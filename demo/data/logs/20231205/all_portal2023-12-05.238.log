@@ -1,0 +1,16 @@
+2023-12-05 08:54:26.278  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : healthCheckProperties...........{}
+2023-12-05 08:54:26.287  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : healthCheckRegistry.............none
+2023-12-05 08:54:26.288  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : idleTimeout.....................30000
+2023-12-05 08:54:26.288  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : initializationFailTimeout.......1
+2023-12-05 08:54:26.289  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : isolateInternalQueries..........false
+2023-12-05 08:54:26.289  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : jdbcUrl.........................jdbc:oracle:thin:@jgjtest.oracle.db.gf.com.cn:1521/jgjtest
+2023-12-05 08:54:26.290  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : leakDetectionThreshold..........0
+2023-12-05 08:54:26.290  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : maxLifetime.....................1800000
+2023-12-05 08:54:26.291  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : maximumPoolSize.................10
+2023-12-05 08:54:26.291  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : metricRegistry..................none
+2023-12-05 08:54:26.291  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : metricsTrackerFactory...........none
+2023-12-05 08:54:26.292  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : minimumIdle.....................2
+2023-12-05 08:54:26.292  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : password........................<masked>
+2023-12-05 08:54:26.292  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : poolName........................"HikariPool-1"
+2023-12-05 08:54:26.293  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : readOnly........................false
+2023-12-05 08:54:26.293  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : registerMbeans..................false

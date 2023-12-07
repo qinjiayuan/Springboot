@@ -1,0 +1,1 @@
+2023-12-05 09:51:38.704  DEBUG [http-nio-8080-exec-1          ] - o.m.s.transaction.SpringManagedTransaction   [49] : JDBC Connection [oracle.jdbc.driver.T4CConnection@2031632a] will not be managed by Spring

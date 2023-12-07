@@ -1,0 +1,2 @@
+2023-12-05 16:15:51.582  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34morg.springframework.boot.SpringApplication   [0;39m[703]: Loading source class com.example.demo.test.DemoApplication
+2023-12-05 16:15:51.941  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.c.config.ConfigFileApplicationListener [0;39m[224]: Loaded config file 'file:/D:/demo/target/classes/application.properties' (classpath:/application.properties)

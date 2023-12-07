@@ -1,0 +1,3 @@
+2023-12-05 17:06:45.701  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34m.w.s.m.m.a.RequestResponseBodyMethodProcessor[0;39m[268]: Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 17:06:45.708  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34m.w.s.m.m.a.RequestResponseBodyMethodProcessor[0;39m[91]: Writing [[model.OtcDerivativeCounterparty@112555fc, model.OtcDerivativeCounterparty@4759b70d, model.OtcDeriva (truncated)...]
+2023-12-05 17:06:45.774  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[1130]: Completed 200 OK

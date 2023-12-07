@@ -1,0 +1,4 @@
+2023-12-05 08:14:41.042  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2023-12-05 08:14:41.047  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2023-12-05 08:14:41.057  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2023-12-05 08:14:41.058  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'

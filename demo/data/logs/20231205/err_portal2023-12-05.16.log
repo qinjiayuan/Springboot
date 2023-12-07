@@ -1,0 +1,8 @@
+2023-12-05 16:00:23.668  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlCounterpartyMapper.updateByPrimaryKey
+2023-12-05 16:00:23.677  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.m.e.spring.MybatisSqlSessionFactoryBean  [0;39m[49]: Parsed mapper file: 'file [D:\demo\target\classes\mapper\AmlCounterpartyMapper.xml]'
+2023-12-05 16:00:23.727  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.selectByExample
+2023-12-05 16:00:23.729  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.selectByPrimaryKey
+2023-12-05 16:00:23.731  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.deleteByPrimaryKey
+2023-12-05 16:00:23.733  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.insert
+2023-12-05 16:00:23.736  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.insertSelective
+2023-12-05 16:00:23.738  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AorgMapper.updateByPrimaryKeySelective

@@ -1,0 +1,16 @@
+2023-12-05 08:54:26.092  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public java.lang.String com.example.demo.test.controller.TestController.selectAll()
+2023-12-05 08:54:26.155  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Creating a new SqlSession
+2023-12-05 08:54:26.186  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6931d992] was not registered for synchronization because synchronization is not active
+2023-12-05 08:54:26.268  DEBUG [http-nio-8080-exec-1          ] - o.s.jdbc.datasource.DataSourceUtils          [114] : Fetching JDBC Connection from DataSource
+2023-12-05 08:54:26.270  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1020] : HikariPool-1 - configuration:
+2023-12-05 08:54:26.273  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : allowPoolSuspension.............false
+2023-12-05 08:54:26.274  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : autoCommit......................true
+2023-12-05 08:54:26.274  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : catalog.........................none
+2023-12-05 08:54:26.274  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionInitSql...............none
+2023-12-05 08:54:26.275  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionTestQuery.............none
+2023-12-05 08:54:26.275  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionTimeout...............30000
+2023-12-05 08:54:26.275  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSource......................none
+2023-12-05 08:54:26.276  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceClassName.............none
+2023-12-05 08:54:26.276  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceJNDI..................none
+2023-12-05 08:54:26.277  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceProperties............{password=<masked>}
+2023-12-05 08:54:26.277  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : driverClassName................."oracle.jdbc.OracleDriver"

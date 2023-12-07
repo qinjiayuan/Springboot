@@ -1,0 +1,4 @@
+2023-12-05 08:14:40.435  DEBUG [main                          ] - c.b.m.a.MybatisPlusAutoConfiguration         [299] : Using auto-configuration base package 'com.example.demo'
+2023-12-05 08:14:40.730  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer'
+2023-12-05 08:14:40.735  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2023-12-05 08:14:40.762  DEBUG [main                          ] - org.apache.ibatis.logging.LogFactory         [105] : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.

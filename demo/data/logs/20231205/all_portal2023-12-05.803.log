@@ -1,0 +1,4 @@
+2023-12-05 11:20:21.294  INFO  [main                          ] - org.apache.coyote.http11.Http11NioProtocol   [173] : Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-05 11:20:21.321  INFO  [main                          ] - org.apache.catalina.core.StandardService     [173] : Starting service [Tomcat]
+2023-12-05 11:20:21.322  INFO  [main                          ] - org.apache.catalina.core.StandardEngine      [173] : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2023-12-05 11:20:21.560  INFO  [main                          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring embedded WebApplicationContext

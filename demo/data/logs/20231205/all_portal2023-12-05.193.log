@@ -1,0 +1,1 @@
+2023-12-05 08:49:33.119  DEBUG [http-nio-8080-exec-2          ] - org.mybatis.spring.SqlSessionUtils           [49] : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ea76ebd]

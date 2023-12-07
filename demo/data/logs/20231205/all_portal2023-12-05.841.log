@@ -1,0 +1,8 @@
+2023-12-05 13:16:30.492  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.ServletContextInitializerBeans     [0;39m[267]: Mapping servlets: dispatcherServlet urls=[/]
+2023-12-05 13:16:30.547  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.filter.OrderedRequestContextFilter [0;39m[241]: Filter 'requestContextFilter' configured for use
+2023-12-05 13:16:30.548  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.f.OrderedHiddenHttpMethodFilter    [0;39m[241]: Filter 'hiddenHttpMethodFilter' configured for use
+2023-12-05 13:16:30.550  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.f.OrderedCharacterEncodingFilter   [0;39m[241]: Filter 'characterEncodingFilter' configured for use
+2023-12-05 13:16:30.551  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.filter.OrderedFormContentFilter    [0;39m[241]: Filter 'formContentFilter' configured for use
+2023-12-05 13:16:30.571  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'demoApplication'
+2023-12-05 13:16:30.573  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'testController'
+2023-12-05 13:16:30.579  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'testserviceImpl'

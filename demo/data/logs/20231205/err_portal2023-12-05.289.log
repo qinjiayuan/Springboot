@@ -1,0 +1,3 @@
+2023-12-05 16:34:14.566  [34mINFO [0;39m [[32mmain                          [0;39m] - [34morg.apache.coyote.http11.Http11NioProtocol   [0;39m[173]: Starting ProtocolHandler ["http-nio-8080"]
+2023-12-05 16:34:14.611  [34mINFO [0;39m [[32mmain                          [0;39m] - [34mo.s.boot.web.embedded.tomcat.TomcatWebServer [0;39m[204]: Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-05 16:34:14.615  [34mINFO [0;39m [[32mmain                          [0;39m] - [34mDemoApplication                              [0;39m[59]: Started com.example.demo.test.DemoApplication in 14.986 seconds (JVM running for 16.073)

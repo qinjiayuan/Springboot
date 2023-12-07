@@ -1,0 +1,16 @@
+2023-12-05 08:49:33.172  DEBUG [http-nio-8080-exec-2          ] - o.s.b.factory.xml.XmlBeanDefinitionReader    [395] : Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2023-12-05 08:49:33.179  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'DB2'
+2023-12-05 08:49:33.192  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'Derby'
+2023-12-05 08:49:33.193  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'H2'
+2023-12-05 08:49:33.195  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'HDB'
+2023-12-05 08:49:33.197  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'HSQL'
+2023-12-05 08:49:33.198  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'Informix'
+2023-12-05 08:49:33.199  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'MS-SQL'
+2023-12-05 08:49:33.203  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'MySQL'
+2023-12-05 08:49:33.205  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'Oracle'
+2023-12-05 08:49:33.206  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'PostgreSQL'
+2023-12-05 08:49:33.207  DEBUG [http-nio-8080-exec-2          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'Sybase'
+2023-12-05 08:49:33.208  DEBUG [http-nio-8080-exec-2          ] - o.s.jdbc.support.SQLErrorCodesFactory        [202] : Looking up default SQLErrorCodes for DataSource [com.zaxxer.hikari.HikariDataSource@5176d279]
+2023-12-05 08:49:33.211  DEBUG [http-nio-8080-exec-2          ] - o.s.jdbc.datasource.DataSourceUtils          [114] : Fetching JDBC Connection from DataSource
+2023-12-05 08:49:33.213  DEBUG [http-nio-8080-exec-2          ] - o.s.jdbc.support.SQLErrorCodesFactory        [178] : SQL error codes for 'Oracle' found
+2023-12-05 08:49:33.213  DEBUG [http-nio-8080-exec-2          ] - o.s.jdbc.support.SQLErrorCodesFactory        [246] : Caching SQL error codes for DataSource [com.zaxxer.hikari.HikariDataSource@5176d279]: database product name is 'Oracle'

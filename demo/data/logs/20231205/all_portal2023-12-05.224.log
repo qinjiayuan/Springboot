@@ -1,0 +1,32 @@
+2023-12-05 08:54:05.746  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.BeneficiaryOrgMapper.updateByPrimaryKey
+2023-12-05 08:54:05.751  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\BeneficiaryOrgMapper.xml]'
+2023-12-05 08:54:05.777  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.selectByExample
+2023-12-05 08:54:05.778  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.selectByPrimaryKey
+2023-12-05 08:54:05.780  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.deleteByPrimaryKey
+2023-12-05 08:54:05.781  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.insert
+2023-12-05 08:54:05.782  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.insertSelective
+2023-12-05 08:54:05.786  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.updateByPrimaryKeySelective
+2023-12-05 08:54:05.788  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewBufferMapper.updateByPrimaryKey
+2023-12-05 08:54:05.789  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\ClientReviewBufferMapper.xml]'
+2023-12-05 08:54:05.810  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.selectByExample
+2023-12-05 08:54:05.811  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.selectByPrimaryKey
+2023-12-05 08:54:05.813  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.deleteByPrimaryKey
+2023-12-05 08:54:05.818  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.insert
+2023-12-05 08:54:05.820  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.insertSelective
+2023-12-05 08:54:05.822  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.updateByPrimaryKeySelective
+2023-12-05 08:54:05.823  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewCounterpartyMapper.updateByPrimaryKey
+2023-12-05 08:54:05.824  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\ClientReviewCounterpartyMapper.xml]'
+2023-12-05 08:54:05.841  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.selectByExampleWithBLOBs
+2023-12-05 08:54:05.842  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.selectByExample
+2023-12-05 08:54:05.844  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.selectByPrimaryKey
+2023-12-05 08:54:05.846  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.deleteByPrimaryKey
+2023-12-05 08:54:05.848  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.insert
+2023-12-05 08:54:05.849  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.insertSelective
+2023-12-05 08:54:05.851  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.updateByPrimaryKeySelective
+2023-12-05 08:54:05.853  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.updateByPrimaryKeyWithBLOBs
+2023-12-05 08:54:05.855  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewDetailMapper.updateByPrimaryKey
+2023-12-05 08:54:05.856  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\ClientReviewDetailMapper.xml]'
+2023-12-05 08:54:05.876  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewFileRecordMapper.selectByExample
+2023-12-05 08:54:05.877  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewFileRecordMapper.selectByPrimaryKey
+2023-12-05 08:54:05.878  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewFileRecordMapper.deleteByPrimaryKey
+2023-12-05 08:54:05.879  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ClientReviewFileRecordMapper.insert

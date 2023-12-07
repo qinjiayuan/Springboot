@@ -1,0 +1,4 @@
+2023-12-05 09:51:39.793  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dfaf61]
+2023-12-05 09:51:39.812  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[268] : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 09:51:39.813  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[91] : Writing [[model.OtcDerivativeCounterparty@7a433ade, model.OtcDerivativeCounterparty@1657ed14, model.OtcDeriva (truncated)...]
+2023-12-05 09:51:39.871  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1130] : Completed 200 OK

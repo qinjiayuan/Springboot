@@ -1,0 +1,2 @@
+2023-12-05 08:45:54.416  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.HttpEntityMethodProcessor      [91] : Writing [{timestamp=Tue Dec 05 08:45:54 CST 2023, status=500, error=Internal Server Error, message=nested exc (truncated)...]
+2023-12-05 08:45:54.448  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1126] : Exiting from "ERROR" dispatch, status 500

@@ -1,0 +1,4 @@
+2023-12-05 16:55:50.066  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-4          [0;39m] - [34mo.s.w.servlet.handler.SimpleUrlHandlerMapping[0;39m[420]: Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2023-12-05 16:55:50.074  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-4          [0;39m] - [34mo.s.w.s.resource.ResourceHttpRequestHandler  [0;39m[453]: Resource not found
+2023-12-05 16:55:50.074  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-4          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[1130]: Completed 404 NOT_FOUND
+2023-12-05 16:55:50.075  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-4          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: "ERROR" dispatch for GET "/error", parameters={}

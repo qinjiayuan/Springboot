@@ -1,0 +1,8 @@
+2023-12-05 08:22:19.409  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'sqlSessionTemplate'
+2023-12-05 08:22:19.413  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'sqlSessionTemplate' via factory method to bean named 'sqlSessionFactory'
+2023-12-05 08:22:19.420  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.github.yulichang.config.InterceptorConfig'
+2023-12-05 08:22:19.423  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration'
+2023-12-05 08:22:19.426  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'mbeanExporter'
+2023-12-05 08:22:19.427  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'objectNamingStrategy'
+2023-12-05 08:22:19.430  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'mbeanExporter' via factory method to bean named 'objectNamingStrategy'
+2023-12-05 08:22:19.439  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'mbeanServer'

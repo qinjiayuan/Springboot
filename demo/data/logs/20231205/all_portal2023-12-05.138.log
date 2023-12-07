@@ -1,0 +1,8 @@
+2023-12-05 08:45:43.517  INFO  [main                          ] - o.springframework.web.context.ContextLoader  [296] : Root WebApplicationContext: initialization completed in 3162 ms
+2023-12-05 08:45:43.528  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'requestContextFilter'
+2023-12-05 08:45:43.532  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'hiddenHttpMethodFilter'
+2023-12-05 08:45:43.532  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2023-12-05 08:45:43.540  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'formContentFilter'
+2023-12-05 08:45:43.545  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'characterEncodingFilter'
+2023-12-05 08:45:43.568  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 08:45:43.569  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping servlets: dispatcherServlet urls=[/]

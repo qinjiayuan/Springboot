@@ -1,0 +1,32 @@
+2023-12-05 10:20:18.602  DEBUG [main                          ] - o.s.b.w.s.f.OrderedCharacterEncodingFilter   [241] : Filter 'characterEncodingFilter' configured for use
+2023-12-05 10:20:18.606  DEBUG [main                          ] - o.s.b.w.s.filter.OrderedFormContentFilter    [241] : Filter 'formContentFilter' configured for use
+2023-12-05 10:20:18.620  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'demoApplication'
+2023-12-05 10:20:18.622  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testController'
+2023-12-05 10:20:18.626  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testserviceImpl'
+2023-12-05 10:20:18.627  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testSpring'
+2023-12-05 10:20:18.631  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'otcDerivativeCounterpartyMapper'
+2023-12-05 10:20:18.637  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'sqlSessionFactory'
+2023-12-05 10:20:18.637  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration'
+2023-12-05 10:20:18.638  DEBUG [main                          ] - s.c.LocalVariableTableParameterNameDiscoverer[108] : Cannot find '.class' file for class [class com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$73954817] - unable to determine constructor/method parameter names
+2023-12-05 10:20:18.641  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
+2023-12-05 10:20:18.650  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
+2023-12-05 10:20:18.651  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@79b06cab'
+2023-12-05 10:20:18.652  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.github.yulichang.interceptor.MPJInterceptor'
+2023-12-05 10:20:18.666  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'dataSource'
+2023-12-05 10:20:18.667  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure'
+2023-12-05 10:20:18.670  INFO  [main                          ] - c.a.d.s.b.a.DruidDataSourceAutoConfigure     [56] : Init DruidDataSource
+2023-12-05 10:20:18.750  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2023-12-05 10:20:19.016  INFO  [main                          ] - com.alibaba.druid.pool.DruidDataSource       [1002] : {dataSource-1} inited
+2023-12-05 10:20:19.026  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'sqlSessionFactory' via factory method to bean named 'dataSource'
+2023-12-05 10:20:19.126  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.github.yulichang.injector.MPJSqlInjector'
+2023-12-05 10:20:19.138  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Registered plugin: 'com.github.yulichang.interceptor.MPJInterceptor@c96a4ea'
+2023-12-05 10:20:19.336  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.selectByPrimaryKey
+2023-12-05 10:20:19.337  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.deleteByPrimaryKey
+2023-12-05 10:20:19.338  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.insert
+2023-12-05 10:20:19.346  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.insertSelective
+2023-12-05 10:20:19.349  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.updateByPrimaryKeySelective
+2023-12-05 10:20:19.351  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.updateByPrimaryKey
+2023-12-05 10:20:19.368  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\AmlBeneficiaryMapper.xml]'
+2023-12-05 10:20:19.390  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.selectByExample
+2023-12-05 10:20:19.391  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.selectByPrimaryKey
+2023-12-05 10:20:19.393  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.deleteByPrimaryKey

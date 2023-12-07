@@ -1,0 +1,7 @@
+2023-12-05 09:40:46.632  DEBUG [http-nio-8080-exec-1          ] - s.O.selectClientbyid                         [137] : ==> Parameters: DEV1100106722(String)
+2023-12-05 09:40:46.698  DEBUG [HikariPool-1 connection adder ] - com.zaxxer.hikari.pool.HikariPool            [709] : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@445f86
+2023-12-05 09:40:46.759  DEBUG [http-nio-8080-exec-1          ] - s.O.selectClientbyid                         [137] : <==      Total: 1
+2023-12-05 09:40:46.760  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73e742a0]
+2023-12-05 09:40:46.781  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[268] : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 09:40:46.782  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[91] : Writing [[model.OtcDerivativeCounterparty@2f520b3c, model.OtcDerivativeCounterparty@1b4d9721, model.OtcDeriva (truncated)...]
+2023-12-05 09:40:46.869  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1130] : Completed 200 OK

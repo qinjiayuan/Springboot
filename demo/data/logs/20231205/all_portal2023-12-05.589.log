@@ -1,0 +1,1 @@
+2023-12-05 10:20:20.739  DEBUG [main                          ] - o.h.v.i.engine.resolver.TraversableResolvers [60] : Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.

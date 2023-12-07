@@ -1,0 +1,6 @@
+2023-12-05 08:54:04.508  INFO  [main                          ] - o.s.boot.web.embedded.tomcat.TomcatWebServer [90] : Tomcat initialized with port(s): 8080 (http)
+2023-12-05 08:54:04.537  INFO  [main                          ] - org.apache.coyote.http11.Http11NioProtocol   [173] : Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-05 08:54:04.555  INFO  [main                          ] - org.apache.catalina.core.StandardService     [173] : Starting service [Tomcat]
+2023-12-05 08:54:04.556  INFO  [main                          ] - org.apache.catalina.core.StandardEngine      [173] : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2023-12-05 08:54:04.775  INFO  [main                          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring embedded WebApplicationContext
+2023-12-05 08:54:04.775  DEBUG [main                          ] - o.springframework.web.context.ContextLoader  [288] : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]

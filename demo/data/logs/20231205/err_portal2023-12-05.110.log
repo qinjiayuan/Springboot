@@ -1,0 +1,2 @@
+2023-12-05 16:16:13.732  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.a.c.c.C.[Tomcat].[localhost].[/]           [0;39m[173]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 16:16:13.734  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[524]: Initializing Servlet 'dispatcherServlet'

@@ -1,0 +1,8 @@
+2023-12-05 16:59:31.526  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'HSQL'
+2023-12-05 16:59:31.530  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'Informix'
+2023-12-05 16:59:31.531  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'MS-SQL'
+2023-12-05 16:59:31.531  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'MySQL'
+2023-12-05 16:59:31.532  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'Oracle'
+2023-12-05 16:59:31.533  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'PostgreSQL'
+2023-12-05 16:59:31.535  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'Sybase'
+2023-12-05 16:59:31.536  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.jdbc.support.SQLErrorCodesFactory        [0;39m[202]: Looking up default SQLErrorCodes for DataSource [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper@3daa82be]

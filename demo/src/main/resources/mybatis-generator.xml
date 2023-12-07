@@ -1,0 +1,205 @@
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <classPathEntry location="D:\java8\repository\com\oracle\ojdbc6\11.2.0.3\ojdbc6-11.2.0.3.jar"/>
+    <context id="default" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@jgjtest.oracle.db.gf.com.cn:1521/jgjtest"
+                        userId="gf_otc"
+                        password="otc1qazXSW@">
+        </jdbcConnection>
+        <javaModelGenerator targetPackage="model" targetProject="D:/demo/src/"/>
+        <sqlMapGenerator targetPackage="mapper" targetProject="D:/demo/src/main/resources/"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="sql" targetProject="D:/demo/src"/>
+        <table tableName="COUNTERPARTY_ORG"
+               domainObjectName="CounterpartyOrg"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+
+        <table tableName="AML_BENEFICIARY"
+               domainObjectName="AmlBeneficiary"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table tableName="AORG"
+               domainObjectName="Aorg"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="AUSER"
+               domainObjectName="Auser"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="BENEFICIARY_ORG"
+               domainObjectName="BeneficiaryOrg"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CLIENT_REVIEW_BUFFER"
+               domainObjectName="ClientReviewBuffer"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CLIENT_REVIEW_COUNTERPARTY"
+               domainObjectName="ClientReviewCounterparty"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CLIENT_REVIEW_DETAIL"
+               domainObjectName="ClientReviewDetail"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CLIENT_REVIEW_FILE_RECORD"
+               domainObjectName="ClientReviewFileRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CLIENT_REVIEW_RECORD"
+               domainObjectName="ClientReviewRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="COUNTERPARTY_ORG"
+               domainObjectName="CounterpartyOrg"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+
+        <table tableName="COUNTERPARTY_PROD_MONITOR_FLOW"
+               domainObjectName="CounterpartyProdMonitorFlow"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CRT_EXPIRED_RECORD"
+               domainObjectName="CrtExpiredRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CTPTY_INFO_UPDATE_RECORD"
+               domainObjectName="CtptyInfoUpdateRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="PROCESS_EXPIRED_REMIND"
+               domainObjectName="ProcessExpiredRemind"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CRT_EXPIRED_RECORD_UNION"
+               domainObjectName="CrtExpiredRecordUnion"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="OTC_DERIVATIVE_COUNTERPARTY"
+               domainObjectName="OtcDerivativeCounterpartyot"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="CRT_EXPIRED_RECORD"
+               domainObjectName="CrtExpiredPersonRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+        <table tableName="COUNTERPARTY_BENEFIT_OVER_LIST"
+               domainObjectName="CounterpartyBenefitOverList"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+
+        <table tableName="AML_COUNTERPARTY"
+               domainObjectName="AmlCounterparty"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+
+        </table>
+
+
+
+    </context>
+
+
+</generatorConfiguration>

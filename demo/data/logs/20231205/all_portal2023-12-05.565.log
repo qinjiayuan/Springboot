@@ -1,0 +1,2 @@
+2023-12-05 10:19:00.085  DEBUG [main                          ] - o.m.spring.mapper.ClassPathMapperScanner     [437] : Identified candidate component class: file [D:\demo\target\classes\sql\AmlBeneficiaryMapper.class]
+2023-12-05 10:19:00.090  DEBUG [main                          ] - o.m.spring.mapper.ClassPathMapperScanner     [437] : Identified candidate component class: file [D:\demo\target\classes\sql\AmlCounterpartyMapper.class]

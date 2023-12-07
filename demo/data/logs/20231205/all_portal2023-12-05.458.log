@@ -1,0 +1,4 @@
+2023-12-05 09:40:38.263  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'faviconRequestHandler'
+2023-12-05 09:40:38.285  DEBUG [main                          ] - o.s.w.s.handler.SimpleUrlHandlerMapping      [139] : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2023-12-05 09:40:38.286  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2023-12-05 09:40:38.287  DEBUG [main                          ] - s.c.LocalVariableTableParameterNameDiscoverer[108] : Cannot find '.class' file for class [class org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$912ccafd] - unable to determine constructor/method parameter names

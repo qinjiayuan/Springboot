@@ -1,0 +1,16 @@
+2023-12-05 08:48:51.801  DEBUG [main                          ] - o.s.b.w.e.t.TomcatServletWebServerFactory    [126] : Code archive: D:\javalesson\JAVAstudyrespository\org\springframework\boot\spring-boot\2.1.5.RELEASE\spring-boot-2.1.5.RELEASE.jar
+2023-12-05 08:48:51.809  DEBUG [main                          ] - o.s.b.w.e.t.TomcatServletWebServerFactory    [151] : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2023-12-05 08:48:51.918  INFO  [main                          ] - o.s.boot.web.embedded.tomcat.TomcatWebServer [90] : Tomcat initialized with port(s): 8080 (http)
+2023-12-05 08:48:51.955  INFO  [main                          ] - org.apache.coyote.http11.Http11NioProtocol   [173] : Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-05 08:48:51.981  INFO  [main                          ] - org.apache.catalina.core.StandardService     [173] : Starting service [Tomcat]
+2023-12-05 08:48:51.982  INFO  [main                          ] - org.apache.catalina.core.StandardEngine      [173] : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2023-12-05 08:48:52.316  INFO  [main                          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring embedded WebApplicationContext
+2023-12-05 08:48:52.317  DEBUG [main                          ] - o.springframework.web.context.ContextLoader  [288] : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-12-05 08:48:52.317  INFO  [main                          ] - o.springframework.web.context.ContextLoader  [296] : Root WebApplicationContext: initialization completed in 6531 ms
+2023-12-05 08:48:52.330  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'requestContextFilter'
+2023-12-05 08:48:52.335  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'hiddenHttpMethodFilter'
+2023-12-05 08:48:52.336  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2023-12-05 08:48:52.350  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'formContentFilter'
+2023-12-05 08:48:52.360  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'characterEncodingFilter'
+2023-12-05 08:48:52.379  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 08:48:52.380  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping servlets: dispatcherServlet urls=[/]

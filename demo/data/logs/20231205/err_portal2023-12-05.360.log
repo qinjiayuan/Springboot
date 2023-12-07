@@ -1,0 +1,3 @@
+2023-12-05 16:59:31.279  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: GET "/api/test/selectAll", parameters={}
+2023-12-05 16:59:31.283  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.w.s.m.m.a.RequestMappingHandlerMapping   [0;39m[420]: Mapped to public java.util.List<model.OtcDerivativeCounterparty> com.example.demo.test.controller.TestController.selectAll()
+2023-12-05 16:59:31.293  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34morg.mybatis.spring.SqlSessionUtils           [0;39m[49]: Creating a new SqlSession

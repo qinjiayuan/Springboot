@@ -1,0 +1,2 @@
+2023-12-05 09:14:27.086  DEBUG [HikariPool-1 housekeeper      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - After cleanup  stats (total=2, active=0, idle=2, waiting=0)
+2023-12-05 09:14:27.086  DEBUG [HikariPool-1 connection closer] - com.zaxxer.hikari.pool.PoolBase              [129] : HikariPool-1 - Closing connection oracle.jdbc.driver.T4CConnection@49f8f03a: (connection has passed idleTimeout)

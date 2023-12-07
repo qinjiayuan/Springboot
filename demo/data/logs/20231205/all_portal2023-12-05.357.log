@@ -1,0 +1,1 @@
+2023-12-05 09:13:03.678  DEBUG [Thread-3                      ] - ationConfigServletWebServerApplicationContext[1002] : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35ef1869, started on Tue Dec 05 09:05:18 CST 2023

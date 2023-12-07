@@ -1,0 +1,4 @@
+2023-12-05 11:20:17.488  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2023-12-05 11:20:17.741  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2023-12-05 11:20:18.019  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\TestController.class]
+2023-12-05 11:20:18.025  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [443] : Ignored because not a concrete top-level class: file [D:\demo\target\classes\com\example\demo\test\impl\Testservice.class]

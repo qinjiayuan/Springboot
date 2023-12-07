@@ -1,0 +1,4 @@
+2023-12-05 08:14:40.772  WARN  [main                          ] - o.m.spring.mapper.ClassPathMapperScanner     [44] : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2023-12-05 08:14:41.035  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2023-12-05 08:14:41.037  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2023-12-05 08:14:41.038  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'

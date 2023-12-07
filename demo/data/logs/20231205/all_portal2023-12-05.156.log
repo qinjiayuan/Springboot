@@ -1,0 +1,2 @@
+2023-12-05 08:48:45.964  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2023-12-05 08:48:46.294  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\TestController.class]

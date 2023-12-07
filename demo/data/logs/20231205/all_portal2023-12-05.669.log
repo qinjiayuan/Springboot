@@ -1,0 +1,4 @@
+2023-12-05 10:47:16.207  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'demoApplication'
+2023-12-05 10:47:16.210  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testController'
+2023-12-05 10:47:16.216  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testserviceImpl'
+2023-12-05 10:47:16.217  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testSpring'

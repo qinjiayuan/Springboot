@@ -1,0 +1,2 @@
+2023-12-05 15:11:39.095  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+2023-12-05 15:11:39.267  DEBUG [main                          ] - o.s.core.env.PropertySourcesPropertyResolver [115] : Found key 'spring.datasource.druid.filter.config.enabled' in PropertySource 'configurationProperties' with value of type String

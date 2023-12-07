@@ -1,0 +1,2 @@
+2023-12-05 09:43:28.300  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 09:43:28.304  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping servlets: dispatcherServlet urls=[/]

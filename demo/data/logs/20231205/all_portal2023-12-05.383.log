@@ -1,0 +1,32 @@
+2023-12-05 09:13:25.887  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : GET "/api/test/selectAll", parameters={}
+2023-12-05 09:13:25.906  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public java.util.List<model.OtcDerivativeCounterparty> com.example.demo.test.controller.TestController.selectAll()
+2023-12-05 09:13:25.968  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Creating a new SqlSession
+2023-12-05 09:13:25.993  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa954f] was not registered for synchronization because synchronization is not active
+2023-12-05 09:13:26.072  DEBUG [http-nio-8080-exec-1          ] - o.s.jdbc.datasource.DataSourceUtils          [114] : Fetching JDBC Connection from DataSource
+2023-12-05 09:13:26.074  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1020] : HikariPool-1 - configuration:
+2023-12-05 09:13:26.078  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : allowPoolSuspension.............false
+2023-12-05 09:13:26.078  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : autoCommit......................true
+2023-12-05 09:13:26.079  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : catalog.........................none
+2023-12-05 09:13:26.080  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionInitSql...............none
+2023-12-05 09:13:26.080  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionTestQuery.............none
+2023-12-05 09:13:26.081  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : connectionTimeout...............30000
+2023-12-05 09:13:26.081  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSource......................none
+2023-12-05 09:13:26.082  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceClassName.............none
+2023-12-05 09:13:26.082  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceJNDI..................none
+2023-12-05 09:13:26.084  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : dataSourceProperties............{password=<masked>}
+2023-12-05 09:13:26.085  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : driverClassName................."oracle.jdbc.OracleDriver"
+2023-12-05 09:13:26.086  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : healthCheckProperties...........{}
+2023-12-05 09:13:26.086  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : healthCheckRegistry.............none
+2023-12-05 09:13:26.087  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : idleTimeout.....................30000
+2023-12-05 09:13:26.088  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : initializationFailTimeout.......1
+2023-12-05 09:13:26.088  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : isolateInternalQueries..........false
+2023-12-05 09:13:26.089  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : jdbcUrl.........................jdbc:oracle:thin:@jgjtest.oracle.db.gf.com.cn:1521/jgjtest
+2023-12-05 09:13:26.089  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : leakDetectionThreshold..........0
+2023-12-05 09:13:26.096  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : maxLifetime.....................1800000
+2023-12-05 09:13:26.097  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : maximumPoolSize.................10
+2023-12-05 09:13:26.098  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : metricRegistry..................none
+2023-12-05 09:13:26.098  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : metricsTrackerFactory...........none
+2023-12-05 09:13:26.099  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : minimumIdle.....................2
+2023-12-05 09:13:26.100  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : password........................<masked>
+2023-12-05 09:13:26.101  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : poolName........................"HikariPool-1"
+2023-12-05 09:13:26.102  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : readOnly........................false

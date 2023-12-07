@@ -1,0 +1,16 @@
+2023-12-05 10:51:08.749  INFO  [main                          ] - o.springframework.web.context.ContextLoader  [296] : Root WebApplicationContext: initialization completed in 3306 ms
+2023-12-05 10:51:08.761  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'requestContextFilter'
+2023-12-05 10:51:08.763  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'hiddenHttpMethodFilter'
+2023-12-05 10:51:08.763  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2023-12-05 10:51:08.771  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'formContentFilter'
+2023-12-05 10:51:08.776  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'characterEncodingFilter'
+2023-12-05 10:51:08.788  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 10:51:08.788  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping servlets: dispatcherServlet urls=[/]
+2023-12-05 10:51:08.820  DEBUG [main                          ] - o.s.b.w.s.filter.OrderedRequestContextFilter [241] : Filter 'requestContextFilter' configured for use
+2023-12-05 10:51:08.821  DEBUG [main                          ] - o.s.b.w.s.f.OrderedHiddenHttpMethodFilter    [241] : Filter 'hiddenHttpMethodFilter' configured for use
+2023-12-05 10:51:08.821  DEBUG [main                          ] - o.s.b.w.s.f.OrderedCharacterEncodingFilter   [241] : Filter 'characterEncodingFilter' configured for use
+2023-12-05 10:51:08.821  DEBUG [main                          ] - o.s.b.w.s.filter.OrderedFormContentFilter    [241] : Filter 'formContentFilter' configured for use
+2023-12-05 10:51:08.831  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'demoApplication'
+2023-12-05 10:51:08.833  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testController'
+2023-12-05 10:51:08.838  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testserviceImpl'
+2023-12-05 10:51:08.839  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'testSpring'

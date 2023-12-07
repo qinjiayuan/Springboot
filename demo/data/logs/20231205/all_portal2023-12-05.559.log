@@ -1,0 +1,2 @@
+2023-12-05 10:18:57.626  DEBUG [main                          ] - o.s.b.c.config.ConfigFileApplicationListener [224] : Loaded config file 'file:/D:/demo/target/classes/application.properties' (classpath:/application.properties)
+2023-12-05 10:18:57.656  DEBUG [main                          ] - ationConfigServletWebServerApplicationContext[594] : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@20ce78ec

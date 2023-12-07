@@ -1,0 +1,2 @@
+2023-12-05 10:36:07.018  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+2023-12-05 10:36:07.339  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.example.demo.test.DemoApplication#MapperScannerRegistrar#0'

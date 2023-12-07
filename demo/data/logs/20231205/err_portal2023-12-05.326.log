@@ -1,0 +1,3 @@
+2023-12-05 16:41:11.877  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: POST "/clientreview/hello", parameters={}
+2023-12-05 16:41:11.882  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.w.servlet.handler.SimpleUrlHandlerMapping[0;39m[420]: Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2023-12-05 16:41:11.886  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.w.s.resource.ResourceHttpRequestHandler  [0;39m[453]: Resource not found

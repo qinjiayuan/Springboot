@@ -1,0 +1,4 @@
+2023-12-05 11:20:09.310  DEBUG [Thread-3                      ] - ationConfigServletWebServerApplicationContext[1002] : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@418e7838, started on Tue Dec 05 11:14:58 CST 2023
+2023-12-05 11:20:09.314  DEBUG [Thread-3                      ] - o.s.j.e.annotation.AnnotationMBeanExporter   [451] : Unregistering JMX-exposed beans on shutdown
+2023-12-05 11:20:09.315  DEBUG [Thread-3                      ] - o.s.j.e.annotation.AnnotationMBeanExporter   [185] : Unregistering JMX-exposed beans
+2023-12-05 11:20:09.316  INFO  [Thread-3                      ] - o.s.s.concurrent.ThreadPoolTaskExecutor      [208] : Shutting down ExecutorService 'applicationTaskExecutor'

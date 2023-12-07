@@ -1,0 +1,3 @@
+2023-12-05 09:13:16.230  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'sqlSessionTemplate'
+2023-12-05 09:13:16.234  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [777] : Autowiring by type from bean name 'sqlSessionTemplate' via factory method to bean named 'sqlSessionFactory'
+2023-12-05 09:13:16.272  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'

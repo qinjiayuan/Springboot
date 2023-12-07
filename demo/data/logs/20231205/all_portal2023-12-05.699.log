@@ -1,0 +1,3 @@
+2023-12-05 10:52:23.851  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.example.demo.test.DemoApplication#MapperScannerRegistrar#0'
+2023-12-05 10:52:23.876  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2023-12-05 10:52:23.907  DEBUG [main                          ] - org.apache.ibatis.logging.LogFactory         [105] : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.

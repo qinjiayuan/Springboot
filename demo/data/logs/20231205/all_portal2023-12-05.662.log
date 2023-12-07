@@ -1,0 +1,1 @@
+2023-12-05 10:47:14.669  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.example.demo.test.DemoApplication#MapperScannerRegistrar#0'

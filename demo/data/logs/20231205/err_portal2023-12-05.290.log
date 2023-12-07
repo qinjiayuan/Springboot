@@ -1,0 +1,5 @@
+2023-12-05 16:34:18.331  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.a.c.c.C.[Tomcat].[localhost].[/]           [0;39m[173]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 16:34:18.335  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[524]: Initializing Servlet 'dispatcherServlet'
+2023-12-05 16:34:18.335  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[525]: Detected StandardServletMultipartResolver
+2023-12-05 16:34:18.343  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[541]: enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 16:34:18.343  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[546]: Completed initialization in 8 ms

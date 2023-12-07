@@ -1,0 +1,12 @@
+2023-12-05 10:20:18.510  INFO  [main                          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring embedded WebApplicationContext
+2023-12-05 10:20:18.517  DEBUG [main                          ] - o.springframework.web.context.ContextLoader  [288] : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-12-05 10:20:18.517  INFO  [main                          ] - o.springframework.web.context.ContextLoader  [296] : Root WebApplicationContext: initialization completed in 3230 ms
+2023-12-05 10:20:18.528  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'requestContextFilter'
+2023-12-05 10:20:18.533  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'hiddenHttpMethodFilter'
+2023-12-05 10:20:18.533  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2023-12-05 10:20:18.542  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'formContentFilter'
+2023-12-05 10:20:18.549  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'characterEncodingFilter'
+2023-12-05 10:20:18.562  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 10:20:18.563  DEBUG [main                          ] - o.s.b.w.s.ServletContextInitializerBeans     [267] : Mapping servlets: dispatcherServlet urls=[/]
+2023-12-05 10:20:18.599  DEBUG [main                          ] - o.s.b.w.s.filter.OrderedRequestContextFilter [241] : Filter 'requestContextFilter' configured for use
+2023-12-05 10:20:18.601  DEBUG [main                          ] - o.s.b.w.s.f.OrderedHiddenHttpMethodFilter    [241] : Filter 'hiddenHttpMethodFilter' configured for use

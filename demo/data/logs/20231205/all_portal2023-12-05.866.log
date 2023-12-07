@@ -1,0 +1,2 @@
+2023-12-05 15:11:40.826  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'configFilter'
+2023-12-05 15:11:40.829  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration'

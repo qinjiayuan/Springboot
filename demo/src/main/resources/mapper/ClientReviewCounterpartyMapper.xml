@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.ClientReviewCounterpartyMapper">
+  <resultMap id="BaseResultMap" type="model.ClientReviewCounterparty">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="RECORD_ID" jdbcType="VARCHAR" property="recordId" />
+    <result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="IGNORE" jdbcType="VARCHAR" property="ignore" />
+    <result column="BENEFIT_OVER_FLAG" jdbcType="VARCHAR" property="benefitOverFlag" />
+    <result column="AGREE_INFO" jdbcType="VARCHAR" property="agreeInfo" />
+    <result column="ALLOW_BUSI_TYPE" jdbcType="VARCHAR" property="allowBusiType" />
+    <result column="CLIENT_QUALIFY_REVIEW" jdbcType="VARCHAR" property="clientQualifyReview" />
+    <result column="SEQ" jdbcType="DECIMAL" property="seq" />
+    <result column="REVIEW_BUFFER_START" jdbcType="TIMESTAMP" property="reviewBufferStart" />
+    <result column="SUPPLEMENTARY_MATERIALS_NOTE" jdbcType="VARCHAR" property="supplementaryMaterialsNote" />
+    <result column="SHOW_NOTE" jdbcType="VARCHAR" property="showNote" />
+    <result column="ALLOW_BUSI_TYPE_HIS" jdbcType="VARCHAR" property="allowBusiTypeHis" />
+    <result column="MANUAL_DEL_ALLOW_BUSI_TYPE" jdbcType="VARCHAR" property="manualDelAllowBusiType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, RECORD_ID, PRODUCT_NAME, CREATED_DATETIME, CLIENT_ID, IGNORE, BENEFIT_OVER_FLAG, 
+    AGREE_INFO, ALLOW_BUSI_TYPE, CLIENT_QUALIFY_REVIEW, SEQ, REVIEW_BUFFER_START, SUPPLEMENTARY_MATERIALS_NOTE, 
+    SHOW_NOTE, ALLOW_BUSI_TYPE_HIS, MANUAL_DEL_ALLOW_BUSI_TYPE
+  </sql>
+  <select id="selectByExample" parameterType="model.ClientReviewCounterpartyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_COUNTERPARTY
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_COUNTERPARTY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CLIENT_REVIEW_COUNTERPARTY
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.ClientReviewCounterparty">
+    insert into CLIENT_REVIEW_COUNTERPARTY (ID, RECORD_ID, PRODUCT_NAME, 
+      CREATED_DATETIME, CLIENT_ID, IGNORE, 
+      BENEFIT_OVER_FLAG, AGREE_INFO, ALLOW_BUSI_TYPE, 
+      CLIENT_QUALIFY_REVIEW, SEQ, REVIEW_BUFFER_START, 
+      SUPPLEMENTARY_MATERIALS_NOTE, SHOW_NOTE, ALLOW_BUSI_TYPE_HIS, 
+      MANUAL_DEL_ALLOW_BUSI_TYPE)
+    values (#{id,jdbcType=VARCHAR}, #{recordId,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
+      #{createdDatetime,jdbcType=TIMESTAMP}, #{clientId,jdbcType=VARCHAR}, #{ignore,jdbcType=VARCHAR}, 
+      #{benefitOverFlag,jdbcType=VARCHAR}, #{agreeInfo,jdbcType=VARCHAR}, #{allowBusiType,jdbcType=VARCHAR}, 
+      #{clientQualifyReview,jdbcType=VARCHAR}, #{seq,jdbcType=DECIMAL}, #{reviewBufferStart,jdbcType=TIMESTAMP}, 
+      #{supplementaryMaterialsNote,jdbcType=VARCHAR}, #{showNote,jdbcType=VARCHAR}, #{allowBusiTypeHis,jdbcType=VARCHAR}, 
+      #{manualDelAllowBusiType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.ClientReviewCounterparty">
+    insert into CLIENT_REVIEW_COUNTERPARTY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="ignore != null">
+        IGNORE,
+      </if>
+      <if test="benefitOverFlag != null">
+        BENEFIT_OVER_FLAG,
+      </if>
+      <if test="agreeInfo != null">
+        AGREE_INFO,
+      </if>
+      <if test="allowBusiType != null">
+        ALLOW_BUSI_TYPE,
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW,
+      </if>
+      <if test="seq != null">
+        SEQ,
+      </if>
+      <if test="reviewBufferStart != null">
+        REVIEW_BUFFER_START,
+      </if>
+      <if test="supplementaryMaterialsNote != null">
+        SUPPLEMENTARY_MATERIALS_NOTE,
+      </if>
+      <if test="showNote != null">
+        SHOW_NOTE,
+      </if>
+      <if test="allowBusiTypeHis != null">
+        ALLOW_BUSI_TYPE_HIS,
+      </if>
+      <if test="manualDelAllowBusiType != null">
+        MANUAL_DEL_ALLOW_BUSI_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="ignore != null">
+        #{ignore,jdbcType=VARCHAR},
+      </if>
+      <if test="benefitOverFlag != null">
+        #{benefitOverFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeInfo != null">
+        #{agreeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="allowBusiType != null">
+        #{allowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="reviewBufferStart != null">
+        #{reviewBufferStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplementaryMaterialsNote != null">
+        #{supplementaryMaterialsNote,jdbcType=VARCHAR},
+      </if>
+      <if test="showNote != null">
+        #{showNote,jdbcType=VARCHAR},
+      </if>
+      <if test="allowBusiTypeHis != null">
+        #{allowBusiTypeHis,jdbcType=VARCHAR},
+      </if>
+      <if test="manualDelAllowBusiType != null">
+        #{manualDelAllowBusiType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.ClientReviewCounterparty">
+    update CLIENT_REVIEW_COUNTERPARTY
+    <set>
+      <if test="recordId != null">
+        RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="ignore != null">
+        IGNORE = #{ignore,jdbcType=VARCHAR},
+      </if>
+      <if test="benefitOverFlag != null">
+        BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeInfo != null">
+        AGREE_INFO = #{agreeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="allowBusiType != null">
+        ALLOW_BUSI_TYPE = #{allowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null">
+        SEQ = #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="reviewBufferStart != null">
+        REVIEW_BUFFER_START = #{reviewBufferStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplementaryMaterialsNote != null">
+        SUPPLEMENTARY_MATERIALS_NOTE = #{supplementaryMaterialsNote,jdbcType=VARCHAR},
+      </if>
+      <if test="showNote != null">
+        SHOW_NOTE = #{showNote,jdbcType=VARCHAR},
+      </if>
+      <if test="allowBusiTypeHis != null">
+        ALLOW_BUSI_TYPE_HIS = #{allowBusiTypeHis,jdbcType=VARCHAR},
+      </if>
+      <if test="manualDelAllowBusiType != null">
+        MANUAL_DEL_ALLOW_BUSI_TYPE = #{manualDelAllowBusiType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.ClientReviewCounterparty">
+    update CLIENT_REVIEW_COUNTERPARTY
+    set RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      IGNORE = #{ignore,jdbcType=VARCHAR},
+      BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR},
+      AGREE_INFO = #{agreeInfo,jdbcType=VARCHAR},
+      ALLOW_BUSI_TYPE = #{allowBusiType,jdbcType=VARCHAR},
+      CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      SEQ = #{seq,jdbcType=DECIMAL},
+      REVIEW_BUFFER_START = #{reviewBufferStart,jdbcType=TIMESTAMP},
+      SUPPLEMENTARY_MATERIALS_NOTE = #{supplementaryMaterialsNote,jdbcType=VARCHAR},
+      SHOW_NOTE = #{showNote,jdbcType=VARCHAR},
+      ALLOW_BUSI_TYPE_HIS = #{allowBusiTypeHis,jdbcType=VARCHAR},
+      MANUAL_DEL_ALLOW_BUSI_TYPE = #{manualDelAllowBusiType,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

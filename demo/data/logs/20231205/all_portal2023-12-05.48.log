@@ -1,0 +1,8 @@
+2023-12-05 08:22:13.816  DEBUG [main                          ] - c.b.m.a.MybatisPlusAutoConfiguration         [299] : Using auto-configuration base package 'com.example.demo'
+2023-12-05 08:22:14.003  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.mybatis.spring.mapper.MapperScannerConfigurer'
+2023-12-05 08:22:14.006  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2023-12-05 08:22:14.027  DEBUG [main                          ] - org.apache.ibatis.logging.LogFactory         [105] : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-12-05 08:22:14.037  WARN  [main                          ] - o.m.spring.mapper.ClassPathMapperScanner     [44] : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2023-12-05 08:22:14.393  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2023-12-05 08:22:14.398  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2023-12-05 08:22:14.400  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'

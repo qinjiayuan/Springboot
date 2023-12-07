@@ -1,0 +1,13 @@
+2023-12-05 11:20:27.503  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.OtcDerivativeCounterpartyMapper.insert
+2023-12-05 11:20:27.517  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.OtcDerivativeCounterpartyMapper.insertSelective
+2023-12-05 11:20:27.520  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.OtcDerivativeCounterpartyMapper.updateByPrimaryKeySelective
+2023-12-05 11:20:27.524  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.OtcDerivativeCounterpartyMapper.updateByPrimaryKey
+2023-12-05 11:20:27.533  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\OtcDerivativeCounterpartyMapper.xml]'
+2023-12-05 11:20:27.552  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.selectByExample
+2023-12-05 11:20:27.554  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.selectByPrimaryKey
+2023-12-05 11:20:27.555  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.deleteByPrimaryKey
+2023-12-05 11:20:27.560  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.insert
+2023-12-05 11:20:27.563  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.insertSelective
+2023-12-05 11:20:27.564  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.updateByPrimaryKeySelective
+2023-12-05 11:20:27.565  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.ProcessExpiredRemindMapper.updateByPrimaryKey
+2023-12-05 11:20:27.567  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\ProcessExpiredRemindMapper.xml]'

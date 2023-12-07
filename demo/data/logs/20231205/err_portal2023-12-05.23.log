@@ -1,0 +1,3 @@
+2023-12-05 16:00:27.400  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'sqlSessionTemplate'
+2023-12-05 16:00:27.405  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[777]: Autowiring by type from bean name 'sqlSessionTemplate' via factory method to bean named 'sqlSessionFactory'
+2023-12-05 16:00:27.418  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'testSpring'

@@ -1,0 +1,2 @@
+2023-12-05 16:15:54.869  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.m.spring.mapper.ClassPathMapperScanner     [0;39m[437]: Identified candidate component class: file [D:\demo\target\classes\sql\AmlBeneficiaryMapper.class]
+2023-12-05 16:15:54.876  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.m.spring.mapper.ClassPathMapperScanner     [0;39m[437]: Identified candidate component class: file [D:\demo\target\classes\sql\AmlCounterpartyMapper.class]

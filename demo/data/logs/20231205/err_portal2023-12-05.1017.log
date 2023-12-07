@@ -1,0 +1,9 @@
+2023-12-05 15:35:15.230  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.a.c.c.C.[Tomcat].[localhost].[/]           [0;39m[173]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 15:35:15.233  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[524]: Initializing Servlet 'dispatcherServlet'
+2023-12-05 15:35:15.234  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[525]: Detected StandardServletMultipartResolver
+2023-12-05 15:35:15.241  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[541]: enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 15:35:15.241  [34mINFO [0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[546]: Completed initialization in 7 ms
+2023-12-05 15:35:15.255  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: GET "/clientreview/selectAll", parameters={}
+2023-12-05 15:35:15.266  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.w.servlet.handler.SimpleUrlHandlerMapping[0;39m[420]: Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2023-12-05 15:35:15.269  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.w.s.resource.ResourceHttpRequestHandler  [0;39m[453]: Resource not found
+2023-12-05 15:35:15.270  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-1          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[1130]: Completed 404 NOT_FOUND

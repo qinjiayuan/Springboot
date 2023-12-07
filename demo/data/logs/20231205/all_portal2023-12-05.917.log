@@ -1,0 +1,2 @@
+2023-12-05 15:16:20.447  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: GET "/clientreview/selectAll", parameters={}
+2023-12-05 15:16:20.450  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.w.servlet.handler.SimpleUrlHandlerMapping[0;39m[420]: Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]

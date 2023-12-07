@@ -1,0 +1,4 @@
+2023-12-05 08:14:40.032  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+2023-12-05 08:14:40.405  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2023-12-05 08:14:40.430  DEBUG [main                          ] - o.s.b.a.AutoConfigurationPackages            [206] : @EnableAutoConfiguration was declared on a class in the package 'com.example.demo'. Automatic @Repository and @Entity scanning is enabled.
+2023-12-05 08:14:40.434  DEBUG [main                          ] - c.b.m.a.MybatisPlusAutoConfiguration         [295] : Searching for mappers annotated with @Mapper

@@ -1,0 +1,4 @@
+2023-12-05 09:01:22.626  INFO  [Thread-3                      ] - com.zaxxer.hikari.HikariDataSource           [350] : HikariPool-1 - Shutdown initiated...
+2023-12-05 09:01:22.629  DEBUG [Thread-3                      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - Before shutdown stats (total=2, active=0, idle=2, waiting=0)
+2023-12-05 09:01:22.630  DEBUG [HikariPool-1 connection closer] - com.zaxxer.hikari.pool.PoolBase              [129] : HikariPool-1 - Closing connection oracle.jdbc.driver.T4CConnection@4369372f: (connection evicted)
+2023-12-05 09:01:22.678  DEBUG [HikariPool-1 connection closer] - com.zaxxer.hikari.pool.PoolBase              [129] : HikariPool-1 - Closing connection oracle.jdbc.driver.T4CConnection@6252c566: (connection evicted)

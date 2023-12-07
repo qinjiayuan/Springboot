@@ -1,0 +1,2 @@
+2023-12-05 16:41:11.894  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.w.s.m.m.a.HttpEntityMethodProcessor      [0;39m[91]: Writing [{timestamp=Tue Dec 05 16:41:11 CST 2023, status=404, error=Not Found, message=No message available,  (truncated)...]
+2023-12-05 16:41:11.897  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[1126]: Exiting from "ERROR" dispatch, status 404

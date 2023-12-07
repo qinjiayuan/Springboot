@@ -1,0 +1,11 @@
+2023-12-05 10:56:19.110  INFO  [http-nio-8080-exec-1          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 10:56:19.115  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [524] : Initializing Servlet 'dispatcherServlet'
+2023-12-05 10:56:19.115  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [525] : Detected StandardServletMultipartResolver
+2023-12-05 10:56:19.122  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [541] : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 10:56:19.123  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [546] : Completed initialization in 8 ms
+2023-12-05 10:56:19.139  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : GET "/api/test/selectAll", parameters={}
+2023-12-05 10:56:19.146  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public java.util.List<model.OtcDerivativeCounterparty> com.example.demo.test.controller.TestController.selectAll()
+2023-12-05 10:56:19.176  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Creating a new SqlSession
+2023-12-05 10:56:19.187  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45485f3a] was not registered for synchronization because synchronization is not active
+2023-12-05 10:56:19.226  DEBUG [http-nio-8080-exec-1          ] - o.s.jdbc.datasource.DataSourceUtils          [114] : Fetching JDBC Connection from DataSource
+2023-12-05 10:56:19.834  DEBUG [http-nio-8080-exec-1          ] - o.m.s.transaction.SpringManagedTransaction   [49] : JDBC Connection [oracle.jdbc.driver.T4CConnection@339e131f] will not be managed by Spring

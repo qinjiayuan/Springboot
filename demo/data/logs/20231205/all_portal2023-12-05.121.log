@@ -1,0 +1,4 @@
+2023-12-05 08:41:06.291  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2023-12-05 08:41:06.301  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2023-12-05 08:41:06.302  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2023-12-05 08:41:06.305  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'

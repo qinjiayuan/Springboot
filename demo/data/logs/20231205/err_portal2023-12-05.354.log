@@ -1,0 +1,6 @@
+2023-12-05 16:55:09.648  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[91]: GET "/api/test/hello", parameters={}
+2023-12-05 16:55:09.652  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.w.s.m.m.a.RequestMappingHandlerMapping   [0;39m[420]: Mapped to public java.lang.String com.example.demo.test.controller.TestController.hello()
+2023-12-05 16:55:09.653  [34mINFO [0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mcom.example.demo.test.impl.TestserviceImpl   [0;39m[26]: hello world!
+2023-12-05 16:55:09.655  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34m.w.s.m.m.a.RequestResponseBodyMethodProcessor[0;39m[268]: Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2023-12-05 16:55:09.656  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34m.w.s.m.m.a.RequestResponseBodyMethodProcessor[0;39m[91]: Writing ["Hello world!"]
+2023-12-05 16:55:09.659  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-3          [0;39m] - [34mo.s.web.servlet.DispatcherServlet            [0;39m[1130]: Completed 200 OK

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.ClientReviewFileRecordMapper">
+  <resultMap id="BaseResultMap" type="model.ClientReviewFileRecord">
+    <id column="S3_FILE_ID" jdbcType="VARCHAR" property="s3FileId" />
+    <result column="OTC_DERIVATIVE_COUNTERPARTY_ID" jdbcType="VARCHAR" property="otcDerivativeCounterpartyId" />
+    <result column="RECORD_ID" jdbcType="VARCHAR" property="recordId" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FILE_SIZE" jdbcType="DECIMAL" property="fileSize" />
+    <result column="FILE_BELONG" jdbcType="VARCHAR" property="fileBelong" />
+    <result column="UPLOAD_ACTIVITY" jdbcType="VARCHAR" property="uploadActivity" />
+    <result column="CREATED_USER" jdbcType="VARCHAR" property="createdUser" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    S3_FILE_ID, OTC_DERIVATIVE_COUNTERPARTY_ID, RECORD_ID, FILE_NAME, FILE_SIZE, FILE_BELONG, 
+    UPLOAD_ACTIVITY, CREATED_USER, CREATED_DATETIME, CLIENT_ID
+  </sql>
+  <select id="selectByExample" parameterType="model.ClientReviewFileRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_FILE_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_FILE_RECORD
+    where S3_FILE_ID = #{s3FileId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CLIENT_REVIEW_FILE_RECORD
+    where S3_FILE_ID = #{s3FileId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.ClientReviewFileRecord">
+    insert into CLIENT_REVIEW_FILE_RECORD (S3_FILE_ID, OTC_DERIVATIVE_COUNTERPARTY_ID, 
+      RECORD_ID, FILE_NAME, FILE_SIZE, 
+      FILE_BELONG, UPLOAD_ACTIVITY, CREATED_USER, 
+      CREATED_DATETIME, CLIENT_ID)
+    values (#{s3FileId,jdbcType=VARCHAR}, #{otcDerivativeCounterpartyId,jdbcType=VARCHAR}, 
+      #{recordId,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{fileSize,jdbcType=DECIMAL}, 
+      #{fileBelong,jdbcType=VARCHAR}, #{uploadActivity,jdbcType=VARCHAR}, #{createdUser,jdbcType=VARCHAR}, 
+      #{createdDatetime,jdbcType=TIMESTAMP}, #{clientId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.ClientReviewFileRecord">
+    insert into CLIENT_REVIEW_FILE_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="s3FileId != null">
+        S3_FILE_ID,
+      </if>
+      <if test="otcDerivativeCounterpartyId != null">
+        OTC_DERIVATIVE_COUNTERPARTY_ID,
+      </if>
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="fileName != null">
+        FILE_NAME,
+      </if>
+      <if test="fileSize != null">
+        FILE_SIZE,
+      </if>
+      <if test="fileBelong != null">
+        FILE_BELONG,
+      </if>
+      <if test="uploadActivity != null">
+        UPLOAD_ACTIVITY,
+      </if>
+      <if test="createdUser != null">
+        CREATED_USER,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="s3FileId != null">
+        #{s3FileId,jdbcType=VARCHAR},
+      </if>
+      <if test="otcDerivativeCounterpartyId != null">
+        #{otcDerivativeCounterpartyId,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=DECIMAL},
+      </if>
+      <if test="fileBelong != null">
+        #{fileBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadActivity != null">
+        #{uploadActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null">
+        #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.ClientReviewFileRecord">
+    update CLIENT_REVIEW_FILE_RECORD
+    <set>
+      <if test="otcDerivativeCounterpartyId != null">
+        OTC_DERIVATIVE_COUNTERPARTY_ID = #{otcDerivativeCounterpartyId,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        FILE_SIZE = #{fileSize,jdbcType=DECIMAL},
+      </if>
+      <if test="fileBelong != null">
+        FILE_BELONG = #{fileBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadActivity != null">
+        UPLOAD_ACTIVITY = #{uploadActivity,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null">
+        CREATED_USER = #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where S3_FILE_ID = #{s3FileId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.ClientReviewFileRecord">
+    update CLIENT_REVIEW_FILE_RECORD
+    set OTC_DERIVATIVE_COUNTERPARTY_ID = #{otcDerivativeCounterpartyId,jdbcType=VARCHAR},
+      RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      FILE_SIZE = #{fileSize,jdbcType=DECIMAL},
+      FILE_BELONG = #{fileBelong,jdbcType=VARCHAR},
+      UPLOAD_ACTIVITY = #{uploadActivity,jdbcType=VARCHAR},
+      CREATED_USER = #{createdUser,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+    where S3_FILE_ID = #{s3FileId,jdbcType=VARCHAR}
+  </update>
+</mapper>

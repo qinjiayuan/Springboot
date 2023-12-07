@@ -1,0 +1,8 @@
+2023-12-05 16:59:31.408  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34msql.OtcDerivativeCounterpartyMapper.selectAll[0;39m[137]: ==> Parameters: 测试产品关注类(String)
+2023-12-05 16:59:31.481  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mcom.alibaba.druid.pool.PreparedStatementPool [0;39m[160]: {conn-10010, pstmt-20000} exit cache
+2023-12-05 16:59:31.482  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34morg.mybatis.spring.SqlSessionUtils           [0;39m[49]: Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57f1568c]
+2023-12-05 16:59:31.513  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.beans.factory.xml.XmlBeanDefinitionReader[0;39m[395]: Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2023-12-05 16:59:31.514  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'DB2'
+2023-12-05 16:59:31.522  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'Derby'
+2023-12-05 16:59:31.523  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'H2'
+2023-12-05 16:59:31.524  [39mDEBUG[0;39m [[32mhttp-nio-8080-exec-7          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'HDB'

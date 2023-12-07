@@ -1,0 +1,1 @@
+2023-12-05 16:36:58.712  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.ServletContextInitializerBeans     [0;39m[267]: Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]

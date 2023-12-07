@@ -1,0 +1,10 @@
+2023-12-05 09:51:36.528  INFO  [http-nio-8080-exec-1          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 09:51:36.532  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [524] : Initializing Servlet 'dispatcherServlet'
+2023-12-05 09:51:36.533  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [525] : Detected StandardServletMultipartResolver
+2023-12-05 09:51:36.547  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [541] : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 09:51:36.548  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [546] : Completed initialization in 15 ms
+2023-12-05 09:51:36.565  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : GET "/api/test/selectAll", parameters={}
+2023-12-05 09:51:36.572  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public java.util.List<model.OtcDerivativeCounterparty> com.example.demo.test.controller.TestController.selectAll()
+2023-12-05 09:51:36.621  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : Creating a new SqlSession
+2023-12-05 09:51:36.636  DEBUG [http-nio-8080-exec-1          ] - org.mybatis.spring.SqlSessionUtils           [49] : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@506618b9] was not registered for synchronization because synchronization is not active
+2023-12-05 09:51:36.688  DEBUG [http-nio-8080-exec-1          ] - o.s.jdbc.datasource.DataSourceUtils          [114] : Fetching JDBC Connection from DataSource

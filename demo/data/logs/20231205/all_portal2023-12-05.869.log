@@ -1,0 +1,8 @@
+2023-12-05 15:11:45.465  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlBeneficiaryMapper.updateByPrimaryKey
+2023-12-05 15:11:45.480  DEBUG [main                          ] - c.b.m.e.spring.MybatisSqlSessionFactoryBean  [49] : Parsed mapper file: 'file [D:\demo\target\classes\mapper\AmlBeneficiaryMapper.xml]'
+2023-12-05 15:11:45.496  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.selectByExample
+2023-12-05 15:11:45.497  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.selectByPrimaryKey
+2023-12-05 15:11:45.498  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.deleteByPrimaryKey
+2023-12-05 15:11:45.499  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.insert
+2023-12-05 15:11:45.500  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.insertSelective
+2023-12-05 15:11:45.501  DEBUG [main                          ] - c.b.mybatisplus.core.MybatisConfiguration    [96] : addMappedStatement: sql.AmlCounterpartyMapper.updateByPrimaryKeySelective

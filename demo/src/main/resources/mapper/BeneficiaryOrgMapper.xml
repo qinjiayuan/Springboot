@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.BeneficiaryOrgMapper">
+  <resultMap id="BaseResultMap" type="model.BeneficiaryOrg">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ENTITY_TYPE" jdbcType="VARCHAR" property="entityType" />
+    <result column="CATEGORY" jdbcType="VARCHAR" property="category" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="ID_KIND" jdbcType="VARCHAR" property="idKind" />
+    <result column="ID_NO" jdbcType="VARCHAR" property="idNo" />
+    <result column="BIRTH" jdbcType="VARCHAR" property="birth" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="COUNTRY" jdbcType="VARCHAR" property="country" />
+    <result column="ID_VALIDDATE_START" jdbcType="VARCHAR" property="idValiddateStart" />
+    <result column="ID_VALIDDATE_END" jdbcType="VARCHAR" property="idValiddateEnd" />
+    <result column="HOLD_RATE" jdbcType="VARCHAR" property="holdRate" />
+    <result column="POSITION" jdbcType="VARCHAR" property="position" />
+    <result column="HOLD_TYPE" jdbcType="VARCHAR" property="holdType" />
+    <result column="COUNTERPARTY_ORG_ID" jdbcType="VARCHAR" property="counterpartyOrgId" />
+    <result column="LOCKED" jdbcType="VARCHAR" property="locked" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, ENTITY_TYPE, CATEGORY, NAME, ID_KIND, ID_NO, BIRTH, GENDER, COUNTRY, ID_VALIDDATE_START, 
+    ID_VALIDDATE_END, HOLD_RATE, POSITION, HOLD_TYPE, COUNTERPARTY_ORG_ID, LOCKED
+  </sql>
+  <select id="selectByExample" parameterType="model.BeneficiaryOrgExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from BENEFICIARY_ORG
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BENEFICIARY_ORG
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from BENEFICIARY_ORG
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.BeneficiaryOrg">
+    insert into BENEFICIARY_ORG (ID, ENTITY_TYPE, CATEGORY, 
+      NAME, ID_KIND, ID_NO, 
+      BIRTH, GENDER, COUNTRY, 
+      ID_VALIDDATE_START, ID_VALIDDATE_END, HOLD_RATE, 
+      POSITION, HOLD_TYPE, COUNTERPARTY_ORG_ID, 
+      LOCKED)
+    values (#{id,jdbcType=VARCHAR}, #{entityType,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{idKind,jdbcType=VARCHAR}, #{idNo,jdbcType=VARCHAR}, 
+      #{birth,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{idValiddateStart,jdbcType=VARCHAR}, #{idValiddateEnd,jdbcType=VARCHAR}, #{holdRate,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{holdType,jdbcType=VARCHAR}, #{counterpartyOrgId,jdbcType=VARCHAR}, 
+      #{locked,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.BeneficiaryOrg">
+    insert into BENEFICIARY_ORG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="entityType != null">
+        ENTITY_TYPE,
+      </if>
+      <if test="category != null">
+        CATEGORY,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="idKind != null">
+        ID_KIND,
+      </if>
+      <if test="idNo != null">
+        ID_NO,
+      </if>
+      <if test="birth != null">
+        BIRTH,
+      </if>
+      <if test="gender != null">
+        GENDER,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="idValiddateStart != null">
+        ID_VALIDDATE_START,
+      </if>
+      <if test="idValiddateEnd != null">
+        ID_VALIDDATE_END,
+      </if>
+      <if test="holdRate != null">
+        HOLD_RATE,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="holdType != null">
+        HOLD_TYPE,
+      </if>
+      <if test="counterpartyOrgId != null">
+        COUNTERPARTY_ORG_ID,
+      </if>
+      <if test="locked != null">
+        LOCKED,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="entityType != null">
+        #{entityType,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateStart != null">
+        #{idValiddateStart,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateEnd != null">
+        #{idValiddateEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="holdRate != null">
+        #{holdRate,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="holdType != null">
+        #{holdType,jdbcType=VARCHAR},
+      </if>
+      <if test="counterpartyOrgId != null">
+        #{counterpartyOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        #{locked,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.BeneficiaryOrg">
+    update BENEFICIARY_ORG
+    <set>
+      <if test="entityType != null">
+        ENTITY_TYPE = #{entityType,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        CATEGORY = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        ID_KIND = #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        ID_NO = #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        BIRTH = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        GENDER = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        COUNTRY = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateStart != null">
+        ID_VALIDDATE_START = #{idValiddateStart,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateEnd != null">
+        ID_VALIDDATE_END = #{idValiddateEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="holdRate != null">
+        HOLD_RATE = #{holdRate,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="holdType != null">
+        HOLD_TYPE = #{holdType,jdbcType=VARCHAR},
+      </if>
+      <if test="counterpartyOrgId != null">
+        COUNTERPARTY_ORG_ID = #{counterpartyOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        LOCKED = #{locked,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.BeneficiaryOrg">
+    update BENEFICIARY_ORG
+    set ENTITY_TYPE = #{entityType,jdbcType=VARCHAR},
+      CATEGORY = #{category,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ID_KIND = #{idKind,jdbcType=VARCHAR},
+      ID_NO = #{idNo,jdbcType=VARCHAR},
+      BIRTH = #{birth,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      COUNTRY = #{country,jdbcType=VARCHAR},
+      ID_VALIDDATE_START = #{idValiddateStart,jdbcType=VARCHAR},
+      ID_VALIDDATE_END = #{idValiddateEnd,jdbcType=VARCHAR},
+      HOLD_RATE = #{holdRate,jdbcType=VARCHAR},
+      POSITION = #{position,jdbcType=VARCHAR},
+      HOLD_TYPE = #{holdType,jdbcType=VARCHAR},
+      COUNTERPARTY_ORG_ID = #{counterpartyOrgId,jdbcType=VARCHAR},
+      LOCKED = #{locked,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

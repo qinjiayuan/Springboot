@@ -1,0 +1,7 @@
+2023-12-05 08:22:24.275  INFO  [http-nio-8080-exec-1          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 08:22:24.279  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [524] : Initializing Servlet 'dispatcherServlet'
+2023-12-05 08:22:24.279  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [525] : Detected StandardServletMultipartResolver
+2023-12-05 08:22:24.292  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [541] : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 08:22:24.293  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [546] : Completed initialization in 13 ms
+2023-12-05 08:22:24.311  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : GET "/api/test/selectAll", parameters={}
+2023-12-05 08:22:24.320  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public java.lang.String com.example.demo.test.controller.TestController.selectAll()

@@ -1,0 +1,2 @@
+2023-12-05 16:15:51.943  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mationConfigServletWebServerApplicationContext[0;39m[594]: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f3f4916
+2023-12-05 16:15:52.080  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'

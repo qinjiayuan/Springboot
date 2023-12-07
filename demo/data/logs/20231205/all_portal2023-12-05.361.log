@@ -1,0 +1,1 @@
+2023-12-05 09:13:11.010  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\TestController.class]

@@ -1,0 +1,2 @@
+2023-12-05 09:01:22.623  DEBUG [Thread-3                      ] - o.s.j.e.annotation.AnnotationMBeanExporter   [185] : Unregistering JMX-exposed beans
+2023-12-05 09:01:22.625  INFO  [Thread-3                      ] - o.s.s.concurrent.ThreadPoolTaskExecutor      [208] : Shutting down ExecutorService 'applicationTaskExecutor'

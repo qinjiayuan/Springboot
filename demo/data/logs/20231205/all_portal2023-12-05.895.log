@@ -1,0 +1,14 @@
+2023-12-05 15:13:12.760  INFO  [http-nio-8080-exec-1          ] - o.a.c.c.C.[Tomcat].[localhost].[/]           [173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05 15:13:12.763  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [524] : Initializing Servlet 'dispatcherServlet'
+2023-12-05 15:13:12.763  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [525] : Detected StandardServletMultipartResolver
+2023-12-05 15:13:12.771  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [541] : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-12-05 15:13:12.772  INFO  [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [546] : Completed initialization in 9 ms
+2023-12-05 15:13:12.784  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : GET "/clientreview/hello", parameters={}
+2023-12-05 15:13:12.794  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.handler.SimpleUrlHandlerMapping      [420] : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2023-12-05 15:13:12.797  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.resource.ResourceHttpRequestHandler  [453] : Resource not found
+2023-12-05 15:13:12.798  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1130] : Completed 404 NOT_FOUND
+2023-12-05 15:13:12.804  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [91] : "ERROR" dispatch for GET "/error", parameters={}
+2023-12-05 15:13:12.807  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.RequestMappingHandlerMapping   [420] : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2023-12-05 15:13:12.848  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.HttpEntityMethodProcessor      [268] : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 15:13:12.848  DEBUG [http-nio-8080-exec-1          ] - o.s.w.s.m.m.a.HttpEntityMethodProcessor      [91] : Writing [{timestamp=Tue Dec 05 15:13:12 CST 2023, status=404, error=Not Found, message=No message available,  (truncated)...]
+2023-12-05 15:13:12.892  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1126] : Exiting from "ERROR" dispatch, status 404

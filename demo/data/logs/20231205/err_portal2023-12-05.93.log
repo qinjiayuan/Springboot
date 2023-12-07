@@ -1,0 +1,8 @@
+2023-12-05 16:16:01.899  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.m.e.spring.MybatisSqlSessionFactoryBean  [0;39m[49]: Registered plugin: 'com.github.yulichang.interceptor.MPJInterceptor@4e6d7365'
+2023-12-05 16:16:02.051  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.selectByPrimaryKey
+2023-12-05 16:16:02.052  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.deleteByPrimaryKey
+2023-12-05 16:16:02.053  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.insert
+2023-12-05 16:16:02.057  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.insertSelective
+2023-12-05 16:16:02.059  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.updateByPrimaryKeySelective
+2023-12-05 16:16:02.061  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.mybatisplus.core.MybatisConfiguration    [0;39m[96]: addMappedStatement: sql.AmlBeneficiaryMapper.updateByPrimaryKey
+2023-12-05 16:16:02.078  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mc.b.m.e.spring.MybatisSqlSessionFactoryBean  [0;39m[49]: Parsed mapper file: 'file [D:\demo\target\classes\mapper\AmlBeneficiaryMapper.xml]'

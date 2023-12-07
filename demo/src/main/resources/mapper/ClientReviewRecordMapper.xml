@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.ClientReviewRecordMapper">
+  <resultMap id="BaseResultMap" type="model.ClientReviewRecord">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DOC_ID" jdbcType="VARCHAR" property="docId" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="CLIENT_NAME" jdbcType="VARCHAR" property="clientName" />
+    <result column="UNIFIEDSOCIAL_CODE" jdbcType="VARCHAR" property="unifiedsocialCode" />
+    <result column="REVIEW_DATE" jdbcType="TIMESTAMP" property="reviewDate" />
+    <result column="REVIEW_USER" jdbcType="VARCHAR" property="reviewUser" />
+    <result column="REVIEW_NAME" jdbcType="VARCHAR" property="reviewName" />
+    <result column="CURRENT_STATUS" jdbcType="VARCHAR" property="currentStatus" />
+    <result column="CURRENT_OPERATOR" jdbcType="VARCHAR" property="currentOperator" />
+    <result column="CURRENT_ACTIVITY_NAME" jdbcType="VARCHAR" property="currentActivityName" />
+    <result column="RECORD_ID" jdbcType="VARCHAR" property="recordId" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="WORK_PHONE" jdbcType="VARCHAR" property="workPhone" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="SECURITY_LEVEL" jdbcType="VARCHAR" property="securityLevel" />
+    <result column="SECURITY_LEVEL_DETAIL" jdbcType="VARCHAR" property="securityLevelDetail" />
+    <result column="URGENCY_LEVEL" jdbcType="VARCHAR" property="urgencyLevel" />
+    <result column="URGENCY_LEVEL_REASON" jdbcType="VARCHAR" property="urgencyLevelReason" />
+    <result column="SALE_PERSON" jdbcType="VARCHAR" property="salePerson" />
+    <result column="REVIEW_TERM" jdbcType="TIMESTAMP" property="reviewTerm" />
+    <result column="REVIEW_PROCESS_TYPE" jdbcType="VARCHAR" property="reviewProcessType" />
+    <result column="SPECIAL_MENTIONED_CUSTOMER" jdbcType="VARCHAR" property="specialMentionedCustomer" />
+    <result column="VERSION" jdbcType="VARCHAR" property="version" />
+    <result column="NO_MORE_REVIEW" jdbcType="VARCHAR" property="noMoreReview" />
+    <result column="ACCOUNTING_FIRM_NAME" jdbcType="VARCHAR" property="accountingFirmName" />
+    <result column="SUPPLEMENTARY_MATERIALS_TIME" jdbcType="TIMESTAMP" property="supplementaryMaterialsTime" />
+    <result column="SUPPLEMENTARY_MATERIALS" jdbcType="VARCHAR" property="supplementaryMaterials" />
+    <result column="REACH_TO_03_DATETIME" jdbcType="TIMESTAMP" property="reachTo03Datetime" />
+    <result column="SERIAL_NUMBER" jdbcType="VARCHAR" property="serialNumber" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, DOC_ID, TITLE, CLIENT_NAME, UNIFIEDSOCIAL_CODE, REVIEW_DATE, REVIEW_USER, REVIEW_NAME, 
+    CURRENT_STATUS, CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, RECORD_ID, CREATED_DATETIME, 
+    WORK_PHONE, PHONE, SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, URGENCY_LEVEL_REASON, 
+    SALE_PERSON, REVIEW_TERM, REVIEW_PROCESS_TYPE, SPECIAL_MENTIONED_CUSTOMER, VERSION, 
+    NO_MORE_REVIEW, ACCOUNTING_FIRM_NAME, SUPPLEMENTARY_MATERIALS_TIME, SUPPLEMENTARY_MATERIALS, 
+    REACH_TO_03_DATETIME, SERIAL_NUMBER
+  </sql>
+  <select id="selectByExample" parameterType="model.ClientReviewRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CLIENT_REVIEW_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CLIENT_REVIEW_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.ClientReviewRecord">
+    insert into CLIENT_REVIEW_RECORD (ID, DOC_ID, TITLE, 
+      CLIENT_NAME, UNIFIEDSOCIAL_CODE, REVIEW_DATE, 
+      REVIEW_USER, REVIEW_NAME, CURRENT_STATUS, 
+      CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, RECORD_ID, 
+      CREATED_DATETIME, WORK_PHONE, PHONE, 
+      SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, 
+      URGENCY_LEVEL_REASON, SALE_PERSON, REVIEW_TERM, 
+      REVIEW_PROCESS_TYPE, SPECIAL_MENTIONED_CUSTOMER, 
+      VERSION, NO_MORE_REVIEW, ACCOUNTING_FIRM_NAME, 
+      SUPPLEMENTARY_MATERIALS_TIME, SUPPLEMENTARY_MATERIALS, 
+      REACH_TO_03_DATETIME, SERIAL_NUMBER)
+    values (#{id,jdbcType=VARCHAR}, #{docId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{clientName,jdbcType=VARCHAR}, #{unifiedsocialCode,jdbcType=VARCHAR}, #{reviewDate,jdbcType=TIMESTAMP}, 
+      #{reviewUser,jdbcType=VARCHAR}, #{reviewName,jdbcType=VARCHAR}, #{currentStatus,jdbcType=VARCHAR}, 
+      #{currentOperator,jdbcType=VARCHAR}, #{currentActivityName,jdbcType=VARCHAR}, #{recordId,jdbcType=VARCHAR}, 
+      #{createdDatetime,jdbcType=TIMESTAMP}, #{workPhone,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{securityLevel,jdbcType=VARCHAR}, #{securityLevelDetail,jdbcType=VARCHAR}, #{urgencyLevel,jdbcType=VARCHAR}, 
+      #{urgencyLevelReason,jdbcType=VARCHAR}, #{salePerson,jdbcType=VARCHAR}, #{reviewTerm,jdbcType=TIMESTAMP}, 
+      #{reviewProcessType,jdbcType=VARCHAR}, #{specialMentionedCustomer,jdbcType=VARCHAR}, 
+      #{version,jdbcType=VARCHAR}, #{noMoreReview,jdbcType=VARCHAR}, #{accountingFirmName,jdbcType=VARCHAR}, 
+      #{supplementaryMaterialsTime,jdbcType=TIMESTAMP}, #{supplementaryMaterials,jdbcType=VARCHAR}, 
+      #{reachTo03Datetime,jdbcType=TIMESTAMP}, #{serialNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.ClientReviewRecord">
+    insert into CLIENT_REVIEW_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="docId != null">
+        DOC_ID,
+      </if>
+      <if test="title != null">
+        TITLE,
+      </if>
+      <if test="clientName != null">
+        CLIENT_NAME,
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE,
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE,
+      </if>
+      <if test="reviewUser != null">
+        REVIEW_USER,
+      </if>
+      <if test="reviewName != null">
+        REVIEW_NAME,
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS,
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR,
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME,
+      </if>
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL,
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL,
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL,
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON,
+      </if>
+      <if test="salePerson != null">
+        SALE_PERSON,
+      </if>
+      <if test="reviewTerm != null">
+        REVIEW_TERM,
+      </if>
+      <if test="reviewProcessType != null">
+        REVIEW_PROCESS_TYPE,
+      </if>
+      <if test="specialMentionedCustomer != null">
+        SPECIAL_MENTIONED_CUSTOMER,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+      <if test="noMoreReview != null">
+        NO_MORE_REVIEW,
+      </if>
+      <if test="accountingFirmName != null">
+        ACCOUNTING_FIRM_NAME,
+      </if>
+      <if test="supplementaryMaterialsTime != null">
+        SUPPLEMENTARY_MATERIALS_TIME,
+      </if>
+      <if test="supplementaryMaterials != null">
+        SUPPLEMENTARY_MATERIALS,
+      </if>
+      <if test="reachTo03Datetime != null">
+        REACH_TO_03_DATETIME,
+      </if>
+      <if test="serialNumber != null">
+        SERIAL_NUMBER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="docId != null">
+        #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewDate != null">
+        #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewUser != null">
+        #{reviewUser,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewName != null">
+        #{reviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStatus != null">
+        #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workPhone != null">
+        #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="salePerson != null">
+        #{salePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTerm != null">
+        #{reviewTerm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewProcessType != null">
+        #{reviewProcessType,jdbcType=VARCHAR},
+      </if>
+      <if test="specialMentionedCustomer != null">
+        #{specialMentionedCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="noMoreReview != null">
+        #{noMoreReview,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingFirmName != null">
+        #{accountingFirmName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementaryMaterialsTime != null">
+        #{supplementaryMaterialsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplementaryMaterials != null">
+        #{supplementaryMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="reachTo03Datetime != null">
+        #{reachTo03Datetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNumber != null">
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.ClientReviewRecord">
+    update CLIENT_REVIEW_RECORD
+    <set>
+      <if test="docId != null">
+        DOC_ID = #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null">
+        CLIENT_NAME = #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE = #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewUser != null">
+        REVIEW_USER = #{reviewUser,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewName != null">
+        REVIEW_NAME = #{reviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="salePerson != null">
+        SALE_PERSON = #{salePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTerm != null">
+        REVIEW_TERM = #{reviewTerm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewProcessType != null">
+        REVIEW_PROCESS_TYPE = #{reviewProcessType,jdbcType=VARCHAR},
+      </if>
+      <if test="specialMentionedCustomer != null">
+        SPECIAL_MENTIONED_CUSTOMER = #{specialMentionedCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="noMoreReview != null">
+        NO_MORE_REVIEW = #{noMoreReview,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingFirmName != null">
+        ACCOUNTING_FIRM_NAME = #{accountingFirmName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementaryMaterialsTime != null">
+        SUPPLEMENTARY_MATERIALS_TIME = #{supplementaryMaterialsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplementaryMaterials != null">
+        SUPPLEMENTARY_MATERIALS = #{supplementaryMaterials,jdbcType=VARCHAR},
+      </if>
+      <if test="reachTo03Datetime != null">
+        REACH_TO_03_DATETIME = #{reachTo03Datetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNumber != null">
+        SERIAL_NUMBER = #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectflownum" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+     *
+    FROM OTC_DERIVATIVE_COUNTERPARTY crr
+    WHERE
+      crr.CLIENT_NAME = #{corporateName}
+    AND
+      crr.CURRENT_STATUS NOT IN ('CLOSED','CANCELLED')
+  </select>
+
+  <delete id="deleteflow" parameterType="java.lang.String">
+    DELETE FROM CLIENT_REVIEW_RECORD WHERE DOC_ID in  #{docid}
+  </delete>
+
+  <update id="updateByPrimaryKey" parameterType="model.ClientReviewRecord">
+    update CLIENT_REVIEW_RECORD
+    set DOC_ID = #{docId,jdbcType=VARCHAR},
+      TITLE = #{title,jdbcType=VARCHAR},
+      CLIENT_NAME = #{clientName,jdbcType=VARCHAR},
+      UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      REVIEW_DATE = #{reviewDate,jdbcType=TIMESTAMP},
+      REVIEW_USER = #{reviewUser,jdbcType=VARCHAR},
+      REVIEW_NAME = #{reviewName,jdbcType=VARCHAR},
+      CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      SALE_PERSON = #{salePerson,jdbcType=VARCHAR},
+      REVIEW_TERM = #{reviewTerm,jdbcType=TIMESTAMP},
+      REVIEW_PROCESS_TYPE = #{reviewProcessType,jdbcType=VARCHAR},
+      SPECIAL_MENTIONED_CUSTOMER = #{specialMentionedCustomer,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=VARCHAR},
+      NO_MORE_REVIEW = #{noMoreReview,jdbcType=VARCHAR},
+      ACCOUNTING_FIRM_NAME = #{accountingFirmName,jdbcType=VARCHAR},
+      SUPPLEMENTARY_MATERIALS_TIME = #{supplementaryMaterialsTime,jdbcType=TIMESTAMP},
+      SUPPLEMENTARY_MATERIALS = #{supplementaryMaterials,jdbcType=VARCHAR},
+      REACH_TO_03_DATETIME = #{reachTo03Datetime,jdbcType=TIMESTAMP},
+      SERIAL_NUMBER = #{serialNumber,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

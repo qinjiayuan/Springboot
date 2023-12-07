@@ -1,0 +1,7 @@
+2023-12-05 09:05:38.128  DEBUG [http-nio-8080-exec-2          ] - org.mybatis.spring.SqlSessionUtils           [49] : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d94bb52]
+2023-12-05 09:05:38.134  INFO  [http-nio-8080-exec-2          ] - com.example.demo.test.testSpring             [28] : DEV1100106499
+2023-12-05 09:05:38.135  INFO  [http-nio-8080-exec-2          ] - com.example.demo.test.testSpring             [31] : [DEV1100106499, DEV1100106355, DEV1100106356, DEV1100106722]
+2023-12-05 09:05:38.153  DEBUG [http-nio-8080-exec-2          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[268] : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 09:05:38.155  DEBUG [http-nio-8080-exec-2          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[91] : Writing [[model.OtcDerivativeCounterparty@5dc81a63, model.OtcDerivativeCounterparty@3f865b4f, model.OtcDeriva (truncated)...]
+2023-12-05 09:05:38.242  DEBUG [http-nio-8080-exec-2          ] - o.s.web.servlet.DispatcherServlet            [1130] : Completed 200 OK
+2023-12-05 09:05:38.380  DEBUG [HikariPool-1 connection adder ] - com.zaxxer.hikari.pool.HikariPool            [709] : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@43e0155d

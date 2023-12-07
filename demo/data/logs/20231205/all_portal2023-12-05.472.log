@@ -1,0 +1,1 @@
+2023-12-05 09:40:47.604  DEBUG [HikariPool-1 connection adder ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - After adding stats (total=3, active=0, idle=3, waiting=0)

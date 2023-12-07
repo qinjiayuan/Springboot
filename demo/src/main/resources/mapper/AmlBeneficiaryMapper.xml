@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.AmlBeneficiaryMapper">
+  <resultMap id="BaseResultMap" type="model.AmlBeneficiary">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ENTITY_TYPE" jdbcType="VARCHAR" property="entityType" />
+    <result column="CATEGORY" jdbcType="VARCHAR" property="category" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="ID_KIND" jdbcType="VARCHAR" property="idKind" />
+    <result column="ID_NO" jdbcType="VARCHAR" property="idNo" />
+    <result column="BIRTH" jdbcType="VARCHAR" property="birth" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="COUNTRY" jdbcType="VARCHAR" property="country" />
+    <result column="ID_VALIDDATE_START" jdbcType="VARCHAR" property="idValiddateStart" />
+    <result column="ID_VALIDDATE_END" jdbcType="VARCHAR" property="idValiddateEnd" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="HOLD_RATE" jdbcType="VARCHAR" property="holdRate" />
+    <result column="SPECIAL_TYPE" jdbcType="VARCHAR" property="specialType" />
+    <result column="POSITION" jdbcType="VARCHAR" property="position" />
+    <result column="HOLD_TYPE" jdbcType="VARCHAR" property="holdType" />
+    <result column="BENEFICIARY_TYPE" jdbcType="VARCHAR" property="beneficiaryType" />
+    <result column="LOCKED" jdbcType="VARCHAR" property="locked" />
+    <result column="COUNTERPARTY_ID" jdbcType="VARCHAR" property="counterpartyId" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="VERSION" jdbcType="DECIMAL" property="version" />
+    <result column="CLIENT_KIND" jdbcType="VARCHAR" property="clientKind" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ENTITY_TYPE, CATEGORY, NAME, ID_KIND, ID_NO, BIRTH, GENDER, COUNTRY, ID_VALIDDATE_START, 
+    ID_VALIDDATE_END, PHONE, MOBILE, EMAIL, HOLD_RATE, SPECIAL_TYPE, POSITION, HOLD_TYPE, 
+    BENEFICIARY_TYPE, LOCKED, COUNTERPARTY_ID, ADDRESS, VERSION, CLIENT_KIND
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from AML_BENEFICIARY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from AML_BENEFICIARY
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.AmlBeneficiary">
+    insert into AML_BENEFICIARY (ID, ENTITY_TYPE, CATEGORY, 
+      NAME, ID_KIND, ID_NO, 
+      BIRTH, GENDER, COUNTRY, 
+      ID_VALIDDATE_START, ID_VALIDDATE_END, PHONE, 
+      MOBILE, EMAIL, HOLD_RATE, 
+      SPECIAL_TYPE, POSITION, HOLD_TYPE, 
+      BENEFICIARY_TYPE, LOCKED, COUNTERPARTY_ID, 
+      ADDRESS, VERSION, CLIENT_KIND
+      )
+    values (#{id,jdbcType=VARCHAR}, #{entityType,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{idKind,jdbcType=VARCHAR}, #{idNo,jdbcType=VARCHAR}, 
+      #{birth,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{idValiddateStart,jdbcType=VARCHAR}, #{idValiddateEnd,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{holdRate,jdbcType=VARCHAR}, 
+      #{specialType,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{holdType,jdbcType=VARCHAR}, 
+      #{beneficiaryType,jdbcType=VARCHAR}, #{locked,jdbcType=VARCHAR}, #{counterpartyId,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{version,jdbcType=DECIMAL}, #{clientKind,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="model.AmlBeneficiary">
+    insert into AML_BENEFICIARY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="entityType != null">
+        ENTITY_TYPE,
+      </if>
+      <if test="category != null">
+        CATEGORY,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="idKind != null">
+        ID_KIND,
+      </if>
+      <if test="idNo != null">
+        ID_NO,
+      </if>
+      <if test="birth != null">
+        BIRTH,
+      </if>
+      <if test="gender != null">
+        GENDER,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="idValiddateStart != null">
+        ID_VALIDDATE_START,
+      </if>
+      <if test="idValiddateEnd != null">
+        ID_VALIDDATE_END,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="mobile != null">
+        MOBILE,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="holdRate != null">
+        HOLD_RATE,
+      </if>
+      <if test="specialType != null">
+        SPECIAL_TYPE,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="holdType != null">
+        HOLD_TYPE,
+      </if>
+      <if test="beneficiaryType != null">
+        BENEFICIARY_TYPE,
+      </if>
+      <if test="locked != null">
+        LOCKED,
+      </if>
+      <if test="counterpartyId != null">
+        COUNTERPARTY_ID,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+      <if test="clientKind != null">
+        CLIENT_KIND,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="entityType != null">
+        #{entityType,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateStart != null">
+        #{idValiddateStart,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateEnd != null">
+        #{idValiddateEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="holdRate != null">
+        #{holdRate,jdbcType=VARCHAR},
+      </if>
+      <if test="specialType != null">
+        #{specialType,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="holdType != null">
+        #{holdType,jdbcType=VARCHAR},
+      </if>
+      <if test="beneficiaryType != null">
+        #{beneficiaryType,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        #{locked,jdbcType=VARCHAR},
+      </if>
+      <if test="counterpartyId != null">
+        #{counterpartyId,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=DECIMAL},
+      </if>
+      <if test="clientKind != null">
+        #{clientKind,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.AmlBeneficiary">
+    update AML_BENEFICIARY
+    <set>
+      <if test="entityType != null">
+        ENTITY_TYPE = #{entityType,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        CATEGORY = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        ID_KIND = #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="idNo != null">
+        ID_NO = #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        BIRTH = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        GENDER = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        COUNTRY = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateStart != null">
+        ID_VALIDDATE_START = #{idValiddateStart,jdbcType=VARCHAR},
+      </if>
+      <if test="idValiddateEnd != null">
+        ID_VALIDDATE_END = #{idValiddateEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="holdRate != null">
+        HOLD_RATE = #{holdRate,jdbcType=VARCHAR},
+      </if>
+      <if test="specialType != null">
+        SPECIAL_TYPE = #{specialType,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="holdType != null">
+        HOLD_TYPE = #{holdType,jdbcType=VARCHAR},
+      </if>
+      <if test="beneficiaryType != null">
+        BENEFICIARY_TYPE = #{beneficiaryType,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        LOCKED = #{locked,jdbcType=VARCHAR},
+      </if>
+      <if test="counterpartyId != null">
+        COUNTERPARTY_ID = #{counterpartyId,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        VERSION = #{version,jdbcType=DECIMAL},
+      </if>
+      <if test="clientKind != null">
+        CLIENT_KIND = #{clientKind,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.AmlBeneficiary">
+    update AML_BENEFICIARY
+    set ENTITY_TYPE = #{entityType,jdbcType=VARCHAR},
+      CATEGORY = #{category,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ID_KIND = #{idKind,jdbcType=VARCHAR},
+      ID_NO = #{idNo,jdbcType=VARCHAR},
+      BIRTH = #{birth,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      COUNTRY = #{country,jdbcType=VARCHAR},
+      ID_VALIDDATE_START = #{idValiddateStart,jdbcType=VARCHAR},
+      ID_VALIDDATE_END = #{idValiddateEnd,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      HOLD_RATE = #{holdRate,jdbcType=VARCHAR},
+      SPECIAL_TYPE = #{specialType,jdbcType=VARCHAR},
+      POSITION = #{position,jdbcType=VARCHAR},
+      HOLD_TYPE = #{holdType,jdbcType=VARCHAR},
+      BENEFICIARY_TYPE = #{beneficiaryType,jdbcType=VARCHAR},
+      LOCKED = #{locked,jdbcType=VARCHAR},
+      COUNTERPARTY_ID = #{counterpartyId,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=DECIMAL},
+      CLIENT_KIND = #{clientKind,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

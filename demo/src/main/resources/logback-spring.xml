@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <!-- 读取spring.application.name中的属性来生成日志文件名 -->
+    <springProperty scope="context" name="filePath" source="logback.file.path" defaultValue="../logs"/>
+    <springProperty scope="context" name="fileName" source="logback.file.name" defaultValue="kyc-counterparty"/>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %X{traceId} %highlight(%-5level) [%green(%-30.30thread)] - %blue(%-45.45logger{45})[%L]: %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${filePath}/${fileName}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <fileNamePattern>${filePath}/${fileName}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <maxHistory>90</maxHistory>
+            <!--日志文件最大的大小-->
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>3000MB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %X{traceId} %-5level [%-30.30thread] - %-45.45logger{44}[%L] : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${filePath}/${fileName}.error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <fileNamePattern>${filePath}/${fileName}.error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <maxHistory>30</maxHistory>
+            <!--日志文件最大的大小-->
+            <maxFileSize>10MB</maxFileSize>
+            <totalSizeCap>300MB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %X{traceId} %-5level [%-30.30thread] - %-45.45logger{44}[%L] : %msg%n
+            </pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 政通调用接口日志 -->
+    <appender name="IDENTIY_CHECK_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 日志文件输出的文件名 -->
+            <!-- 按月滚动 -->
+            <fileNamePattern>${filePath}/identitycheck/identitycheck.%d{yyyy-MM}.%i.log</fileNamePattern>
+            <!-- 日志文件保留天数 -->
+            <!-- 政通接口调用情况年末结算 -->
+            <!--<maxHistory>36</maxHistory>-->
+            <!--日志文件最大的大小-->
+            <maxFileSize>512MB</maxFileSize>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %X{traceId} %-5level [%-30.30thread] - %-45.45logger{44}[%L] : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+    <logger name="org.apache.druid" level="off" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.mybatis.spring" level="off" additivity="false"/>
+    <logger name="org.springframework.jdbc.datasource" level="off" additivity="false"/>
+    <!--    <springProfile name="local">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--        </root>-->
+<!--        <logger name="com.gf.otc.common.util" additivity="false" level="DEBUG">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--        </logger>-->
+<!--    </springProfile>-->
+
+<!--    <springProfile name="tst">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--            <appender-ref ref="FILE"/>-->
+<!--            <appender-ref ref="ERROR_FILE"/>-->
+<!--        </root>-->
+<!--        <logger name="IDENTIY_CHECK_LOG"  additivity="false">-->
+<!--            <appender-ref ref="IDENTIY_CHECK_FILE" />-->
+<!--        </logger>-->
+<!--    </springProfile>-->
+
+<!--    <springProfile name="dev">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--            <appender-ref ref="FILE"/>-->
+<!--            <appender-ref ref="ERROR_FILE"/>-->
+<!--        </root>-->
+<!--        <logger name="IDENTIY_CHECK_LOG"  additivity="false">-->
+<!--            <appender-ref ref="IDENTIY_CHECK_FILE" />-->
+<!--        </logger>-->
+<!--    </springProfile>-->
+
+
+<!--    <springProfile name="uat">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--            <appender-ref ref="FILE"/>-->
+<!--            <appender-ref ref="ERROR_FILE"/>-->
+<!--        </root>-->
+<!--        <logger name="IDENTIY_CHECK_LOG"  additivity="false">-->
+<!--            <appender-ref ref="IDENTIY_CHECK_FILE" />-->
+<!--        </logger>-->
+<!--    </springProfile>-->
+
+
+<!--    <springProfile name="prod">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--            <appender-ref ref="FILE"/>-->
+<!--            <appender-ref ref="ERROR_FILE"/>-->
+<!--        </root>-->
+<!--        <logger name="IDENTIY_CHECK_LOG"  additivity="false">-->
+<!--            <appender-ref ref="IDENTIY_CHECK_FILE" />-->
+<!--        </logger>-->
+<!--    </springProfile>-->
+
+</configuration>
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<configuration debug="false" scan="true">-->
+<!--    &lt;!&ndash; 日志级别 &ndash;&gt;-->
+<!--    <springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="DEBUG"/>-->
+<!--    &lt;!&ndash;  标识这个"STDOUT" 将会添加到这个logger &ndash;&gt;-->
+<!--    <springProperty scope="context" name="STDOUT" source="log.stdout" defaultValue="STDOUT"/>-->
+<!--    &lt;!&ndash; 日志格式，%d：日期；%thread：线程名；%-5level：日志级别从左显示5个字符长度，列如:DEBUG；-->
+<!--        %logger{36}：java类名，例如:com.muses.taoshop.MyTest，36表示字符长度；%msg：日志内容；%d：换行 &ndash;&gt;-->
+<!--    <property name="LOG_PATTERN"-->
+<!--              value="  %d{yyyy-MM-dd HH:mm:ss.SSS} %X{traceId} %highlight(%-5level) [%green(%-30.30thread)] - %blue(%-45.45logger{45})[%L]: %msg%n" />-->
+<!--    &lt;!&ndash; root日志级别&ndash;&gt;-->
+<!--    <property name="${LOG_ROOT_LEVEL}" value="DEBUG" />-->
+<!--    &lt;!&ndash; 日志跟目录 &ndash;&gt;-->
+<!--    <property name="LOG_HOME" value="data/logs" />-->
+<!--    &lt;!&ndash; 日志文件路径&ndash;&gt;-->
+<!--    <property name="LOG_DIR" value="${LOG_HOME}/%d{yyyyMMdd}" />-->
+<!--    &lt;!&ndash; 日志文件名称 &ndash;&gt;-->
+<!--    <property name="LOG_PREFIX" value="portal" />-->
+<!--    &lt;!&ndash; 日志文件编码 &ndash;&gt;-->
+<!--    <property name="LOG_CHARSET" value="utf-8" />-->
+<!--    &lt;!&ndash; 配置日志的滚动时间，保存时间为15天&ndash;&gt;-->
+<!--    <property name="MAX_HISTORY" value="15" />-->
+<!--    &lt;!&ndash; 文件大小，默认为10MB&ndash;&gt;-->
+<!--    <property name="MAX_FILE_SIZE" value="10" />-->
+
+
+<!--    &lt;!&ndash; 打印到控制台 &ndash;&gt;-->
+<!--    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        &lt;!&ndash; 格式化日志内容&ndash;&gt;-->
+<!--        <encoder>-->
+<!--            <pattern>${LOG_PATTERN}</pattern>-->
+<!--            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;-->
+<!--        </encoder>-->
+<!--    </appender>-->
+<!--    &lt;!&ndash; 打印所有日志，保存到文件&ndash;&gt;-->
+<!--    <appender name="FILE_ALL"-->
+<!--              class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${LOG_HOME}/all_${LOG_PREFIX}.log</file>-->
+<!--        &lt;!&ndash; 设置滚动策略，当日志文件大小超过${MAX_FILE_SIZE}时，新的日志内容写到新的日志文件&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash; 新的日志文件路径名称，%d:日期 %i:i是变量 &ndash;&gt;-->
+<!--            <fileNamePattern>${LOG_DIR}/all_${LOG_PREFIX}%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+<!--            &lt;!&ndash; 保存日志15天 &ndash;&gt;-->
+<!--            <maxHistory>${MAX_HISTORY}</maxHistory>-->
+<!--            <timeBasedFileNamingAndTriggeringPolicy-->
+<!--                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--                &lt;!&ndash; 日志文件的最大大小 &ndash;&gt;-->
+<!--                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>-->
+<!--            </timeBasedFileNamingAndTriggeringPolicy>-->
+<!--        </rollingPolicy>-->
+<!--        &lt;!&ndash; 格式日志文件内容&ndash;&gt;-->
+<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
+<!--            <pattern>${LOG_PATTERN}</pattern>-->
+<!--        </layout>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; 打印错误日志，保存到文件&ndash;&gt;-->
+<!--    <appender name="FILE_ERR"-->
+<!--              class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${LOG_HOME}/err_${LOG_PREFIX}.log</file>-->
+<!--        &lt;!&ndash; 设置滚动策略，当日志文件大小超过${MAX_FILE_SIZE}时，新的日志内容写到新的日志文件&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash; 新的日志文件路径名称，%d:日期 %i:i是变量 &ndash;&gt;-->
+<!--            <fileNamePattern>${LOG_DIR}/err_${LOG_PREFIX}%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+<!--            &lt;!&ndash; 保存日志15天 &ndash;&gt;-->
+<!--            <maxHistory>${MAX_HISTORY}</maxHistory>-->
+<!--            <timeBasedFileNamingAndTriggeringPolicy-->
+<!--                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--                &lt;!&ndash; 日志文件的最大大小 &ndash;&gt;-->
+<!--                <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>-->
+<!--            </timeBasedFileNamingAndTriggeringPolicy>-->
+<!--        </rollingPolicy>-->
+<!--        &lt;!&ndash; 格式日志文件内容&ndash;&gt;-->
+<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
+<!--            <pattern>${LOG_PATTERN}</pattern>-->
+<!--        </layout>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; rest template logger&ndash;&gt;-->
+<!--    &lt;!&ndash;<logger name="org.springframework.web.client.RestTemplate" level="DEBUG" />&ndash;&gt;-->
+<!--    &lt;!&ndash;<logger name="org.springframework" level="DEBUG" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash; jdbc&ndash;&gt;-->
+<!--    &lt;!&ndash;<logger name="jdbc.sqltiming" level="DEBUG" />&ndash;&gt;-->
+<!--    <logger name="org.mybatis" level="DEBUG" />-->
+
+<!--    &lt;!&ndash; zookeeper&ndash;&gt;-->
+<!--    <logger name="org.apache.zookeeper"    level="ERROR"  />-->
+
+<!--    &lt;!&ndash; dubbo &ndash;&gt;-->
+<!--    <logger name="com.alibaba.dubbo.monitor" level="ERROR"/>-->
+<!--    <logger name="com.alibaba.dubbo.remoting" level="ERROR" />-->
+
+<!--    &lt;!&ndash; 日志输出级别 &ndash;&gt;-->
+<!--    <root leve="${LOG_ROOT_LEVEL}">-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--        <appender-ref ref="FILE_ALL" />-->
+<!--        <appender-ref ref="FILE_ERR" />-->
+<!--    </root>-->
+
+<!--</configuration>-->

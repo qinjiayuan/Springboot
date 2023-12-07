@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.CounterpartyProdMonitorFlowMapper">
+  <resultMap id="BaseResultMap" type="model.CounterpartyProdMonitorFlow">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DOCUMENT_ID" jdbcType="VARCHAR" property="documentId" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="CORPORATE_NAME" jdbcType="VARCHAR" property="corporateName" />
+    <result column="UNIFIEDSOCIAL_CODE" jdbcType="VARCHAR" property="unifiedsocialCode" />
+    <result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName" />
+    <result column="REVIEW_DATE" jdbcType="TIMESTAMP" property="reviewDate" />
+    <result column="CURRENT_STATUS" jdbcType="VARCHAR" property="currentStatus" />
+    <result column="CURRENT_OPERATOR" jdbcType="VARCHAR" property="currentOperator" />
+    <result column="CURRENT_ACTIVITY_NAME" jdbcType="VARCHAR" property="currentActivityName" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+    <result column="WORK_PHONE" jdbcType="VARCHAR" property="workPhone" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="SECURITY_LEVEL" jdbcType="VARCHAR" property="securityLevel" />
+    <result column="SECURITY_LEVEL_DETAIL" jdbcType="VARCHAR" property="securityLevelDetail" />
+    <result column="URGENCY_LEVEL" jdbcType="VARCHAR" property="urgencyLevel" />
+    <result column="URGENCY_LEVEL_REASON" jdbcType="VARCHAR" property="urgencyLevelReason" />
+    <result column="BPM_DOC_NO" jdbcType="VARCHAR" property="bpmDocNo" />
+    <result column="END_DATE" jdbcType="TIMESTAMP" property="endDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, DOCUMENT_ID, TITLE, CLIENT_ID, CORPORATE_NAME, UNIFIEDSOCIAL_CODE, PRODUCT_NAME, 
+    REVIEW_DATE, CURRENT_STATUS, CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, CREATED_DATETIME, 
+    CREATED_BY, WORK_PHONE, PHONE, SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, 
+    URGENCY_LEVEL_REASON, BPM_DOC_NO, END_DATE
+  </sql>
+  <select id="selectByExample" parameterType="model.CounterpartyProdMonitorFlowExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from COUNTERPARTY_PROD_MONITOR_FLOW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from COUNTERPARTY_PROD_MONITOR_FLOW
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from COUNTERPARTY_PROD_MONITOR_FLOW
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.CounterpartyProdMonitorFlow">
+    insert into COUNTERPARTY_PROD_MONITOR_FLOW (ID, DOCUMENT_ID, TITLE, 
+      CLIENT_ID, CORPORATE_NAME, UNIFIEDSOCIAL_CODE, 
+      PRODUCT_NAME, REVIEW_DATE, CURRENT_STATUS, 
+      CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, CREATED_DATETIME, 
+      CREATED_BY, WORK_PHONE, PHONE, 
+      SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, 
+      URGENCY_LEVEL_REASON, BPM_DOC_NO, END_DATE
+      )
+    values (#{id,jdbcType=VARCHAR}, #{documentId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, #{unifiedsocialCode,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{reviewDate,jdbcType=TIMESTAMP}, #{currentStatus,jdbcType=VARCHAR}, 
+      #{currentOperator,jdbcType=VARCHAR}, #{currentActivityName,jdbcType=VARCHAR}, #{createdDatetime,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{workPhone,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{securityLevel,jdbcType=VARCHAR}, #{securityLevelDetail,jdbcType=VARCHAR}, #{urgencyLevel,jdbcType=VARCHAR}, 
+      #{urgencyLevelReason,jdbcType=VARCHAR}, #{bpmDocNo,jdbcType=VARCHAR}, #{endDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="model.CounterpartyProdMonitorFlow">
+    insert into COUNTERPARTY_PROD_MONITOR_FLOW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="documentId != null">
+        DOCUMENT_ID,
+      </if>
+      <if test="title != null">
+        TITLE,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="corporateName != null">
+        CORPORATE_NAME,
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE,
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME,
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE,
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS,
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR,
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY,
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL,
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL,
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL,
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON,
+      </if>
+      <if test="bpmDocNo != null">
+        BPM_DOC_NO,
+      </if>
+      <if test="endDate != null">
+        END_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="documentId != null">
+        #{documentId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewDate != null">
+        #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentStatus != null">
+        #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="workPhone != null">
+        #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="bpmDocNo != null">
+        #{bpmDocNo,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.CounterpartyProdMonitorFlow">
+    update COUNTERPARTY_PROD_MONITOR_FLOW
+    <set>
+      <if test="documentId != null">
+        DOCUMENT_ID = #{documentId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE = #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="bpmDocNo != null">
+        BPM_DOC_NO = #{bpmDocNo,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.CounterpartyProdMonitorFlow">
+    update COUNTERPARTY_PROD_MONITOR_FLOW
+    set DOCUMENT_ID = #{documentId,jdbcType=VARCHAR},
+      TITLE = #{title,jdbcType=VARCHAR},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
+      REVIEW_DATE = #{reviewDate,jdbcType=TIMESTAMP},
+      CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      BPM_DOC_NO = #{bpmDocNo,jdbcType=VARCHAR},
+      END_DATE = #{endDate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

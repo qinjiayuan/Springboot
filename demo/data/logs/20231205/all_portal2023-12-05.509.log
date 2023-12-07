@@ -1,0 +1,2 @@
+2023-12-05 09:51:26.235  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\testSpring.class]
+2023-12-05 09:51:26.781  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'

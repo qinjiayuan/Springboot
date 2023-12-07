@@ -1,0 +1,1 @@
+2023-12-05 17:00:44.196  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'

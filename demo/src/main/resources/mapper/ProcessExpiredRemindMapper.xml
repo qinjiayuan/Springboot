@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.ProcessExpiredRemindMapper">
+  <resultMap id="BaseResultMap" type="model.ProcessExpiredRemind">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROCESS_NAME" jdbcType="VARCHAR" property="processName" />
+    <result column="CORPORATE_NAME" jdbcType="VARCHAR" property="corporateName" />
+    <result column="SIGNED_PRODUCT_NAME" jdbcType="VARCHAR" property="signedProductName" />
+    <result column="CLIENT_QUALIFY_REVIEW" jdbcType="VARCHAR" property="clientQualifyReview" />
+    <result column="PROCESS_CREATE_DATE" jdbcType="TIMESTAMP" property="processCreateDate" />
+    <result column="PROCESS_END_DATE" jdbcType="TIMESTAMP" property="processEndDate" />
+    <result column="PROCESS_STATUS" jdbcType="VARCHAR" property="processStatus" />
+    <result column="CURRENT_OPERATOR" jdbcType="VARCHAR" property="currentOperator" />
+    <result column="MASTER_AGREEMENT_DATE" jdbcType="TIMESTAMP" property="masterAgreementDate" />
+    <result column="REVIEW_DATE" jdbcType="VARCHAR" property="reviewDate" />
+    <result column="PROCESS_LINK" jdbcType="VARCHAR" property="processLink" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="UPDATED_DATETIME" jdbcType="TIMESTAMP" property="updatedDatetime" />
+    <result column="EXPIRED_TYPE" jdbcType="VARCHAR" property="expiredType" />
+    <result column="ACTUAL_OPERATOR" jdbcType="VARCHAR" property="actualOperator" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="UNIFIEDSOCIAL_CODE" jdbcType="VARCHAR" property="unifiedsocialCode" />
+    <result column="ABBREVIATION" jdbcType="VARCHAR" property="abbreviation" />
+    <result column="BIG_CLIENT" jdbcType="VARCHAR" property="bigClient" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROCESS_NAME, CORPORATE_NAME, SIGNED_PRODUCT_NAME, CLIENT_QUALIFY_REVIEW, PROCESS_CREATE_DATE, 
+    PROCESS_END_DATE, PROCESS_STATUS, CURRENT_OPERATOR, MASTER_AGREEMENT_DATE, REVIEW_DATE, 
+    PROCESS_LINK, CREATED_DATETIME, UPDATED_DATETIME, EXPIRED_TYPE, ACTUAL_OPERATOR, 
+    CLIENT_ID, UNIFIEDSOCIAL_CODE, ABBREVIATION, BIG_CLIENT
+  </sql>
+  <select id="selectByExample" parameterType="model.ProcessExpiredRemindExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from PROCESS_EXPIRED_REMIND
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PROCESS_EXPIRED_REMIND
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PROCESS_EXPIRED_REMIND
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.ProcessExpiredRemind">
+    insert into PROCESS_EXPIRED_REMIND (ID, PROCESS_NAME, CORPORATE_NAME, 
+      SIGNED_PRODUCT_NAME, CLIENT_QUALIFY_REVIEW, 
+      PROCESS_CREATE_DATE, PROCESS_END_DATE, 
+      PROCESS_STATUS, CURRENT_OPERATOR, MASTER_AGREEMENT_DATE, 
+      REVIEW_DATE, PROCESS_LINK, CREATED_DATETIME, 
+      UPDATED_DATETIME, EXPIRED_TYPE, ACTUAL_OPERATOR, 
+      CLIENT_ID, UNIFIEDSOCIAL_CODE, ABBREVIATION, 
+      BIG_CLIENT)
+    values (#{id,jdbcType=VARCHAR}, #{processName,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, 
+      #{signedProductName,jdbcType=VARCHAR}, #{clientQualifyReview,jdbcType=VARCHAR}, 
+      #{processCreateDate,jdbcType=TIMESTAMP}, #{processEndDate,jdbcType=TIMESTAMP}, 
+      #{processStatus,jdbcType=VARCHAR}, #{currentOperator,jdbcType=VARCHAR}, #{masterAgreementDate,jdbcType=TIMESTAMP}, 
+      #{reviewDate,jdbcType=VARCHAR}, #{processLink,jdbcType=VARCHAR}, #{createdDatetime,jdbcType=TIMESTAMP}, 
+      #{updatedDatetime,jdbcType=TIMESTAMP}, #{expiredType,jdbcType=VARCHAR}, #{actualOperator,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR}, #{unifiedsocialCode,jdbcType=VARCHAR}, #{abbreviation,jdbcType=VARCHAR}, 
+      #{bigClient,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.ProcessExpiredRemind">
+    insert into PROCESS_EXPIRED_REMIND
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="processName != null">
+        PROCESS_NAME,
+      </if>
+      <if test="corporateName != null">
+        CORPORATE_NAME,
+      </if>
+      <if test="signedProductName != null">
+        SIGNED_PRODUCT_NAME,
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW,
+      </if>
+      <if test="processCreateDate != null">
+        PROCESS_CREATE_DATE,
+      </if>
+      <if test="processEndDate != null">
+        PROCESS_END_DATE,
+      </if>
+      <if test="processStatus != null">
+        PROCESS_STATUS,
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR,
+      </if>
+      <if test="masterAgreementDate != null">
+        MASTER_AGREEMENT_DATE,
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE,
+      </if>
+      <if test="processLink != null">
+        PROCESS_LINK,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="updatedDatetime != null">
+        UPDATED_DATETIME,
+      </if>
+      <if test="expiredType != null">
+        EXPIRED_TYPE,
+      </if>
+      <if test="actualOperator != null">
+        ACTUAL_OPERATOR,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE,
+      </if>
+      <if test="abbreviation != null">
+        ABBREVIATION,
+      </if>
+      <if test="bigClient != null">
+        BIG_CLIENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="processName != null">
+        #{processName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="signedProductName != null">
+        #{signedProductName,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="processCreateDate != null">
+        #{processCreateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="processEndDate != null">
+        #{processEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="processStatus != null">
+        #{processStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementDate != null">
+        #{masterAgreementDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewDate != null">
+        #{reviewDate,jdbcType=VARCHAR},
+      </if>
+      <if test="processLink != null">
+        #{processLink,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDatetime != null">
+        #{updatedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expiredType != null">
+        #{expiredType,jdbcType=VARCHAR},
+      </if>
+      <if test="actualOperator != null">
+        #{actualOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="abbreviation != null">
+        #{abbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="bigClient != null">
+        #{bigClient,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.ProcessExpiredRemind">
+    update PROCESS_EXPIRED_REMIND
+    <set>
+      <if test="processName != null">
+        PROCESS_NAME = #{processName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="signedProductName != null">
+        SIGNED_PRODUCT_NAME = #{signedProductName,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="processCreateDate != null">
+        PROCESS_CREATE_DATE = #{processCreateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="processEndDate != null">
+        PROCESS_END_DATE = #{processEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="processStatus != null">
+        PROCESS_STATUS = #{processStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementDate != null">
+        MASTER_AGREEMENT_DATE = #{masterAgreementDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewDate != null">
+        REVIEW_DATE = #{reviewDate,jdbcType=VARCHAR},
+      </if>
+      <if test="processLink != null">
+        PROCESS_LINK = #{processLink,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDatetime != null">
+        UPDATED_DATETIME = #{updatedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expiredType != null">
+        EXPIRED_TYPE = #{expiredType,jdbcType=VARCHAR},
+      </if>
+      <if test="actualOperator != null">
+        ACTUAL_OPERATOR = #{actualOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="abbreviation != null">
+        ABBREVIATION = #{abbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="bigClient != null">
+        BIG_CLIENT = #{bigClient,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.ProcessExpiredRemind">
+    update PROCESS_EXPIRED_REMIND
+    set PROCESS_NAME = #{processName,jdbcType=VARCHAR},
+      CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      SIGNED_PRODUCT_NAME = #{signedProductName,jdbcType=VARCHAR},
+      CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      PROCESS_CREATE_DATE = #{processCreateDate,jdbcType=TIMESTAMP},
+      PROCESS_END_DATE = #{processEndDate,jdbcType=TIMESTAMP},
+      PROCESS_STATUS = #{processStatus,jdbcType=VARCHAR},
+      CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      MASTER_AGREEMENT_DATE = #{masterAgreementDate,jdbcType=TIMESTAMP},
+      REVIEW_DATE = #{reviewDate,jdbcType=VARCHAR},
+      PROCESS_LINK = #{processLink,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      UPDATED_DATETIME = #{updatedDatetime,jdbcType=TIMESTAMP},
+      EXPIRED_TYPE = #{expiredType,jdbcType=VARCHAR},
+      ACTUAL_OPERATOR = #{actualOperator,jdbcType=VARCHAR},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      ABBREVIATION = #{abbreviation,jdbcType=VARCHAR},
+      BIG_CLIENT = #{bigClient,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

@@ -1,0 +1,2 @@
+2023-12-05 16:17:17.623  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mo.s.j.e.annotation.AnnotationMBeanExporter   [0;39m[451]: Unregistering JMX-exposed beans on shutdown
+2023-12-05 16:17:17.625  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mo.s.j.e.annotation.AnnotationMBeanExporter   [0;39m[185]: Unregistering JMX-exposed beans

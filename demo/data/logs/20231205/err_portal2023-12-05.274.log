@@ -1,0 +1,2 @@
+2023-12-05 16:34:11.685  [34mINFO [0;39m [[32mmain                          [0;39m] - [34mcom.alibaba.druid.pool.DruidDataSource       [0;39m[1002]: {dataSource-1} inited
+2023-12-05 16:34:11.704  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker'

@@ -1,0 +1,4 @@
+2023-12-05 13:16:30.402  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34morg.springframework.web.context.ContextLoader[0;39m[288]: Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-12-05 13:16:30.410  [34mINFO [0;39m [[32mmain                          [0;39m] - [34morg.springframework.web.context.ContextLoader[0;39m[296]: Root WebApplicationContext: initialization completed in 5894 ms
+2023-12-05 13:16:30.428  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'requestContextFilter'
+2023-12-05 13:16:30.431  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'hiddenHttpMethodFilter'

@@ -1,0 +1,1 @@
+2023-12-05 11:14:59.822  DEBUG [main                          ] - o.s.core.env.PropertySourcesPropertyResolver [115] : Found key 'spring.datasource.druid.filter.config.enabled' in PropertySource 'configurationProperties' with value of type String

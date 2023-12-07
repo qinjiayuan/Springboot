@@ -1,0 +1,1 @@
+2023-12-05 17:11:50.022  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mationConfigServletWebServerApplicationContext[0;39m[1002]: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c93084c, started on Tue Dec 05 17:06:28 CST 2023

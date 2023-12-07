@@ -1,0 +1,4 @@
+2023-12-05 09:02:42.593  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[268] : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-12-05 09:02:42.597  DEBUG [http-nio-8080-exec-1          ] - .w.s.m.m.a.RequestResponseBodyMethodProcessor[91] : Writing [[model.OtcDerivativeCounterparty@5ec35e3e, model.OtcDerivativeCounterparty@a7fc1cf, model.OtcDerivat (truncated)...]
+2023-12-05 09:02:42.685  DEBUG [http-nio-8080-exec-1          ] - o.s.web.servlet.DispatcherServlet            [1130] : Completed 200 OK
+2023-12-05 09:02:42.875  DEBUG [HikariPool-1 connection adder ] - com.zaxxer.hikari.pool.HikariPool            [709] : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@46c1cdf3

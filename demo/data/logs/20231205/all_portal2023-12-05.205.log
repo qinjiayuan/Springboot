@@ -1,0 +1,4 @@
+2023-12-05 08:53:51.684  DEBUG [Thread-3                      ] - o.s.j.e.annotation.AnnotationMBeanExporter   [185] : Unregistering JMX-exposed beans
+2023-12-05 08:53:51.687  INFO  [Thread-3                      ] - o.s.s.concurrent.ThreadPoolTaskExecutor      [208] : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-05 08:53:51.691  INFO  [Thread-3                      ] - com.zaxxer.hikari.HikariDataSource           [350] : HikariPool-1 - Shutdown initiated...
+2023-12-05 08:53:51.692  DEBUG [Thread-3                      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - Before shutdown stats (total=2, active=0, idle=2, waiting=0)

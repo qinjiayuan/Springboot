@@ -1,0 +1,2355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.OtcDerivativeCounterpartyMapper">
+  <resultMap id="BaseResultMap" type="model.OtcDerivativeCounterparty">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="CORPORATE_NAME" jdbcType="VARCHAR" property="corporateName" />
+    <result column="ABBREVIATION" jdbcType="VARCHAR" property="abbreviation" />
+    <result column="NAME_ABBREVIATION" jdbcType="VARCHAR" property="nameAbbreviation" />
+    <result column="ORGANIZATION_CODE" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="REGISTERED_ADDRESS" jdbcType="VARCHAR" property="registeredAddress" />
+    <result column="OFFICE_ADDRESS" jdbcType="VARCHAR" property="officeAddress" />
+    <result column="SCOPE_BUSINESS" jdbcType="VARCHAR" property="scopeBusiness" />
+    <result column="START_DATE" jdbcType="TIMESTAMP" property="startDate" />
+    <result column="END_DATE" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="LIMITED_DATE" jdbcType="TIMESTAMP" property="limitedDate" />
+    <result column="MAJOR_MECHANISM" jdbcType="VARCHAR" property="majorMechanism" />
+    <result column="NATURE" jdbcType="VARCHAR" property="nature" />
+    <result column="APTITUDE" jdbcType="VARCHAR" property="aptitude" />
+    <result column="LIST_ATTRIBUTE" jdbcType="VARCHAR" property="listAttribute" />
+    <result column="CAPITAL_ATTRIBUTE" jdbcType="VARCHAR" property="capitalAttribute" />
+    <result column="INVESTMENT_VARIETIES" jdbcType="VARCHAR" property="investmentVarieties" />
+    <result column="PARTY_CONTACTMAN" jdbcType="VARCHAR" property="partyContactman" />
+    <result column="ACTUAL_CONTROLLER" jdbcType="VARCHAR" property="actualController" />
+    <result column="LEGAL_PERSON" jdbcType="VARCHAR" property="legalPerson" />
+    <result column="PROFESSIONAL_INVESTORS" jdbcType="VARCHAR" property="professionalInvestors" />
+    <result column="MOBILE_PHONE" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="UNIFIEDSOCIAL_CODE" jdbcType="VARCHAR" property="unifiedsocialCode" />
+    <result column="SIGNATURE_NAME" jdbcType="VARCHAR" property="signatureName" />
+    <result column="MASTER_AGREEMENT_DATE" jdbcType="TIMESTAMP" property="masterAgreementDate" />
+    <result column="AGREEMENT_SIGNING_DATE" jdbcType="TIMESTAMP" property="agreementSigningDate" />
+    <result column="AUDIT_STATUS" jdbcType="VARCHAR" property="auditStatus" />
+    <result column="PARTY_B_CONTACT" jdbcType="VARCHAR" property="partyBContact" />
+    <result column="OUR_CONTRACTUAL_SIDE" jdbcType="VARCHAR" property="ourContractualSide" />
+    <result column="CREDIT_RATING" jdbcType="VARCHAR" property="creditRating" />
+    <result column="PROTOCOL_TYPE" jdbcType="VARCHAR" property="protocolType" />
+    <result column="OPERATOR" jdbcType="VARCHAR" property="operator" />
+    <result column="NONTAXRESIDENT" jdbcType="VARCHAR" property="nontaxresident" />
+    <result column="RISK_LEVEL" jdbcType="VARCHAR" property="riskLevel" />
+    <result column="TERMOF_INVESTMENT" jdbcType="VARCHAR" property="termofInvestment" />
+    <result column="EXPECTED_INCOME" jdbcType="OTHER" property="expectedIncome" />
+    <result column="REPORT_STATUS" jdbcType="VARCHAR" property="reportStatus" />
+    <result column="INTRODUCTION_DEPARTMENT" jdbcType="VARCHAR" property="introductionDepartment" />
+    <result column="CUSTOMER_MANAGER" jdbcType="VARCHAR" property="customerManager" />
+    <result column="NET_TRADING" jdbcType="VARCHAR" property="netTrading" />
+    <result column="PERFORMANCE_PROTOCOL_SIGN_DATE" jdbcType="VARCHAR" property="performanceProtocolSignDate" />
+    <result column="CLASSIFICATION_RATING" jdbcType="VARCHAR" property="classificationRating" />
+    <result column="SHAREHOLDER_INFO" jdbcType="VARCHAR" property="shareholderInfo" />
+    <result column="HOST_DEPARTMENT" jdbcType="VARCHAR" property="hostDepartment" />
+    <result column="FAX_TEL" jdbcType="VARCHAR" property="faxTel" />
+    <result column="IS_CREDITED" jdbcType="VARCHAR" property="isCredited" />
+    <result column="UPDATER" jdbcType="VARCHAR" property="updater" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="AML_RISK_LEVEL" jdbcType="VARCHAR" property="amlRiskLevel" />
+    <result column="REGISTERED_CAPITAL" jdbcType="DECIMAL" property="registeredCapital" />
+    <result column="IS_PROD_HOLDER" jdbcType="VARCHAR" property="isProdHolder" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="CLIENT_QUALIFY_REVIEW" jdbcType="VARCHAR" property="clientQualifyReview" />
+    <result column="CLIENT_QUALIFY_REVIEW_DES" jdbcType="VARCHAR" property="clientQualifyReviewDes" />
+    <result column="CLIENT_LEVEL" jdbcType="VARCHAR" property="clientLevel" />
+    <result column="ALLOW_OPTION_LEVEL" jdbcType="VARCHAR" property="allowOptionLevel" />
+    <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+    <result column="MASTER_AGREEMENT_ID" jdbcType="VARCHAR" property="masterAgreementId" />
+    <result column="SUPPLEMENT_AGREEMENT_ID" jdbcType="VARCHAR" property="supplementAgreementId" />
+    <result column="VALID_FLAG" jdbcType="VARCHAR" property="validFlag" />
+    <result column="INVALID_DATE" jdbcType="TIMESTAMP" property="invalidDate" />
+    <result column="SECONDRAY_TRADER_CLIENT" jdbcType="VARCHAR" property="secondrayTraderClient" />
+    <result column="SECONDRAY_TRADER" jdbcType="VARCHAR" property="secondrayTrader" />
+    <result column="PROD_CODE" jdbcType="VARCHAR" property="prodCode" />
+    <result column="ADVISOR_NAME" jdbcType="VARCHAR" property="advisorName" />
+    <result column="ADVISOR_CERT_TYPE" jdbcType="VARCHAR" property="advisorCertType" />
+    <result column="ADVISOR_CERT_NO" jdbcType="VARCHAR" property="advisorCertNo" />
+    <result column="ECIF_CUST_NO" jdbcType="VARCHAR" property="ecifCustNo" />
+    <result column="SETUP_DATE" jdbcType="TIMESTAMP" property="setupDate" />
+    <result column="INDUSTRY" jdbcType="VARCHAR" property="industry" />
+    <result column="RETURN_VISIT_DATE" jdbcType="TIMESTAMP" property="returnVisitDate" />
+    <result column="RETURN_VISIT_DATA_STATUS" jdbcType="VARCHAR" property="returnVisitDataStatus" />
+    <result column="EXTRAN_PROSCALE_RATIO" jdbcType="DECIMAL" property="extranProscaleRatio" />
+    <result column="MARGIN_BALANCE" jdbcType="DECIMAL" property="marginBalance" />
+    <result column="PRODUCT_ESTAB_DATE" jdbcType="TIMESTAMP" property="productEstabDate" />
+    <result column="PAYEE_MIN_TRANSFER_AMOUNT" jdbcType="DECIMAL" property="payeeMinTransferAmount" />
+    <result column="PAYER_MIN_TRANSFER_AMOUNT" jdbcType="DECIMAL" property="payerMinTransferAmount" />
+    <result column="CLIENT_COEFFICIENT" jdbcType="DECIMAL" property="clientCoefficient" />
+    <result column="OP_TYPE" jdbcType="VARCHAR" property="opType" />
+    <result column="PUT_TAKE_BALANCE" jdbcType="DECIMAL" property="putTakeBalance" />
+    <result column="GUARANTEE_AGREEMENT_ID" jdbcType="VARCHAR" property="guaranteeAgreementId" />
+    <result column="EXECUTE_PRICE_PRECISION" jdbcType="DECIMAL" property="executePricePrecision" />
+    <result column="BLOCK_PRICE_PRECISION" jdbcType="DECIMAL" property="blockPricePrecision" />
+    <result column="INITIAL_PRICE_PRECISION" jdbcType="DECIMAL" property="initialPricePrecision" />
+    <result column="FINAL_PRICE_PRECISION" jdbcType="DECIMAL" property="finalPricePrecision" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="JOB_ID" jdbcType="VARCHAR" property="jobId" />
+    <result column="AUDIT_STATUS_BAK" jdbcType="VARCHAR" property="auditStatusBak" />
+    <result column="STAMP_COUNT" jdbcType="DECIMAL" property="stampCount" />
+    <result column="STAMP_NAME" jdbcType="VARCHAR" property="stampName" />
+    <result column="STAMP_FIRST_FLAG" jdbcType="VARCHAR" property="stampFirstFlag" />
+    <result column="MASTER_AGREEMENT_ID_BOTH" jdbcType="VARCHAR" property="masterAgreementIdBoth" />
+    <result column="SUPPLEMENT_AGREEMENT_ID_BOTH" jdbcType="VARCHAR" property="supplementAgreementIdBoth" />
+    <result column="FILL_ROLE" jdbcType="VARCHAR" property="fillRole" />
+    <result column="CLIENT_TYPE" jdbcType="VARCHAR" property="clientType" />
+    <result column="MASTER_AGREEMENT_FILE_PATH" jdbcType="VARCHAR" property="masterAgreementFilePath" />
+    <result column="SUPPLEMENT_AGREEMENT_FILE_PATH" jdbcType="VARCHAR" property="supplementAgreementFilePath" />
+    <result column="SIGNED_PRODUCT_FILE_PATH" jdbcType="VARCHAR" property="signedProductFilePath" />
+    <result column="RPT_PRODCODE" jdbcType="VARCHAR" property="rptProdcode" />
+    <result column="GUARANTEE_AGRMT_FILE_PATH" jdbcType="VARCHAR" property="guaranteeAgrmtFilePath" />
+    <result column="COMMISSION_RATE" jdbcType="DECIMAL" property="commissionRate" />
+    <result column="ALLOW_BUSI_TYPE" jdbcType="VARCHAR" property="allowBusiType" />
+    <result column="PARTIAL_MARGIN_FLAG" jdbcType="VARCHAR" property="partialMarginFlag" />
+    <result column="COMMISSION_RATE_HK" jdbcType="DECIMAL" property="commissionRateHk" />
+    <result column="PREMIUM_FEE_RATIO" jdbcType="DECIMAL" property="premiumFeeRatio" />
+    <result column="INTEREST_TYPE" jdbcType="VARCHAR" property="interestType" />
+    <result column="INTEREST_INTERVAL" jdbcType="VARCHAR" property="interestInterval" />
+    <result column="EXCHANGE_RATE_TYPE" jdbcType="VARCHAR" property="exchangeRateType" />
+    <result column="AML_MONITOR_FLAG" jdbcType="VARCHAR" property="amlMonitorFlag" />
+    <result column="CPTY_NOTIONAL_LIMIT" jdbcType="DECIMAL" property="cptyNotionalLimit" />
+    <result column="BENEFIT_OVER_FLAG" jdbcType="VARCHAR" property="benefitOverFlag" />
+    <result column="FIID" jdbcType="DECIMAL" property="fiid" />
+    <result column="HK_FEE_RATE_US" jdbcType="DECIMAL" property="hkFeeRateUs" />
+    <result column="HK_FEE_RATE_HK" jdbcType="DECIMAL" property="hkFeeRateHk" />
+    <result column="HK_FIXED_RATE" jdbcType="DECIMAL" property="hkFixedRate" />
+    <result column="RELATED_PARTY_FLAG" jdbcType="VARCHAR" property="relatedPartyFlag" />
+    <result column="RELATED_PARTY_RESULT" jdbcType="VARCHAR" property="relatedPartyResult" />
+    <result column="REGISTER_COUNTRY" jdbcType="VARCHAR" property="registerCountry" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="OPTION_DURATION_FLAG" jdbcType="VARCHAR" property="optionDurationFlag" />
+    <result column="TRS_DURATION_FLAG" jdbcType="VARCHAR" property="trsDurationFlag" />
+    <result column="AML_EXCLUDE_FLAG" jdbcType="VARCHAR" property="amlExcludeFlag" />
+    <result column="ID_KIND" jdbcType="VARCHAR" property="idKind" />
+    <result column="GRANT_BALANCE" jdbcType="DECIMAL" property="grantBalance" />
+    <result column="GRANT_BALANCE_EXPIRE_DATE" jdbcType="TIMESTAMP" property="grantBalanceExpireDate" />
+    <result column="MARGIN_TYPE" jdbcType="VARCHAR" property="marginType" />
+    <result column="CONCERN_FLAG" jdbcType="VARCHAR" property="concernFlag" />
+    <result column="PROD_TYPE" jdbcType="VARCHAR" property="prodType" />
+    <result column="PROD_END_DATE" jdbcType="TIMESTAMP" property="prodEndDate" />
+    <result column="AB_FUTURES_PREMIUM_RATE" jdbcType="DECIMAL" property="abFuturesPremiumRate" />
+    <result column="AB_FUTURES_LEVEL_FACTOR" jdbcType="DECIMAL" property="abFuturesLevelFactor" />
+    <result column="PROD_TYPE_OTHER" jdbcType="VARCHAR" property="prodTypeOther" />
+    <result column="SPREAD" jdbcType="DECIMAL" property="spread" />
+    <result column="LEI_CODE" jdbcType="VARCHAR" property="leiCode" />
+    <result column="CLIENT_PROTOCOL" jdbcType="VARCHAR" property="clientProtocol" />
+    <result column="PUBLIC_RELATED" jdbcType="VARCHAR" property="publicRelated" />
+    <result column="PUBLIC_STOCK_CODE" jdbcType="VARCHAR" property="publicStockCode" />
+    <result column="INTRODUCTION_OPERATOR" jdbcType="VARCHAR" property="introductionOperator" />
+    <result column="CLIENT_QUALIFY_REVIEW_REASON" jdbcType="VARCHAR" property="clientQualifyReviewReason" />
+    <result column="PROD_PUBLIC_RELATED" jdbcType="VARCHAR" property="prodPublicRelated" />
+    <result column="PROD_PUBLIC_STOCK_CODE" jdbcType="VARCHAR" property="prodPublicStockCode" />
+    <result column="EXCHANGE_REPORT_FLAG" jdbcType="VARCHAR" property="exchangeReportFlag" />
+    <result column="CHAT_ROOM_NAME" jdbcType="VARCHAR" property="chatRoomName" />
+    <result column="NO_AUTO_VISIT" jdbcType="VARCHAR" property="noAutoVisit" />
+    <result column="PRODUCT_REPORT_STATUS" jdbcType="VARCHAR" property="productReportStatus" />
+    <result column="DEPARTMENT" jdbcType="VARCHAR" property="department" />
+    <result column="OPTION_PRODUCT_QUALITY_REASON" jdbcType="VARCHAR" property="optionProductQualityReason" />
+    <result column="HIS_ALLOW_BUSI_TYPE" jdbcType="VARCHAR" property="hisAllowBusiType" />
+    <result column="BASIC_HOST_AGENCY" jdbcType="VARCHAR" property="basicHostAgency" />
+    <result column="FUND_MANAGER" jdbcType="VARCHAR" property="fundManager" />
+    <result column="FUND_MANAGER_TEL" jdbcType="VARCHAR" property="fundManagerTel" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, CORPORATE_NAME, ABBREVIATION, NAME_ABBREVIATION, ORGANIZATION_CODE, REGISTERED_ADDRESS, 
+    OFFICE_ADDRESS, SCOPE_BUSINESS, START_DATE, END_DATE, LIMITED_DATE, MAJOR_MECHANISM, 
+    NATURE, APTITUDE, LIST_ATTRIBUTE, CAPITAL_ATTRIBUTE, INVESTMENT_VARIETIES, PARTY_CONTACTMAN, 
+    ACTUAL_CONTROLLER, LEGAL_PERSON, PROFESSIONAL_INVESTORS, MOBILE_PHONE, UNIFIEDSOCIAL_CODE, 
+    SIGNATURE_NAME, MASTER_AGREEMENT_DATE, AGREEMENT_SIGNING_DATE, AUDIT_STATUS, PARTY_B_CONTACT, 
+    OUR_CONTRACTUAL_SIDE, CREDIT_RATING, PROTOCOL_TYPE, OPERATOR, NONTAXRESIDENT, RISK_LEVEL, 
+    TERMOF_INVESTMENT, EXPECTED_INCOME, REPORT_STATUS, INTRODUCTION_DEPARTMENT, CUSTOMER_MANAGER, 
+    NET_TRADING, PERFORMANCE_PROTOCOL_SIGN_DATE, CLASSIFICATION_RATING, SHAREHOLDER_INFO, 
+    HOST_DEPARTMENT, FAX_TEL, IS_CREDITED, UPDATER, UPDATE_TIME, AML_RISK_LEVEL, REGISTERED_CAPITAL, 
+    IS_PROD_HOLDER, CLIENT_ID, CLIENT_QUALIFY_REVIEW, CLIENT_QUALIFY_REVIEW_DES, CLIENT_LEVEL, 
+    ALLOW_OPTION_LEVEL, DELETE_FLAG, MASTER_AGREEMENT_ID, SUPPLEMENT_AGREEMENT_ID, VALID_FLAG, 
+    INVALID_DATE, SECONDRAY_TRADER_CLIENT, SECONDRAY_TRADER, PROD_CODE, ADVISOR_NAME, 
+    ADVISOR_CERT_TYPE, ADVISOR_CERT_NO, ECIF_CUST_NO, SETUP_DATE, INDUSTRY, RETURN_VISIT_DATE, 
+    RETURN_VISIT_DATA_STATUS, EXTRAN_PROSCALE_RATIO, MARGIN_BALANCE, PRODUCT_ESTAB_DATE, 
+    PAYEE_MIN_TRANSFER_AMOUNT, PAYER_MIN_TRANSFER_AMOUNT, CLIENT_COEFFICIENT, OP_TYPE, 
+    PUT_TAKE_BALANCE, GUARANTEE_AGREEMENT_ID, EXECUTE_PRICE_PRECISION, BLOCK_PRICE_PRECISION, 
+    INITIAL_PRICE_PRECISION, FINAL_PRICE_PRECISION, CREATE_BY, CREATE_TIME, JOB_ID, AUDIT_STATUS_BAK, 
+    STAMP_COUNT, STAMP_NAME, STAMP_FIRST_FLAG, MASTER_AGREEMENT_ID_BOTH, SUPPLEMENT_AGREEMENT_ID_BOTH, 
+    FILL_ROLE, CLIENT_TYPE, MASTER_AGREEMENT_FILE_PATH, SUPPLEMENT_AGREEMENT_FILE_PATH, 
+    SIGNED_PRODUCT_FILE_PATH, RPT_PRODCODE, GUARANTEE_AGRMT_FILE_PATH, COMMISSION_RATE, 
+    ALLOW_BUSI_TYPE, PARTIAL_MARGIN_FLAG, COMMISSION_RATE_HK, PREMIUM_FEE_RATIO, INTEREST_TYPE, 
+    INTEREST_INTERVAL, EXCHANGE_RATE_TYPE, AML_MONITOR_FLAG, CPTY_NOTIONAL_LIMIT, BENEFIT_OVER_FLAG, 
+    FIID, HK_FEE_RATE_US, HK_FEE_RATE_HK, HK_FIXED_RATE, RELATED_PARTY_FLAG, RELATED_PARTY_RESULT, 
+    REGISTER_COUNTRY, REMARK, OPTION_DURATION_FLAG, TRS_DURATION_FLAG, AML_EXCLUDE_FLAG, 
+    ID_KIND, GRANT_BALANCE, GRANT_BALANCE_EXPIRE_DATE, MARGIN_TYPE, CONCERN_FLAG, PROD_TYPE, 
+    PROD_END_DATE, AB_FUTURES_PREMIUM_RATE, AB_FUTURES_LEVEL_FACTOR, PROD_TYPE_OTHER, 
+    SPREAD, LEI_CODE, CLIENT_PROTOCOL, PUBLIC_RELATED, PUBLIC_STOCK_CODE, INTRODUCTION_OPERATOR, 
+    CLIENT_QUALIFY_REVIEW_REASON, PROD_PUBLIC_RELATED, PROD_PUBLIC_STOCK_CODE, EXCHANGE_REPORT_FLAG, 
+    CHAT_ROOM_NAME, NO_AUTO_VISIT, PRODUCT_REPORT_STATUS, DEPARTMENT, OPTION_PRODUCT_QUALITY_REASON, 
+    HIS_ALLOW_BUSI_TYPE, BASIC_HOST_AGENCY, FUND_MANAGER, FUND_MANAGER_TEL
+  </sql>
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from OTC_DERIVATIVE_COUNTERPARTY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateByCorporatename" parameterType="model.OtcDerivativeCounterparty">
+    update OTC_DERIVATIVE_COUNTERPARTY
+    <set>
+
+      <if test="abbreviation != null">
+        ABBREVIATION = #{abbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAbbreviation != null">
+        NAME_ABBREVIATION = #{nameAbbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        ORGANIZATION_CODE = #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredAddress != null">
+        REGISTERED_ADDRESS = #{registeredAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="officeAddress != null">
+        OFFICE_ADDRESS = #{officeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="scopeBusiness != null">
+        SCOPE_BUSINESS = #{scopeBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null">
+        END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitedDate != null">
+        LIMITED_DATE = #{limitedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="majorMechanism != null">
+        MAJOR_MECHANISM = #{majorMechanism,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        NATURE = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="aptitude != null">
+        APTITUDE = #{aptitude,jdbcType=VARCHAR},
+      </if>
+      <if test="listAttribute != null">
+        LIST_ATTRIBUTE = #{listAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="capitalAttribute != null">
+        CAPITAL_ATTRIBUTE = #{capitalAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="investmentVarieties != null">
+        INVESTMENT_VARIETIES = #{investmentVarieties,jdbcType=VARCHAR},
+      </if>
+      <if test="partyContactman != null">
+        PARTY_CONTACTMAN = #{partyContactman,jdbcType=VARCHAR},
+      </if>
+      <if test="actualController != null">
+        ACTUAL_CONTROLLER = #{actualController,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null">
+        LEGAL_PERSON = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="professionalInvestors != null">
+        PROFESSIONAL_INVESTORS = #{professionalInvestors,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureName != null">
+        SIGNATURE_NAME = #{signatureName,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementDate != null">
+        MASTER_AGREEMENT_DATE = #{masterAgreementDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreementSigningDate != null">
+        AGREEMENT_SIGNING_DATE = #{agreementSigningDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditStatus != null">
+        AUDIT_STATUS = #{auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="partyBContact != null">
+        PARTY_B_CONTACT = #{partyBContact,jdbcType=VARCHAR},
+      </if>
+      <if test="ourContractualSide != null">
+        OUR_CONTRACTUAL_SIDE = #{ourContractualSide,jdbcType=VARCHAR},
+      </if>
+      <if test="creditRating != null">
+        CREDIT_RATING = #{creditRating,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolType != null">
+        PROTOCOL_TYPE = #{protocolType,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        OPERATOR = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="nontaxresident != null">
+        NONTAXRESIDENT = #{nontaxresident,jdbcType=VARCHAR},
+      </if>
+      <if test="riskLevel != null">
+        RISK_LEVEL = #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="termofInvestment != null">
+        TERMOF_INVESTMENT = #{termofInvestment,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedIncome != null">
+        EXPECTED_INCOME = #{expectedIncome,jdbcType=OTHER},
+      </if>
+      <if test="reportStatus != null">
+        REPORT_STATUS = #{reportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionDepartment != null">
+        INTRODUCTION_DEPARTMENT = #{introductionDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="customerManager != null">
+        CUSTOMER_MANAGER = #{customerManager,jdbcType=VARCHAR},
+      </if>
+      <if test="netTrading != null">
+        NET_TRADING = #{netTrading,jdbcType=VARCHAR},
+      </if>
+      <if test="performanceProtocolSignDate != null">
+        PERFORMANCE_PROTOCOL_SIGN_DATE = #{performanceProtocolSignDate,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationRating != null">
+        CLASSIFICATION_RATING = #{classificationRating,jdbcType=VARCHAR},
+      </if>
+      <if test="shareholderInfo != null">
+        SHAREHOLDER_INFO = #{shareholderInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="hostDepartment != null">
+        HOST_DEPARTMENT = #{hostDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="faxTel != null">
+        FAX_TEL = #{faxTel,jdbcType=VARCHAR},
+      </if>
+      <if test="isCredited != null">
+        IS_CREDITED = #{isCredited,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null">
+        UPDATER = #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amlRiskLevel != null">
+        AML_RISK_LEVEL = #{amlRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        REGISTERED_CAPITAL = #{registeredCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="isProdHolder != null">
+        IS_PROD_HOLDER = #{isProdHolder,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewDes != null">
+        CLIENT_QUALIFY_REVIEW_DES = #{clientQualifyReviewDes,jdbcType=VARCHAR},
+      </if>
+      <if test="clientLevel != null">
+        CLIENT_LEVEL = #{clientLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="allowOptionLevel != null">
+        ALLOW_OPTION_LEVEL = #{allowOptionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        DELETE_FLAG = #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="masterAgreementId != null">
+        MASTER_AGREEMENT_ID = #{masterAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementId != null">
+        SUPPLEMENT_AGREEMENT_ID = #{supplementAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="validFlag != null">
+        VALID_FLAG = #{validFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidDate != null">
+        INVALID_DATE = #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="secondrayTraderClient != null">
+        SECONDRAY_TRADER_CLIENT = #{secondrayTraderClient,jdbcType=VARCHAR},
+      </if>
+      <if test="secondrayTrader != null">
+        SECONDRAY_TRADER = #{secondrayTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="prodCode != null">
+        PROD_CODE = #{prodCode,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorName != null">
+        ADVISOR_NAME = #{advisorName,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertType != null">
+        ADVISOR_CERT_TYPE = #{advisorCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertNo != null">
+        ADVISOR_CERT_NO = #{advisorCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ecifCustNo != null">
+        ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="setupDate != null">
+        SETUP_DATE = #{setupDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="industry != null">
+        INDUSTRY = #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="returnVisitDate != null">
+        RETURN_VISIT_DATE = #{returnVisitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnVisitDataStatus != null">
+        RETURN_VISIT_DATA_STATUS = #{returnVisitDataStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="extranProscaleRatio != null">
+        EXTRAN_PROSCALE_RATIO = #{extranProscaleRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="marginBalance != null">
+        MARGIN_BALANCE = #{marginBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="productEstabDate != null">
+        PRODUCT_ESTAB_DATE = #{productEstabDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payeeMinTransferAmount != null">
+        PAYEE_MIN_TRANSFER_AMOUNT = #{payeeMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payerMinTransferAmount != null">
+        PAYER_MIN_TRANSFER_AMOUNT = #{payerMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="clientCoefficient != null">
+        CLIENT_COEFFICIENT = #{clientCoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="opType != null">
+        OP_TYPE = #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="putTakeBalance != null">
+        PUT_TAKE_BALANCE = #{putTakeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeAgreementId != null">
+        GUARANTEE_AGREEMENT_ID = #{guaranteeAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="executePricePrecision != null">
+        EXECUTE_PRICE_PRECISION = #{executePricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="blockPricePrecision != null">
+        BLOCK_PRICE_PRECISION = #{blockPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="initialPricePrecision != null">
+        INITIAL_PRICE_PRECISION = #{initialPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="finalPricePrecision != null">
+        FINAL_PRICE_PRECISION = #{finalPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobId != null">
+        JOB_ID = #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatusBak != null">
+        AUDIT_STATUS_BAK = #{auditStatusBak,jdbcType=VARCHAR},
+      </if>
+      <if test="stampCount != null">
+        STAMP_COUNT = #{stampCount,jdbcType=DECIMAL},
+      </if>
+      <if test="stampName != null">
+        STAMP_NAME = #{stampName,jdbcType=VARCHAR},
+      </if>
+      <if test="stampFirstFlag != null">
+        STAMP_FIRST_FLAG = #{stampFirstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementIdBoth != null">
+        MASTER_AGREEMENT_ID_BOTH = #{masterAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementIdBoth != null">
+        SUPPLEMENT_AGREEMENT_ID_BOTH = #{supplementAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="fillRole != null">
+        FILL_ROLE = #{fillRole,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        CLIENT_TYPE = #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementFilePath != null">
+        MASTER_AGREEMENT_FILE_PATH = #{masterAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementFilePath != null">
+        SUPPLEMENT_AGREEMENT_FILE_PATH = #{supplementAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="signedProductFilePath != null">
+        SIGNED_PRODUCT_FILE_PATH = #{signedProductFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="rptProdcode != null">
+        RPT_PRODCODE = #{rptProdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAgrmtFilePath != null">
+        GUARANTEE_AGRMT_FILE_PATH = #{guaranteeAgrmtFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRate != null">
+        COMMISSION_RATE = #{commissionRate,jdbcType=DECIMAL},
+      </if>
+      <if test="allowBusiType != null">
+        ALLOW_BUSI_TYPE = #{allowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="partialMarginFlag != null">
+        PARTIAL_MARGIN_FLAG = #{partialMarginFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRateHk != null">
+        COMMISSION_RATE_HK = #{commissionRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="premiumFeeRatio != null">
+        PREMIUM_FEE_RATIO = #{premiumFeeRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="interestType != null">
+        INTEREST_TYPE = #{interestType,jdbcType=VARCHAR},
+      </if>
+      <if test="interestInterval != null">
+        INTEREST_INTERVAL = #{interestInterval,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeRateType != null">
+        EXCHANGE_RATE_TYPE = #{exchangeRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="amlMonitorFlag != null">
+        AML_MONITOR_FLAG = #{amlMonitorFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="cptyNotionalLimit != null">
+        CPTY_NOTIONAL_LIMIT = #{cptyNotionalLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="benefitOverFlag != null">
+        BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="fiid != null">
+        FIID = #{fiid,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateUs != null">
+        HK_FEE_RATE_US = #{hkFeeRateUs,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateHk != null">
+        HK_FEE_RATE_HK = #{hkFeeRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFixedRate != null">
+        HK_FIXED_RATE = #{hkFixedRate,jdbcType=DECIMAL},
+      </if>
+      <if test="relatedPartyFlag != null">
+        RELATED_PARTY_FLAG = #{relatedPartyFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="relatedPartyResult != null">
+        RELATED_PARTY_RESULT = #{relatedPartyResult,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCountry != null">
+        REGISTER_COUNTRY = #{registerCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="optionDurationFlag != null">
+        OPTION_DURATION_FLAG = #{optionDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="trsDurationFlag != null">
+        TRS_DURATION_FLAG = #{trsDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="amlExcludeFlag != null">
+        AML_EXCLUDE_FLAG = #{amlExcludeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        ID_KIND = #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="grantBalance != null">
+        GRANT_BALANCE = #{grantBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="grantBalanceExpireDate != null">
+        GRANT_BALANCE_EXPIRE_DATE = #{grantBalanceExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="marginType != null">
+        MARGIN_TYPE = #{marginType,jdbcType=VARCHAR},
+      </if>
+      <if test="concernFlag != null">
+        CONCERN_FLAG = #{concernFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prodType != null">
+        PROD_TYPE = #{prodType,jdbcType=VARCHAR},
+      </if>
+      <if test="prodEndDate != null">
+        PROD_END_DATE = #{prodEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="abFuturesPremiumRate != null">
+        AB_FUTURES_PREMIUM_RATE = #{abFuturesPremiumRate,jdbcType=DECIMAL},
+      </if>
+      <if test="abFuturesLevelFactor != null">
+        AB_FUTURES_LEVEL_FACTOR = #{abFuturesLevelFactor,jdbcType=DECIMAL},
+      </if>
+      <if test="prodTypeOther != null">
+        PROD_TYPE_OTHER = #{prodTypeOther,jdbcType=VARCHAR},
+      </if>
+      <if test="spread != null">
+        SPREAD = #{spread,jdbcType=DECIMAL},
+      </if>
+      <if test="leiCode != null">
+        LEI_CODE = #{leiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clientProtocol != null">
+        CLIENT_PROTOCOL = #{clientProtocol,jdbcType=VARCHAR},
+      </if>
+      <if test="publicRelated != null">
+        PUBLIC_RELATED = #{publicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="publicStockCode != null">
+        PUBLIC_STOCK_CODE = #{publicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionOperator != null">
+        INTRODUCTION_OPERATOR = #{introductionOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewReason != null">
+        CLIENT_QUALIFY_REVIEW_REASON = #{clientQualifyReviewReason,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicRelated != null">
+        PROD_PUBLIC_RELATED = #{prodPublicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicStockCode != null">
+        PROD_PUBLIC_STOCK_CODE = #{prodPublicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeReportFlag != null">
+        EXCHANGE_REPORT_FLAG = #{exchangeReportFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="chatRoomName != null">
+        CHAT_ROOM_NAME = #{chatRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="noAutoVisit != null">
+        NO_AUTO_VISIT = #{noAutoVisit,jdbcType=VARCHAR},
+      </if>
+      <if test="productReportStatus != null">
+        PRODUCT_REPORT_STATUS = #{productReportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        DEPARTMENT = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="optionProductQualityReason != null">
+        OPTION_PRODUCT_QUALITY_REASON = #{optionProductQualityReason,jdbcType=VARCHAR},
+      </if>
+      <if test="hisAllowBusiType != null">
+        HIS_ALLOW_BUSI_TYPE = #{hisAllowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="basicHostAgency != null">
+        BASIC_HOST_AGENCY = #{basicHostAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManager != null">
+        FUND_MANAGER = #{fundManager,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManagerTel != null">
+        FUND_MANAGER_TEL = #{fundManagerTel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR}
+  </update>
+
+
+  <select id="selectAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM OTC_DERIVATIVE_COUNTERPARTY
+
+      where
+       corporate_name =  #{corporateName}
+
+  </select>
+
+  <select id="selectClientbyid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM OTC_DERIVATIVE_COUNTERPARTY
+    WHERE CLIENT_ID = #{clientid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from OTC_DERIVATIVE_COUNTERPARTY
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.OtcDerivativeCounterparty">
+    insert into OTC_DERIVATIVE_COUNTERPARTY (ID, CORPORATE_NAME, ABBREVIATION, 
+      NAME_ABBREVIATION, ORGANIZATION_CODE, REGISTERED_ADDRESS, 
+      OFFICE_ADDRESS, SCOPE_BUSINESS, START_DATE, 
+      END_DATE, LIMITED_DATE, MAJOR_MECHANISM, 
+      NATURE, APTITUDE, LIST_ATTRIBUTE, 
+      CAPITAL_ATTRIBUTE, INVESTMENT_VARIETIES, 
+      PARTY_CONTACTMAN, ACTUAL_CONTROLLER, LEGAL_PERSON, 
+      PROFESSIONAL_INVESTORS, MOBILE_PHONE, UNIFIEDSOCIAL_CODE, 
+      SIGNATURE_NAME, MASTER_AGREEMENT_DATE, AGREEMENT_SIGNING_DATE, 
+      AUDIT_STATUS, PARTY_B_CONTACT, OUR_CONTRACTUAL_SIDE, 
+      CREDIT_RATING, PROTOCOL_TYPE, OPERATOR, 
+      NONTAXRESIDENT, RISK_LEVEL, TERMOF_INVESTMENT, 
+      EXPECTED_INCOME, REPORT_STATUS, INTRODUCTION_DEPARTMENT, 
+      CUSTOMER_MANAGER, NET_TRADING, PERFORMANCE_PROTOCOL_SIGN_DATE, 
+      CLASSIFICATION_RATING, SHAREHOLDER_INFO, 
+      HOST_DEPARTMENT, FAX_TEL, IS_CREDITED, 
+      UPDATER, UPDATE_TIME, AML_RISK_LEVEL, 
+      REGISTERED_CAPITAL, IS_PROD_HOLDER, CLIENT_ID, 
+      CLIENT_QUALIFY_REVIEW, CLIENT_QUALIFY_REVIEW_DES, 
+      CLIENT_LEVEL, ALLOW_OPTION_LEVEL, DELETE_FLAG, 
+      MASTER_AGREEMENT_ID, SUPPLEMENT_AGREEMENT_ID, 
+      VALID_FLAG, INVALID_DATE, SECONDRAY_TRADER_CLIENT, 
+      SECONDRAY_TRADER, PROD_CODE, ADVISOR_NAME, 
+      ADVISOR_CERT_TYPE, ADVISOR_CERT_NO, ECIF_CUST_NO, 
+      SETUP_DATE, INDUSTRY, RETURN_VISIT_DATE, 
+      RETURN_VISIT_DATA_STATUS, EXTRAN_PROSCALE_RATIO, 
+      MARGIN_BALANCE, PRODUCT_ESTAB_DATE, PAYEE_MIN_TRANSFER_AMOUNT, 
+      PAYER_MIN_TRANSFER_AMOUNT, CLIENT_COEFFICIENT, 
+      OP_TYPE, PUT_TAKE_BALANCE, GUARANTEE_AGREEMENT_ID, 
+      EXECUTE_PRICE_PRECISION, BLOCK_PRICE_PRECISION, 
+      INITIAL_PRICE_PRECISION, FINAL_PRICE_PRECISION, 
+      CREATE_BY, CREATE_TIME, JOB_ID, 
+      AUDIT_STATUS_BAK, STAMP_COUNT, STAMP_NAME, 
+      STAMP_FIRST_FLAG, MASTER_AGREEMENT_ID_BOTH, 
+      SUPPLEMENT_AGREEMENT_ID_BOTH, FILL_ROLE, CLIENT_TYPE, 
+      MASTER_AGREEMENT_FILE_PATH, SUPPLEMENT_AGREEMENT_FILE_PATH, 
+      SIGNED_PRODUCT_FILE_PATH, RPT_PRODCODE, GUARANTEE_AGRMT_FILE_PATH, 
+      COMMISSION_RATE, ALLOW_BUSI_TYPE, PARTIAL_MARGIN_FLAG, 
+      COMMISSION_RATE_HK, PREMIUM_FEE_RATIO, INTEREST_TYPE, 
+      INTEREST_INTERVAL, EXCHANGE_RATE_TYPE, AML_MONITOR_FLAG, 
+      CPTY_NOTIONAL_LIMIT, BENEFIT_OVER_FLAG, FIID, 
+      HK_FEE_RATE_US, HK_FEE_RATE_HK, HK_FIXED_RATE, 
+      RELATED_PARTY_FLAG, RELATED_PARTY_RESULT, REGISTER_COUNTRY, 
+      REMARK, OPTION_DURATION_FLAG, TRS_DURATION_FLAG, 
+      AML_EXCLUDE_FLAG, ID_KIND, GRANT_BALANCE, 
+      GRANT_BALANCE_EXPIRE_DATE, MARGIN_TYPE, CONCERN_FLAG, 
+      PROD_TYPE, PROD_END_DATE, AB_FUTURES_PREMIUM_RATE, 
+      AB_FUTURES_LEVEL_FACTOR, PROD_TYPE_OTHER, SPREAD, 
+      LEI_CODE, CLIENT_PROTOCOL, PUBLIC_RELATED, 
+      PUBLIC_STOCK_CODE, INTRODUCTION_OPERATOR, 
+      CLIENT_QUALIFY_REVIEW_REASON, PROD_PUBLIC_RELATED, 
+      PROD_PUBLIC_STOCK_CODE, EXCHANGE_REPORT_FLAG, 
+      CHAT_ROOM_NAME, NO_AUTO_VISIT, PRODUCT_REPORT_STATUS, 
+      DEPARTMENT, OPTION_PRODUCT_QUALITY_REASON, 
+      HIS_ALLOW_BUSI_TYPE, BASIC_HOST_AGENCY, FUND_MANAGER, 
+      FUND_MANAGER_TEL)
+    values (#{id,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, #{abbreviation,jdbcType=VARCHAR}, 
+      #{nameAbbreviation,jdbcType=VARCHAR}, #{organizationCode,jdbcType=VARCHAR}, #{registeredAddress,jdbcType=VARCHAR}, 
+      #{officeAddress,jdbcType=VARCHAR}, #{scopeBusiness,jdbcType=VARCHAR}, #{startDate,jdbcType=TIMESTAMP}, 
+      #{endDate,jdbcType=TIMESTAMP}, #{limitedDate,jdbcType=TIMESTAMP}, #{majorMechanism,jdbcType=VARCHAR}, 
+      #{nature,jdbcType=VARCHAR}, #{aptitude,jdbcType=VARCHAR}, #{listAttribute,jdbcType=VARCHAR}, 
+      #{capitalAttribute,jdbcType=VARCHAR}, #{investmentVarieties,jdbcType=VARCHAR}, 
+      #{partyContactman,jdbcType=VARCHAR}, #{actualController,jdbcType=VARCHAR}, #{legalPerson,jdbcType=VARCHAR}, 
+      #{professionalInvestors,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{unifiedsocialCode,jdbcType=VARCHAR}, 
+      #{signatureName,jdbcType=VARCHAR}, #{masterAgreementDate,jdbcType=TIMESTAMP}, #{agreementSigningDate,jdbcType=TIMESTAMP}, 
+      #{auditStatus,jdbcType=VARCHAR}, #{partyBContact,jdbcType=VARCHAR}, #{ourContractualSide,jdbcType=VARCHAR}, 
+      #{creditRating,jdbcType=VARCHAR}, #{protocolType,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, 
+      #{nontaxresident,jdbcType=VARCHAR}, #{riskLevel,jdbcType=VARCHAR}, #{termofInvestment,jdbcType=VARCHAR}, 
+      #{expectedIncome,jdbcType=OTHER}, #{reportStatus,jdbcType=VARCHAR}, #{introductionDepartment,jdbcType=VARCHAR}, 
+      #{customerManager,jdbcType=VARCHAR}, #{netTrading,jdbcType=VARCHAR}, #{performanceProtocolSignDate,jdbcType=VARCHAR}, 
+      #{classificationRating,jdbcType=VARCHAR}, #{shareholderInfo,jdbcType=VARCHAR}, 
+      #{hostDepartment,jdbcType=VARCHAR}, #{faxTel,jdbcType=VARCHAR}, #{isCredited,jdbcType=VARCHAR}, 
+      #{updater,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{amlRiskLevel,jdbcType=VARCHAR}, 
+      #{registeredCapital,jdbcType=DECIMAL}, #{isProdHolder,jdbcType=VARCHAR}, #{clientId,jdbcType=VARCHAR}, 
+      #{clientQualifyReview,jdbcType=VARCHAR}, #{clientQualifyReviewDes,jdbcType=VARCHAR}, 
+      #{clientLevel,jdbcType=VARCHAR}, #{allowOptionLevel,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=CHAR}, 
+      #{masterAgreementId,jdbcType=VARCHAR}, #{supplementAgreementId,jdbcType=VARCHAR}, 
+      #{validFlag,jdbcType=VARCHAR}, #{invalidDate,jdbcType=TIMESTAMP}, #{secondrayTraderClient,jdbcType=VARCHAR}, 
+      #{secondrayTrader,jdbcType=VARCHAR}, #{prodCode,jdbcType=VARCHAR}, #{advisorName,jdbcType=VARCHAR}, 
+      #{advisorCertType,jdbcType=VARCHAR}, #{advisorCertNo,jdbcType=VARCHAR}, #{ecifCustNo,jdbcType=VARCHAR}, 
+      #{setupDate,jdbcType=TIMESTAMP}, #{industry,jdbcType=VARCHAR}, #{returnVisitDate,jdbcType=TIMESTAMP}, 
+      #{returnVisitDataStatus,jdbcType=VARCHAR}, #{extranProscaleRatio,jdbcType=DECIMAL}, 
+      #{marginBalance,jdbcType=DECIMAL}, #{productEstabDate,jdbcType=TIMESTAMP}, #{payeeMinTransferAmount,jdbcType=DECIMAL}, 
+      #{payerMinTransferAmount,jdbcType=DECIMAL}, #{clientCoefficient,jdbcType=DECIMAL}, 
+      #{opType,jdbcType=VARCHAR}, #{putTakeBalance,jdbcType=DECIMAL}, #{guaranteeAgreementId,jdbcType=VARCHAR}, 
+      #{executePricePrecision,jdbcType=DECIMAL}, #{blockPricePrecision,jdbcType=DECIMAL}, 
+      #{initialPricePrecision,jdbcType=DECIMAL}, #{finalPricePrecision,jdbcType=DECIMAL}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{jobId,jdbcType=VARCHAR}, 
+      #{auditStatusBak,jdbcType=VARCHAR}, #{stampCount,jdbcType=DECIMAL}, #{stampName,jdbcType=VARCHAR}, 
+      #{stampFirstFlag,jdbcType=VARCHAR}, #{masterAgreementIdBoth,jdbcType=VARCHAR}, 
+      #{supplementAgreementIdBoth,jdbcType=VARCHAR}, #{fillRole,jdbcType=VARCHAR}, #{clientType,jdbcType=VARCHAR}, 
+      #{masterAgreementFilePath,jdbcType=VARCHAR}, #{supplementAgreementFilePath,jdbcType=VARCHAR}, 
+      #{signedProductFilePath,jdbcType=VARCHAR}, #{rptProdcode,jdbcType=VARCHAR}, #{guaranteeAgrmtFilePath,jdbcType=VARCHAR}, 
+      #{commissionRate,jdbcType=DECIMAL}, #{allowBusiType,jdbcType=VARCHAR}, #{partialMarginFlag,jdbcType=VARCHAR}, 
+      #{commissionRateHk,jdbcType=DECIMAL}, #{premiumFeeRatio,jdbcType=DECIMAL}, #{interestType,jdbcType=VARCHAR}, 
+      #{interestInterval,jdbcType=VARCHAR}, #{exchangeRateType,jdbcType=VARCHAR}, #{amlMonitorFlag,jdbcType=VARCHAR}, 
+      #{cptyNotionalLimit,jdbcType=DECIMAL}, #{benefitOverFlag,jdbcType=VARCHAR}, #{fiid,jdbcType=DECIMAL}, 
+      #{hkFeeRateUs,jdbcType=DECIMAL}, #{hkFeeRateHk,jdbcType=DECIMAL}, #{hkFixedRate,jdbcType=DECIMAL}, 
+      #{relatedPartyFlag,jdbcType=VARCHAR}, #{relatedPartyResult,jdbcType=VARCHAR}, #{registerCountry,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{optionDurationFlag,jdbcType=VARCHAR}, #{trsDurationFlag,jdbcType=VARCHAR}, 
+      #{amlExcludeFlag,jdbcType=VARCHAR}, #{idKind,jdbcType=VARCHAR}, #{grantBalance,jdbcType=DECIMAL}, 
+      #{grantBalanceExpireDate,jdbcType=TIMESTAMP}, #{marginType,jdbcType=VARCHAR}, #{concernFlag,jdbcType=VARCHAR}, 
+      #{prodType,jdbcType=VARCHAR}, #{prodEndDate,jdbcType=TIMESTAMP}, #{abFuturesPremiumRate,jdbcType=DECIMAL}, 
+      #{abFuturesLevelFactor,jdbcType=DECIMAL}, #{prodTypeOther,jdbcType=VARCHAR}, #{spread,jdbcType=DECIMAL}, 
+      #{leiCode,jdbcType=VARCHAR}, #{clientProtocol,jdbcType=VARCHAR}, #{publicRelated,jdbcType=VARCHAR}, 
+      #{publicStockCode,jdbcType=VARCHAR}, #{introductionOperator,jdbcType=VARCHAR}, 
+      #{clientQualifyReviewReason,jdbcType=VARCHAR}, #{prodPublicRelated,jdbcType=VARCHAR}, 
+      #{prodPublicStockCode,jdbcType=VARCHAR}, #{exchangeReportFlag,jdbcType=VARCHAR}, 
+      #{chatRoomName,jdbcType=VARCHAR}, #{noAutoVisit,jdbcType=VARCHAR}, #{productReportStatus,jdbcType=VARCHAR}, 
+      #{department,jdbcType=VARCHAR}, #{optionProductQualityReason,jdbcType=VARCHAR}, 
+      #{hisAllowBusiType,jdbcType=VARCHAR}, #{basicHostAgency,jdbcType=VARCHAR}, #{fundManager,jdbcType=VARCHAR}, 
+      #{fundManagerTel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.OtcDerivativeCounterparty">
+    insert into OTC_DERIVATIVE_COUNTERPARTY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="corporateName != null">
+        CORPORATE_NAME,
+      </if>
+      <if test="abbreviation != null">
+        ABBREVIATION,
+      </if>
+      <if test="nameAbbreviation != null">
+        NAME_ABBREVIATION,
+      </if>
+      <if test="organizationCode != null">
+        ORGANIZATION_CODE,
+      </if>
+      <if test="registeredAddress != null">
+        REGISTERED_ADDRESS,
+      </if>
+      <if test="officeAddress != null">
+        OFFICE_ADDRESS,
+      </if>
+      <if test="scopeBusiness != null">
+        SCOPE_BUSINESS,
+      </if>
+      <if test="startDate != null">
+        START_DATE,
+      </if>
+      <if test="endDate != null">
+        END_DATE,
+      </if>
+      <if test="limitedDate != null">
+        LIMITED_DATE,
+      </if>
+      <if test="majorMechanism != null">
+        MAJOR_MECHANISM,
+      </if>
+      <if test="nature != null">
+        NATURE,
+      </if>
+      <if test="aptitude != null">
+        APTITUDE,
+      </if>
+      <if test="listAttribute != null">
+        LIST_ATTRIBUTE,
+      </if>
+      <if test="capitalAttribute != null">
+        CAPITAL_ATTRIBUTE,
+      </if>
+      <if test="investmentVarieties != null">
+        INVESTMENT_VARIETIES,
+      </if>
+      <if test="partyContactman != null">
+        PARTY_CONTACTMAN,
+      </if>
+      <if test="actualController != null">
+        ACTUAL_CONTROLLER,
+      </if>
+      <if test="legalPerson != null">
+        LEGAL_PERSON,
+      </if>
+      <if test="professionalInvestors != null">
+        PROFESSIONAL_INVESTORS,
+      </if>
+      <if test="mobilePhone != null">
+        MOBILE_PHONE,
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE,
+      </if>
+      <if test="signatureName != null">
+        SIGNATURE_NAME,
+      </if>
+      <if test="masterAgreementDate != null">
+        MASTER_AGREEMENT_DATE,
+      </if>
+      <if test="agreementSigningDate != null">
+        AGREEMENT_SIGNING_DATE,
+      </if>
+      <if test="auditStatus != null">
+        AUDIT_STATUS,
+      </if>
+      <if test="partyBContact != null">
+        PARTY_B_CONTACT,
+      </if>
+      <if test="ourContractualSide != null">
+        OUR_CONTRACTUAL_SIDE,
+      </if>
+      <if test="creditRating != null">
+        CREDIT_RATING,
+      </if>
+      <if test="protocolType != null">
+        PROTOCOL_TYPE,
+      </if>
+      <if test="operator != null">
+        OPERATOR,
+      </if>
+      <if test="nontaxresident != null">
+        NONTAXRESIDENT,
+      </if>
+      <if test="riskLevel != null">
+        RISK_LEVEL,
+      </if>
+      <if test="termofInvestment != null">
+        TERMOF_INVESTMENT,
+      </if>
+      <if test="expectedIncome != null">
+        EXPECTED_INCOME,
+      </if>
+      <if test="reportStatus != null">
+        REPORT_STATUS,
+      </if>
+      <if test="introductionDepartment != null">
+        INTRODUCTION_DEPARTMENT,
+      </if>
+      <if test="customerManager != null">
+        CUSTOMER_MANAGER,
+      </if>
+      <if test="netTrading != null">
+        NET_TRADING,
+      </if>
+      <if test="performanceProtocolSignDate != null">
+        PERFORMANCE_PROTOCOL_SIGN_DATE,
+      </if>
+      <if test="classificationRating != null">
+        CLASSIFICATION_RATING,
+      </if>
+      <if test="shareholderInfo != null">
+        SHAREHOLDER_INFO,
+      </if>
+      <if test="hostDepartment != null">
+        HOST_DEPARTMENT,
+      </if>
+      <if test="faxTel != null">
+        FAX_TEL,
+      </if>
+      <if test="isCredited != null">
+        IS_CREDITED,
+      </if>
+      <if test="updater != null">
+        UPDATER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="amlRiskLevel != null">
+        AML_RISK_LEVEL,
+      </if>
+      <if test="registeredCapital != null">
+        REGISTERED_CAPITAL,
+      </if>
+      <if test="isProdHolder != null">
+        IS_PROD_HOLDER,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW,
+      </if>
+      <if test="clientQualifyReviewDes != null">
+        CLIENT_QUALIFY_REVIEW_DES,
+      </if>
+      <if test="clientLevel != null">
+        CLIENT_LEVEL,
+      </if>
+      <if test="allowOptionLevel != null">
+        ALLOW_OPTION_LEVEL,
+      </if>
+      <if test="deleteFlag != null">
+        DELETE_FLAG,
+      </if>
+      <if test="masterAgreementId != null">
+        MASTER_AGREEMENT_ID,
+      </if>
+      <if test="supplementAgreementId != null">
+        SUPPLEMENT_AGREEMENT_ID,
+      </if>
+      <if test="validFlag != null">
+        VALID_FLAG,
+      </if>
+      <if test="invalidDate != null">
+        INVALID_DATE,
+      </if>
+      <if test="secondrayTraderClient != null">
+        SECONDRAY_TRADER_CLIENT,
+      </if>
+      <if test="secondrayTrader != null">
+        SECONDRAY_TRADER,
+      </if>
+      <if test="prodCode != null">
+        PROD_CODE,
+      </if>
+      <if test="advisorName != null">
+        ADVISOR_NAME,
+      </if>
+      <if test="advisorCertType != null">
+        ADVISOR_CERT_TYPE,
+      </if>
+      <if test="advisorCertNo != null">
+        ADVISOR_CERT_NO,
+      </if>
+      <if test="ecifCustNo != null">
+        ECIF_CUST_NO,
+      </if>
+      <if test="setupDate != null">
+        SETUP_DATE,
+      </if>
+      <if test="industry != null">
+        INDUSTRY,
+      </if>
+      <if test="returnVisitDate != null">
+        RETURN_VISIT_DATE,
+      </if>
+      <if test="returnVisitDataStatus != null">
+        RETURN_VISIT_DATA_STATUS,
+      </if>
+      <if test="extranProscaleRatio != null">
+        EXTRAN_PROSCALE_RATIO,
+      </if>
+      <if test="marginBalance != null">
+        MARGIN_BALANCE,
+      </if>
+      <if test="productEstabDate != null">
+        PRODUCT_ESTAB_DATE,
+      </if>
+      <if test="payeeMinTransferAmount != null">
+        PAYEE_MIN_TRANSFER_AMOUNT,
+      </if>
+      <if test="payerMinTransferAmount != null">
+        PAYER_MIN_TRANSFER_AMOUNT,
+      </if>
+      <if test="clientCoefficient != null">
+        CLIENT_COEFFICIENT,
+      </if>
+      <if test="opType != null">
+        OP_TYPE,
+      </if>
+      <if test="putTakeBalance != null">
+        PUT_TAKE_BALANCE,
+      </if>
+      <if test="guaranteeAgreementId != null">
+        GUARANTEE_AGREEMENT_ID,
+      </if>
+      <if test="executePricePrecision != null">
+        EXECUTE_PRICE_PRECISION,
+      </if>
+      <if test="blockPricePrecision != null">
+        BLOCK_PRICE_PRECISION,
+      </if>
+      <if test="initialPricePrecision != null">
+        INITIAL_PRICE_PRECISION,
+      </if>
+      <if test="finalPricePrecision != null">
+        FINAL_PRICE_PRECISION,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="jobId != null">
+        JOB_ID,
+      </if>
+      <if test="auditStatusBak != null">
+        AUDIT_STATUS_BAK,
+      </if>
+      <if test="stampCount != null">
+        STAMP_COUNT,
+      </if>
+      <if test="stampName != null">
+        STAMP_NAME,
+      </if>
+      <if test="stampFirstFlag != null">
+        STAMP_FIRST_FLAG,
+      </if>
+      <if test="masterAgreementIdBoth != null">
+        MASTER_AGREEMENT_ID_BOTH,
+      </if>
+      <if test="supplementAgreementIdBoth != null">
+        SUPPLEMENT_AGREEMENT_ID_BOTH,
+      </if>
+      <if test="fillRole != null">
+        FILL_ROLE,
+      </if>
+      <if test="clientType != null">
+        CLIENT_TYPE,
+      </if>
+      <if test="masterAgreementFilePath != null">
+        MASTER_AGREEMENT_FILE_PATH,
+      </if>
+      <if test="supplementAgreementFilePath != null">
+        SUPPLEMENT_AGREEMENT_FILE_PATH,
+      </if>
+      <if test="signedProductFilePath != null">
+        SIGNED_PRODUCT_FILE_PATH,
+      </if>
+      <if test="rptProdcode != null">
+        RPT_PRODCODE,
+      </if>
+      <if test="guaranteeAgrmtFilePath != null">
+        GUARANTEE_AGRMT_FILE_PATH,
+      </if>
+      <if test="commissionRate != null">
+        COMMISSION_RATE,
+      </if>
+      <if test="allowBusiType != null">
+        ALLOW_BUSI_TYPE,
+      </if>
+      <if test="partialMarginFlag != null">
+        PARTIAL_MARGIN_FLAG,
+      </if>
+      <if test="commissionRateHk != null">
+        COMMISSION_RATE_HK,
+      </if>
+      <if test="premiumFeeRatio != null">
+        PREMIUM_FEE_RATIO,
+      </if>
+      <if test="interestType != null">
+        INTEREST_TYPE,
+      </if>
+      <if test="interestInterval != null">
+        INTEREST_INTERVAL,
+      </if>
+      <if test="exchangeRateType != null">
+        EXCHANGE_RATE_TYPE,
+      </if>
+      <if test="amlMonitorFlag != null">
+        AML_MONITOR_FLAG,
+      </if>
+      <if test="cptyNotionalLimit != null">
+        CPTY_NOTIONAL_LIMIT,
+      </if>
+      <if test="benefitOverFlag != null">
+        BENEFIT_OVER_FLAG,
+      </if>
+      <if test="fiid != null">
+        FIID,
+      </if>
+      <if test="hkFeeRateUs != null">
+        HK_FEE_RATE_US,
+      </if>
+      <if test="hkFeeRateHk != null">
+        HK_FEE_RATE_HK,
+      </if>
+      <if test="hkFixedRate != null">
+        HK_FIXED_RATE,
+      </if>
+      <if test="relatedPartyFlag != null">
+        RELATED_PARTY_FLAG,
+      </if>
+      <if test="relatedPartyResult != null">
+        RELATED_PARTY_RESULT,
+      </if>
+      <if test="registerCountry != null">
+        REGISTER_COUNTRY,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="optionDurationFlag != null">
+        OPTION_DURATION_FLAG,
+      </if>
+      <if test="trsDurationFlag != null">
+        TRS_DURATION_FLAG,
+      </if>
+      <if test="amlExcludeFlag != null">
+        AML_EXCLUDE_FLAG,
+      </if>
+      <if test="idKind != null">
+        ID_KIND,
+      </if>
+      <if test="grantBalance != null">
+        GRANT_BALANCE,
+      </if>
+      <if test="grantBalanceExpireDate != null">
+        GRANT_BALANCE_EXPIRE_DATE,
+      </if>
+      <if test="marginType != null">
+        MARGIN_TYPE,
+      </if>
+      <if test="concernFlag != null">
+        CONCERN_FLAG,
+      </if>
+      <if test="prodType != null">
+        PROD_TYPE,
+      </if>
+      <if test="prodEndDate != null">
+        PROD_END_DATE,
+      </if>
+      <if test="abFuturesPremiumRate != null">
+        AB_FUTURES_PREMIUM_RATE,
+      </if>
+      <if test="abFuturesLevelFactor != null">
+        AB_FUTURES_LEVEL_FACTOR,
+      </if>
+      <if test="prodTypeOther != null">
+        PROD_TYPE_OTHER,
+      </if>
+      <if test="spread != null">
+        SPREAD,
+      </if>
+      <if test="leiCode != null">
+        LEI_CODE,
+      </if>
+      <if test="clientProtocol != null">
+        CLIENT_PROTOCOL,
+      </if>
+      <if test="publicRelated != null">
+        PUBLIC_RELATED,
+      </if>
+      <if test="publicStockCode != null">
+        PUBLIC_STOCK_CODE,
+      </if>
+      <if test="introductionOperator != null">
+        INTRODUCTION_OPERATOR,
+      </if>
+      <if test="clientQualifyReviewReason != null">
+        CLIENT_QUALIFY_REVIEW_REASON,
+      </if>
+      <if test="prodPublicRelated != null">
+        PROD_PUBLIC_RELATED,
+      </if>
+      <if test="prodPublicStockCode != null">
+        PROD_PUBLIC_STOCK_CODE,
+      </if>
+      <if test="exchangeReportFlag != null">
+        EXCHANGE_REPORT_FLAG,
+      </if>
+      <if test="chatRoomName != null">
+        CHAT_ROOM_NAME,
+      </if>
+      <if test="noAutoVisit != null">
+        NO_AUTO_VISIT,
+      </if>
+      <if test="productReportStatus != null">
+        PRODUCT_REPORT_STATUS,
+      </if>
+      <if test="department != null">
+        DEPARTMENT,
+      </if>
+      <if test="optionProductQualityReason != null">
+        OPTION_PRODUCT_QUALITY_REASON,
+      </if>
+      <if test="hisAllowBusiType != null">
+        HIS_ALLOW_BUSI_TYPE,
+      </if>
+      <if test="basicHostAgency != null">
+        BASIC_HOST_AGENCY,
+      </if>
+      <if test="fundManager != null">
+        FUND_MANAGER,
+      </if>
+      <if test="fundManagerTel != null">
+        FUND_MANAGER_TEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null">
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbreviation != null">
+        #{abbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAbbreviation != null">
+        #{nameAbbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredAddress != null">
+        #{registeredAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="officeAddress != null">
+        #{officeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="scopeBusiness != null">
+        #{scopeBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitedDate != null">
+        #{limitedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="majorMechanism != null">
+        #{majorMechanism,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="aptitude != null">
+        #{aptitude,jdbcType=VARCHAR},
+      </if>
+      <if test="listAttribute != null">
+        #{listAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="capitalAttribute != null">
+        #{capitalAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="investmentVarieties != null">
+        #{investmentVarieties,jdbcType=VARCHAR},
+      </if>
+      <if test="partyContactman != null">
+        #{partyContactman,jdbcType=VARCHAR},
+      </if>
+      <if test="actualController != null">
+        #{actualController,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null">
+        #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="professionalInvestors != null">
+        #{professionalInvestors,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureName != null">
+        #{signatureName,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementDate != null">
+        #{masterAgreementDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreementSigningDate != null">
+        #{agreementSigningDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditStatus != null">
+        #{auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="partyBContact != null">
+        #{partyBContact,jdbcType=VARCHAR},
+      </if>
+      <if test="ourContractualSide != null">
+        #{ourContractualSide,jdbcType=VARCHAR},
+      </if>
+      <if test="creditRating != null">
+        #{creditRating,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolType != null">
+        #{protocolType,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="nontaxresident != null">
+        #{nontaxresident,jdbcType=VARCHAR},
+      </if>
+      <if test="riskLevel != null">
+        #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="termofInvestment != null">
+        #{termofInvestment,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedIncome != null">
+        #{expectedIncome,jdbcType=OTHER},
+      </if>
+      <if test="reportStatus != null">
+        #{reportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionDepartment != null">
+        #{introductionDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="customerManager != null">
+        #{customerManager,jdbcType=VARCHAR},
+      </if>
+      <if test="netTrading != null">
+        #{netTrading,jdbcType=VARCHAR},
+      </if>
+      <if test="performanceProtocolSignDate != null">
+        #{performanceProtocolSignDate,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationRating != null">
+        #{classificationRating,jdbcType=VARCHAR},
+      </if>
+      <if test="shareholderInfo != null">
+        #{shareholderInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="hostDepartment != null">
+        #{hostDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="faxTel != null">
+        #{faxTel,jdbcType=VARCHAR},
+      </if>
+      <if test="isCredited != null">
+        #{isCredited,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null">
+        #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amlRiskLevel != null">
+        #{amlRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        #{registeredCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="isProdHolder != null">
+        #{isProdHolder,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewDes != null">
+        #{clientQualifyReviewDes,jdbcType=VARCHAR},
+      </if>
+      <if test="clientLevel != null">
+        #{clientLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="allowOptionLevel != null">
+        #{allowOptionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="masterAgreementId != null">
+        #{masterAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementId != null">
+        #{supplementAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="validFlag != null">
+        #{validFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidDate != null">
+        #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="secondrayTraderClient != null">
+        #{secondrayTraderClient,jdbcType=VARCHAR},
+      </if>
+      <if test="secondrayTrader != null">
+        #{secondrayTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="prodCode != null">
+        #{prodCode,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorName != null">
+        #{advisorName,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertType != null">
+        #{advisorCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertNo != null">
+        #{advisorCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ecifCustNo != null">
+        #{ecifCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="setupDate != null">
+        #{setupDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="industry != null">
+        #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="returnVisitDate != null">
+        #{returnVisitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnVisitDataStatus != null">
+        #{returnVisitDataStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="extranProscaleRatio != null">
+        #{extranProscaleRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="marginBalance != null">
+        #{marginBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="productEstabDate != null">
+        #{productEstabDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payeeMinTransferAmount != null">
+        #{payeeMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payerMinTransferAmount != null">
+        #{payerMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="clientCoefficient != null">
+        #{clientCoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="opType != null">
+        #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="putTakeBalance != null">
+        #{putTakeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeAgreementId != null">
+        #{guaranteeAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="executePricePrecision != null">
+        #{executePricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="blockPricePrecision != null">
+        #{blockPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="initialPricePrecision != null">
+        #{initialPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="finalPricePrecision != null">
+        #{finalPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobId != null">
+        #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatusBak != null">
+        #{auditStatusBak,jdbcType=VARCHAR},
+      </if>
+      <if test="stampCount != null">
+        #{stampCount,jdbcType=DECIMAL},
+      </if>
+      <if test="stampName != null">
+        #{stampName,jdbcType=VARCHAR},
+      </if>
+      <if test="stampFirstFlag != null">
+        #{stampFirstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementIdBoth != null">
+        #{masterAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementIdBoth != null">
+        #{supplementAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="fillRole != null">
+        #{fillRole,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementFilePath != null">
+        #{masterAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementFilePath != null">
+        #{supplementAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="signedProductFilePath != null">
+        #{signedProductFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="rptProdcode != null">
+        #{rptProdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAgrmtFilePath != null">
+        #{guaranteeAgrmtFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRate != null">
+        #{commissionRate,jdbcType=DECIMAL},
+      </if>
+      <if test="allowBusiType != null">
+        #{allowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="partialMarginFlag != null">
+        #{partialMarginFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRateHk != null">
+        #{commissionRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="premiumFeeRatio != null">
+        #{premiumFeeRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="interestType != null">
+        #{interestType,jdbcType=VARCHAR},
+      </if>
+      <if test="interestInterval != null">
+        #{interestInterval,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeRateType != null">
+        #{exchangeRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="amlMonitorFlag != null">
+        #{amlMonitorFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="cptyNotionalLimit != null">
+        #{cptyNotionalLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="benefitOverFlag != null">
+        #{benefitOverFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="fiid != null">
+        #{fiid,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateUs != null">
+        #{hkFeeRateUs,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateHk != null">
+        #{hkFeeRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFixedRate != null">
+        #{hkFixedRate,jdbcType=DECIMAL},
+      </if>
+      <if test="relatedPartyFlag != null">
+        #{relatedPartyFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="relatedPartyResult != null">
+        #{relatedPartyResult,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCountry != null">
+        #{registerCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="optionDurationFlag != null">
+        #{optionDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="trsDurationFlag != null">
+        #{trsDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="amlExcludeFlag != null">
+        #{amlExcludeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="grantBalance != null">
+        #{grantBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="grantBalanceExpireDate != null">
+        #{grantBalanceExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="marginType != null">
+        #{marginType,jdbcType=VARCHAR},
+      </if>
+      <if test="concernFlag != null">
+        #{concernFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prodType != null">
+        #{prodType,jdbcType=VARCHAR},
+      </if>
+      <if test="prodEndDate != null">
+        #{prodEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="abFuturesPremiumRate != null">
+        #{abFuturesPremiumRate,jdbcType=DECIMAL},
+      </if>
+      <if test="abFuturesLevelFactor != null">
+        #{abFuturesLevelFactor,jdbcType=DECIMAL},
+      </if>
+      <if test="prodTypeOther != null">
+        #{prodTypeOther,jdbcType=VARCHAR},
+      </if>
+      <if test="spread != null">
+        #{spread,jdbcType=DECIMAL},
+      </if>
+      <if test="leiCode != null">
+        #{leiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clientProtocol != null">
+        #{clientProtocol,jdbcType=VARCHAR},
+      </if>
+      <if test="publicRelated != null">
+        #{publicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="publicStockCode != null">
+        #{publicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionOperator != null">
+        #{introductionOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewReason != null">
+        #{clientQualifyReviewReason,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicRelated != null">
+        #{prodPublicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicStockCode != null">
+        #{prodPublicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeReportFlag != null">
+        #{exchangeReportFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="chatRoomName != null">
+        #{chatRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="noAutoVisit != null">
+        #{noAutoVisit,jdbcType=VARCHAR},
+      </if>
+      <if test="productReportStatus != null">
+        #{productReportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="optionProductQualityReason != null">
+        #{optionProductQualityReason,jdbcType=VARCHAR},
+      </if>
+      <if test="hisAllowBusiType != null">
+        #{hisAllowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="basicHostAgency != null">
+        #{basicHostAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManager != null">
+        #{fundManager,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManagerTel != null">
+        #{fundManagerTel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.OtcDerivativeCounterparty">
+    update OTC_DERIVATIVE_COUNTERPARTY
+    <set>
+      <if test="corporateName != null">
+        CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbreviation != null">
+        ABBREVIATION = #{abbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAbbreviation != null">
+        NAME_ABBREVIATION = #{nameAbbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        ORGANIZATION_CODE = #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredAddress != null">
+        REGISTERED_ADDRESS = #{registeredAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="officeAddress != null">
+        OFFICE_ADDRESS = #{officeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="scopeBusiness != null">
+        SCOPE_BUSINESS = #{scopeBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null">
+        END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="limitedDate != null">
+        LIMITED_DATE = #{limitedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="majorMechanism != null">
+        MAJOR_MECHANISM = #{majorMechanism,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        NATURE = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="aptitude != null">
+        APTITUDE = #{aptitude,jdbcType=VARCHAR},
+      </if>
+      <if test="listAttribute != null">
+        LIST_ATTRIBUTE = #{listAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="capitalAttribute != null">
+        CAPITAL_ATTRIBUTE = #{capitalAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="investmentVarieties != null">
+        INVESTMENT_VARIETIES = #{investmentVarieties,jdbcType=VARCHAR},
+      </if>
+      <if test="partyContactman != null">
+        PARTY_CONTACTMAN = #{partyContactman,jdbcType=VARCHAR},
+      </if>
+      <if test="actualController != null">
+        ACTUAL_CONTROLLER = #{actualController,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null">
+        LEGAL_PERSON = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="professionalInvestors != null">
+        PROFESSIONAL_INVESTORS = #{professionalInvestors,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="signatureName != null">
+        SIGNATURE_NAME = #{signatureName,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementDate != null">
+        MASTER_AGREEMENT_DATE = #{masterAgreementDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreementSigningDate != null">
+        AGREEMENT_SIGNING_DATE = #{agreementSigningDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditStatus != null">
+        AUDIT_STATUS = #{auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="partyBContact != null">
+        PARTY_B_CONTACT = #{partyBContact,jdbcType=VARCHAR},
+      </if>
+      <if test="ourContractualSide != null">
+        OUR_CONTRACTUAL_SIDE = #{ourContractualSide,jdbcType=VARCHAR},
+      </if>
+      <if test="creditRating != null">
+        CREDIT_RATING = #{creditRating,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolType != null">
+        PROTOCOL_TYPE = #{protocolType,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null">
+        OPERATOR = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="nontaxresident != null">
+        NONTAXRESIDENT = #{nontaxresident,jdbcType=VARCHAR},
+      </if>
+      <if test="riskLevel != null">
+        RISK_LEVEL = #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="termofInvestment != null">
+        TERMOF_INVESTMENT = #{termofInvestment,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedIncome != null">
+        EXPECTED_INCOME = #{expectedIncome,jdbcType=OTHER},
+      </if>
+      <if test="reportStatus != null">
+        REPORT_STATUS = #{reportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionDepartment != null">
+        INTRODUCTION_DEPARTMENT = #{introductionDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="customerManager != null">
+        CUSTOMER_MANAGER = #{customerManager,jdbcType=VARCHAR},
+      </if>
+      <if test="netTrading != null">
+        NET_TRADING = #{netTrading,jdbcType=VARCHAR},
+      </if>
+      <if test="performanceProtocolSignDate != null">
+        PERFORMANCE_PROTOCOL_SIGN_DATE = #{performanceProtocolSignDate,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationRating != null">
+        CLASSIFICATION_RATING = #{classificationRating,jdbcType=VARCHAR},
+      </if>
+      <if test="shareholderInfo != null">
+        SHAREHOLDER_INFO = #{shareholderInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="hostDepartment != null">
+        HOST_DEPARTMENT = #{hostDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="faxTel != null">
+        FAX_TEL = #{faxTel,jdbcType=VARCHAR},
+      </if>
+      <if test="isCredited != null">
+        IS_CREDITED = #{isCredited,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null">
+        UPDATER = #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amlRiskLevel != null">
+        AML_RISK_LEVEL = #{amlRiskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null">
+        REGISTERED_CAPITAL = #{registeredCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="isProdHolder != null">
+        IS_PROD_HOLDER = #{isProdHolder,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReview != null">
+        CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewDes != null">
+        CLIENT_QUALIFY_REVIEW_DES = #{clientQualifyReviewDes,jdbcType=VARCHAR},
+      </if>
+      <if test="clientLevel != null">
+        CLIENT_LEVEL = #{clientLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="allowOptionLevel != null">
+        ALLOW_OPTION_LEVEL = #{allowOptionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        DELETE_FLAG = #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="masterAgreementId != null">
+        MASTER_AGREEMENT_ID = #{masterAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementId != null">
+        SUPPLEMENT_AGREEMENT_ID = #{supplementAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="validFlag != null">
+        VALID_FLAG = #{validFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="invalidDate != null">
+        INVALID_DATE = #{invalidDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="secondrayTraderClient != null">
+        SECONDRAY_TRADER_CLIENT = #{secondrayTraderClient,jdbcType=VARCHAR},
+      </if>
+      <if test="secondrayTrader != null">
+        SECONDRAY_TRADER = #{secondrayTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="prodCode != null">
+        PROD_CODE = #{prodCode,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorName != null">
+        ADVISOR_NAME = #{advisorName,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertType != null">
+        ADVISOR_CERT_TYPE = #{advisorCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="advisorCertNo != null">
+        ADVISOR_CERT_NO = #{advisorCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ecifCustNo != null">
+        ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="setupDate != null">
+        SETUP_DATE = #{setupDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="industry != null">
+        INDUSTRY = #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="returnVisitDate != null">
+        RETURN_VISIT_DATE = #{returnVisitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnVisitDataStatus != null">
+        RETURN_VISIT_DATA_STATUS = #{returnVisitDataStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="extranProscaleRatio != null">
+        EXTRAN_PROSCALE_RATIO = #{extranProscaleRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="marginBalance != null">
+        MARGIN_BALANCE = #{marginBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="productEstabDate != null">
+        PRODUCT_ESTAB_DATE = #{productEstabDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payeeMinTransferAmount != null">
+        PAYEE_MIN_TRANSFER_AMOUNT = #{payeeMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payerMinTransferAmount != null">
+        PAYER_MIN_TRANSFER_AMOUNT = #{payerMinTransferAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="clientCoefficient != null">
+        CLIENT_COEFFICIENT = #{clientCoefficient,jdbcType=DECIMAL},
+      </if>
+      <if test="opType != null">
+        OP_TYPE = #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="putTakeBalance != null">
+        PUT_TAKE_BALANCE = #{putTakeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeAgreementId != null">
+        GUARANTEE_AGREEMENT_ID = #{guaranteeAgreementId,jdbcType=VARCHAR},
+      </if>
+      <if test="executePricePrecision != null">
+        EXECUTE_PRICE_PRECISION = #{executePricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="blockPricePrecision != null">
+        BLOCK_PRICE_PRECISION = #{blockPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="initialPricePrecision != null">
+        INITIAL_PRICE_PRECISION = #{initialPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="finalPricePrecision != null">
+        FINAL_PRICE_PRECISION = #{finalPricePrecision,jdbcType=DECIMAL},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobId != null">
+        JOB_ID = #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatusBak != null">
+        AUDIT_STATUS_BAK = #{auditStatusBak,jdbcType=VARCHAR},
+      </if>
+      <if test="stampCount != null">
+        STAMP_COUNT = #{stampCount,jdbcType=DECIMAL},
+      </if>
+      <if test="stampName != null">
+        STAMP_NAME = #{stampName,jdbcType=VARCHAR},
+      </if>
+      <if test="stampFirstFlag != null">
+        STAMP_FIRST_FLAG = #{stampFirstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementIdBoth != null">
+        MASTER_AGREEMENT_ID_BOTH = #{masterAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementIdBoth != null">
+        SUPPLEMENT_AGREEMENT_ID_BOTH = #{supplementAgreementIdBoth,jdbcType=VARCHAR},
+      </if>
+      <if test="fillRole != null">
+        FILL_ROLE = #{fillRole,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        CLIENT_TYPE = #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="masterAgreementFilePath != null">
+        MASTER_AGREEMENT_FILE_PATH = #{masterAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAgreementFilePath != null">
+        SUPPLEMENT_AGREEMENT_FILE_PATH = #{supplementAgreementFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="signedProductFilePath != null">
+        SIGNED_PRODUCT_FILE_PATH = #{signedProductFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="rptProdcode != null">
+        RPT_PRODCODE = #{rptProdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAgrmtFilePath != null">
+        GUARANTEE_AGRMT_FILE_PATH = #{guaranteeAgrmtFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRate != null">
+        COMMISSION_RATE = #{commissionRate,jdbcType=DECIMAL},
+      </if>
+      <if test="allowBusiType != null">
+        ALLOW_BUSI_TYPE = #{allowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="partialMarginFlag != null">
+        PARTIAL_MARGIN_FLAG = #{partialMarginFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="commissionRateHk != null">
+        COMMISSION_RATE_HK = #{commissionRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="premiumFeeRatio != null">
+        PREMIUM_FEE_RATIO = #{premiumFeeRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="interestType != null">
+        INTEREST_TYPE = #{interestType,jdbcType=VARCHAR},
+      </if>
+      <if test="interestInterval != null">
+        INTEREST_INTERVAL = #{interestInterval,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeRateType != null">
+        EXCHANGE_RATE_TYPE = #{exchangeRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="amlMonitorFlag != null">
+        AML_MONITOR_FLAG = #{amlMonitorFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="cptyNotionalLimit != null">
+        CPTY_NOTIONAL_LIMIT = #{cptyNotionalLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="benefitOverFlag != null">
+        BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="fiid != null">
+        FIID = #{fiid,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateUs != null">
+        HK_FEE_RATE_US = #{hkFeeRateUs,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFeeRateHk != null">
+        HK_FEE_RATE_HK = #{hkFeeRateHk,jdbcType=DECIMAL},
+      </if>
+      <if test="hkFixedRate != null">
+        HK_FIXED_RATE = #{hkFixedRate,jdbcType=DECIMAL},
+      </if>
+      <if test="relatedPartyFlag != null">
+        RELATED_PARTY_FLAG = #{relatedPartyFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="relatedPartyResult != null">
+        RELATED_PARTY_RESULT = #{relatedPartyResult,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCountry != null">
+        REGISTER_COUNTRY = #{registerCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="optionDurationFlag != null">
+        OPTION_DURATION_FLAG = #{optionDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="trsDurationFlag != null">
+        TRS_DURATION_FLAG = #{trsDurationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="amlExcludeFlag != null">
+        AML_EXCLUDE_FLAG = #{amlExcludeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="idKind != null">
+        ID_KIND = #{idKind,jdbcType=VARCHAR},
+      </if>
+      <if test="grantBalance != null">
+        GRANT_BALANCE = #{grantBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="grantBalanceExpireDate != null">
+        GRANT_BALANCE_EXPIRE_DATE = #{grantBalanceExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="marginType != null">
+        MARGIN_TYPE = #{marginType,jdbcType=VARCHAR},
+      </if>
+      <if test="concernFlag != null">
+        CONCERN_FLAG = #{concernFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prodType != null">
+        PROD_TYPE = #{prodType,jdbcType=VARCHAR},
+      </if>
+      <if test="prodEndDate != null">
+        PROD_END_DATE = #{prodEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="abFuturesPremiumRate != null">
+        AB_FUTURES_PREMIUM_RATE = #{abFuturesPremiumRate,jdbcType=DECIMAL},
+      </if>
+      <if test="abFuturesLevelFactor != null">
+        AB_FUTURES_LEVEL_FACTOR = #{abFuturesLevelFactor,jdbcType=DECIMAL},
+      </if>
+      <if test="prodTypeOther != null">
+        PROD_TYPE_OTHER = #{prodTypeOther,jdbcType=VARCHAR},
+      </if>
+      <if test="spread != null">
+        SPREAD = #{spread,jdbcType=DECIMAL},
+      </if>
+      <if test="leiCode != null">
+        LEI_CODE = #{leiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="clientProtocol != null">
+        CLIENT_PROTOCOL = #{clientProtocol,jdbcType=VARCHAR},
+      </if>
+      <if test="publicRelated != null">
+        PUBLIC_RELATED = #{publicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="publicStockCode != null">
+        PUBLIC_STOCK_CODE = #{publicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="introductionOperator != null">
+        INTRODUCTION_OPERATOR = #{introductionOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="clientQualifyReviewReason != null">
+        CLIENT_QUALIFY_REVIEW_REASON = #{clientQualifyReviewReason,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicRelated != null">
+        PROD_PUBLIC_RELATED = #{prodPublicRelated,jdbcType=VARCHAR},
+      </if>
+      <if test="prodPublicStockCode != null">
+        PROD_PUBLIC_STOCK_CODE = #{prodPublicStockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="exchangeReportFlag != null">
+        EXCHANGE_REPORT_FLAG = #{exchangeReportFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="chatRoomName != null">
+        CHAT_ROOM_NAME = #{chatRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="noAutoVisit != null">
+        NO_AUTO_VISIT = #{noAutoVisit,jdbcType=VARCHAR},
+      </if>
+      <if test="productReportStatus != null">
+        PRODUCT_REPORT_STATUS = #{productReportStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        DEPARTMENT = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="optionProductQualityReason != null">
+        OPTION_PRODUCT_QUALITY_REASON = #{optionProductQualityReason,jdbcType=VARCHAR},
+      </if>
+      <if test="hisAllowBusiType != null">
+        HIS_ALLOW_BUSI_TYPE = #{hisAllowBusiType,jdbcType=VARCHAR},
+      </if>
+      <if test="basicHostAgency != null">
+        BASIC_HOST_AGENCY = #{basicHostAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManager != null">
+        FUND_MANAGER = #{fundManager,jdbcType=VARCHAR},
+      </if>
+      <if test="fundManagerTel != null">
+        FUND_MANAGER_TEL = #{fundManagerTel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.OtcDerivativeCounterparty">
+    update OTC_DERIVATIVE_COUNTERPARTY
+    set CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR},
+      ABBREVIATION = #{abbreviation,jdbcType=VARCHAR},
+      NAME_ABBREVIATION = #{nameAbbreviation,jdbcType=VARCHAR},
+      ORGANIZATION_CODE = #{organizationCode,jdbcType=VARCHAR},
+      REGISTERED_ADDRESS = #{registeredAddress,jdbcType=VARCHAR},
+      OFFICE_ADDRESS = #{officeAddress,jdbcType=VARCHAR},
+      SCOPE_BUSINESS = #{scopeBusiness,jdbcType=VARCHAR},
+      START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      LIMITED_DATE = #{limitedDate,jdbcType=TIMESTAMP},
+      MAJOR_MECHANISM = #{majorMechanism,jdbcType=VARCHAR},
+      NATURE = #{nature,jdbcType=VARCHAR},
+      APTITUDE = #{aptitude,jdbcType=VARCHAR},
+      LIST_ATTRIBUTE = #{listAttribute,jdbcType=VARCHAR},
+      CAPITAL_ATTRIBUTE = #{capitalAttribute,jdbcType=VARCHAR},
+      INVESTMENT_VARIETIES = #{investmentVarieties,jdbcType=VARCHAR},
+      PARTY_CONTACTMAN = #{partyContactman,jdbcType=VARCHAR},
+      ACTUAL_CONTROLLER = #{actualController,jdbcType=VARCHAR},
+      LEGAL_PERSON = #{legalPerson,jdbcType=VARCHAR},
+      PROFESSIONAL_INVESTORS = #{professionalInvestors,jdbcType=VARCHAR},
+      MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      SIGNATURE_NAME = #{signatureName,jdbcType=VARCHAR},
+      MASTER_AGREEMENT_DATE = #{masterAgreementDate,jdbcType=TIMESTAMP},
+      AGREEMENT_SIGNING_DATE = #{agreementSigningDate,jdbcType=TIMESTAMP},
+      AUDIT_STATUS = #{auditStatus,jdbcType=VARCHAR},
+      PARTY_B_CONTACT = #{partyBContact,jdbcType=VARCHAR},
+      OUR_CONTRACTUAL_SIDE = #{ourContractualSide,jdbcType=VARCHAR},
+      CREDIT_RATING = #{creditRating,jdbcType=VARCHAR},
+      PROTOCOL_TYPE = #{protocolType,jdbcType=VARCHAR},
+      OPERATOR = #{operator,jdbcType=VARCHAR},
+      NONTAXRESIDENT = #{nontaxresident,jdbcType=VARCHAR},
+      RISK_LEVEL = #{riskLevel,jdbcType=VARCHAR},
+      TERMOF_INVESTMENT = #{termofInvestment,jdbcType=VARCHAR},
+      EXPECTED_INCOME = #{expectedIncome,jdbcType=OTHER},
+      REPORT_STATUS = #{reportStatus,jdbcType=VARCHAR},
+      INTRODUCTION_DEPARTMENT = #{introductionDepartment,jdbcType=VARCHAR},
+      CUSTOMER_MANAGER = #{customerManager,jdbcType=VARCHAR},
+      NET_TRADING = #{netTrading,jdbcType=VARCHAR},
+      PERFORMANCE_PROTOCOL_SIGN_DATE = #{performanceProtocolSignDate,jdbcType=VARCHAR},
+      CLASSIFICATION_RATING = #{classificationRating,jdbcType=VARCHAR},
+      SHAREHOLDER_INFO = #{shareholderInfo,jdbcType=VARCHAR},
+      HOST_DEPARTMENT = #{hostDepartment,jdbcType=VARCHAR},
+      FAX_TEL = #{faxTel,jdbcType=VARCHAR},
+      IS_CREDITED = #{isCredited,jdbcType=VARCHAR},
+      UPDATER = #{updater,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      AML_RISK_LEVEL = #{amlRiskLevel,jdbcType=VARCHAR},
+      REGISTERED_CAPITAL = #{registeredCapital,jdbcType=DECIMAL},
+      IS_PROD_HOLDER = #{isProdHolder,jdbcType=VARCHAR},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      CLIENT_QUALIFY_REVIEW = #{clientQualifyReview,jdbcType=VARCHAR},
+      CLIENT_QUALIFY_REVIEW_DES = #{clientQualifyReviewDes,jdbcType=VARCHAR},
+      CLIENT_LEVEL = #{clientLevel,jdbcType=VARCHAR},
+      ALLOW_OPTION_LEVEL = #{allowOptionLevel,jdbcType=VARCHAR},
+      DELETE_FLAG = #{deleteFlag,jdbcType=CHAR},
+      MASTER_AGREEMENT_ID = #{masterAgreementId,jdbcType=VARCHAR},
+      SUPPLEMENT_AGREEMENT_ID = #{supplementAgreementId,jdbcType=VARCHAR},
+      VALID_FLAG = #{validFlag,jdbcType=VARCHAR},
+      INVALID_DATE = #{invalidDate,jdbcType=TIMESTAMP},
+      SECONDRAY_TRADER_CLIENT = #{secondrayTraderClient,jdbcType=VARCHAR},
+      SECONDRAY_TRADER = #{secondrayTrader,jdbcType=VARCHAR},
+      PROD_CODE = #{prodCode,jdbcType=VARCHAR},
+      ADVISOR_NAME = #{advisorName,jdbcType=VARCHAR},
+      ADVISOR_CERT_TYPE = #{advisorCertType,jdbcType=VARCHAR},
+      ADVISOR_CERT_NO = #{advisorCertNo,jdbcType=VARCHAR},
+      ECIF_CUST_NO = #{ecifCustNo,jdbcType=VARCHAR},
+      SETUP_DATE = #{setupDate,jdbcType=TIMESTAMP},
+      INDUSTRY = #{industry,jdbcType=VARCHAR},
+      RETURN_VISIT_DATE = #{returnVisitDate,jdbcType=TIMESTAMP},
+      RETURN_VISIT_DATA_STATUS = #{returnVisitDataStatus,jdbcType=VARCHAR},
+      EXTRAN_PROSCALE_RATIO = #{extranProscaleRatio,jdbcType=DECIMAL},
+      MARGIN_BALANCE = #{marginBalance,jdbcType=DECIMAL},
+      PRODUCT_ESTAB_DATE = #{productEstabDate,jdbcType=TIMESTAMP},
+      PAYEE_MIN_TRANSFER_AMOUNT = #{payeeMinTransferAmount,jdbcType=DECIMAL},
+      PAYER_MIN_TRANSFER_AMOUNT = #{payerMinTransferAmount,jdbcType=DECIMAL},
+      CLIENT_COEFFICIENT = #{clientCoefficient,jdbcType=DECIMAL},
+      OP_TYPE = #{opType,jdbcType=VARCHAR},
+      PUT_TAKE_BALANCE = #{putTakeBalance,jdbcType=DECIMAL},
+      GUARANTEE_AGREEMENT_ID = #{guaranteeAgreementId,jdbcType=VARCHAR},
+      EXECUTE_PRICE_PRECISION = #{executePricePrecision,jdbcType=DECIMAL},
+      BLOCK_PRICE_PRECISION = #{blockPricePrecision,jdbcType=DECIMAL},
+      INITIAL_PRICE_PRECISION = #{initialPricePrecision,jdbcType=DECIMAL},
+      FINAL_PRICE_PRECISION = #{finalPricePrecision,jdbcType=DECIMAL},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      JOB_ID = #{jobId,jdbcType=VARCHAR},
+      AUDIT_STATUS_BAK = #{auditStatusBak,jdbcType=VARCHAR},
+      STAMP_COUNT = #{stampCount,jdbcType=DECIMAL},
+      STAMP_NAME = #{stampName,jdbcType=VARCHAR},
+      STAMP_FIRST_FLAG = #{stampFirstFlag,jdbcType=VARCHAR},
+      MASTER_AGREEMENT_ID_BOTH = #{masterAgreementIdBoth,jdbcType=VARCHAR},
+      SUPPLEMENT_AGREEMENT_ID_BOTH = #{supplementAgreementIdBoth,jdbcType=VARCHAR},
+      FILL_ROLE = #{fillRole,jdbcType=VARCHAR},
+      CLIENT_TYPE = #{clientType,jdbcType=VARCHAR},
+      MASTER_AGREEMENT_FILE_PATH = #{masterAgreementFilePath,jdbcType=VARCHAR},
+      SUPPLEMENT_AGREEMENT_FILE_PATH = #{supplementAgreementFilePath,jdbcType=VARCHAR},
+      SIGNED_PRODUCT_FILE_PATH = #{signedProductFilePath,jdbcType=VARCHAR},
+      RPT_PRODCODE = #{rptProdcode,jdbcType=VARCHAR},
+      GUARANTEE_AGRMT_FILE_PATH = #{guaranteeAgrmtFilePath,jdbcType=VARCHAR},
+      COMMISSION_RATE = #{commissionRate,jdbcType=DECIMAL},
+      ALLOW_BUSI_TYPE = #{allowBusiType,jdbcType=VARCHAR},
+      PARTIAL_MARGIN_FLAG = #{partialMarginFlag,jdbcType=VARCHAR},
+      COMMISSION_RATE_HK = #{commissionRateHk,jdbcType=DECIMAL},
+      PREMIUM_FEE_RATIO = #{premiumFeeRatio,jdbcType=DECIMAL},
+      INTEREST_TYPE = #{interestType,jdbcType=VARCHAR},
+      INTEREST_INTERVAL = #{interestInterval,jdbcType=VARCHAR},
+      EXCHANGE_RATE_TYPE = #{exchangeRateType,jdbcType=VARCHAR},
+      AML_MONITOR_FLAG = #{amlMonitorFlag,jdbcType=VARCHAR},
+      CPTY_NOTIONAL_LIMIT = #{cptyNotionalLimit,jdbcType=DECIMAL},
+      BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR},
+      FIID = #{fiid,jdbcType=DECIMAL},
+      HK_FEE_RATE_US = #{hkFeeRateUs,jdbcType=DECIMAL},
+      HK_FEE_RATE_HK = #{hkFeeRateHk,jdbcType=DECIMAL},
+      HK_FIXED_RATE = #{hkFixedRate,jdbcType=DECIMAL},
+      RELATED_PARTY_FLAG = #{relatedPartyFlag,jdbcType=VARCHAR},
+      RELATED_PARTY_RESULT = #{relatedPartyResult,jdbcType=VARCHAR},
+      REGISTER_COUNTRY = #{registerCountry,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      OPTION_DURATION_FLAG = #{optionDurationFlag,jdbcType=VARCHAR},
+      TRS_DURATION_FLAG = #{trsDurationFlag,jdbcType=VARCHAR},
+      AML_EXCLUDE_FLAG = #{amlExcludeFlag,jdbcType=VARCHAR},
+      ID_KIND = #{idKind,jdbcType=VARCHAR},
+      GRANT_BALANCE = #{grantBalance,jdbcType=DECIMAL},
+      GRANT_BALANCE_EXPIRE_DATE = #{grantBalanceExpireDate,jdbcType=TIMESTAMP},
+      MARGIN_TYPE = #{marginType,jdbcType=VARCHAR},
+      CONCERN_FLAG = #{concernFlag,jdbcType=VARCHAR},
+      PROD_TYPE = #{prodType,jdbcType=VARCHAR},
+      PROD_END_DATE = #{prodEndDate,jdbcType=TIMESTAMP},
+      AB_FUTURES_PREMIUM_RATE = #{abFuturesPremiumRate,jdbcType=DECIMAL},
+      AB_FUTURES_LEVEL_FACTOR = #{abFuturesLevelFactor,jdbcType=DECIMAL},
+      PROD_TYPE_OTHER = #{prodTypeOther,jdbcType=VARCHAR},
+      SPREAD = #{spread,jdbcType=DECIMAL},
+      LEI_CODE = #{leiCode,jdbcType=VARCHAR},
+      CLIENT_PROTOCOL = #{clientProtocol,jdbcType=VARCHAR},
+      PUBLIC_RELATED = #{publicRelated,jdbcType=VARCHAR},
+      PUBLIC_STOCK_CODE = #{publicStockCode,jdbcType=VARCHAR},
+      INTRODUCTION_OPERATOR = #{introductionOperator,jdbcType=VARCHAR},
+      CLIENT_QUALIFY_REVIEW_REASON = #{clientQualifyReviewReason,jdbcType=VARCHAR},
+      PROD_PUBLIC_RELATED = #{prodPublicRelated,jdbcType=VARCHAR},
+      PROD_PUBLIC_STOCK_CODE = #{prodPublicStockCode,jdbcType=VARCHAR},
+      EXCHANGE_REPORT_FLAG = #{exchangeReportFlag,jdbcType=VARCHAR},
+      CHAT_ROOM_NAME = #{chatRoomName,jdbcType=VARCHAR},
+      NO_AUTO_VISIT = #{noAutoVisit,jdbcType=VARCHAR},
+      PRODUCT_REPORT_STATUS = #{productReportStatus,jdbcType=VARCHAR},
+      DEPARTMENT = #{department,jdbcType=VARCHAR},
+      OPTION_PRODUCT_QUALITY_REASON = #{optionProductQualityReason,jdbcType=VARCHAR},
+      HIS_ALLOW_BUSI_TYPE = #{hisAllowBusiType,jdbcType=VARCHAR},
+      BASIC_HOST_AGENCY = #{basicHostAgency,jdbcType=VARCHAR},
+      FUND_MANAGER = #{fundManager,jdbcType=VARCHAR},
+      FUND_MANAGER_TEL = #{fundManagerTel,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

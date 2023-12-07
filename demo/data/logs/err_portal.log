@@ -1,0 +1,3 @@
+2023-12-05 17:11:50.340  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mcom.alibaba.druid.pool.PreparedStatementPool [0;39m[160]: {conn-10010, pstmt-20000} exit cache
+2023-12-05 17:11:50.343  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mcom.alibaba.druid.pool.PreparedStatementPool [0;39m[160]: {conn-10010, pstmt-20001} exit cache
+2023-12-05 17:11:50.380  [34mINFO [0;39m [[32mThread-3                      [0;39m] - [34mcom.alibaba.druid.pool.DruidDataSource       [0;39m[1955]: {dataSource-1} closed

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.CounterpartyBenefitOverListMapper">
+  <resultMap id="BaseResultMap" type="model.CounterpartyBenefitOverList">
+    <id column="ID_NO" jdbcType="VARCHAR" property="idNo" />
+    <id column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="PROPORTION" jdbcType="DECIMAL" property="proportion" />
+    <result column="FIID" jdbcType="DECIMAL" property="fiid" />
+    <result column="PROFESSIONAL_INVESTOR_FLAG" jdbcType="VARCHAR" property="professionalInvestorFlag" />
+    <result column="FINANCIAL_ASSETS_OF_LASTYEAR" jdbcType="DECIMAL" property="financialAssetsOfLastyear" />
+    <result column="INVEST_3YEAR_EXP_FLAG" jdbcType="VARCHAR" property="invest3yearExpFlag" />
+    <result column="PROD_ID" jdbcType="VARCHAR" property="prodId" />
+    <result column="ASSETS_20MILLION_FLAG" jdbcType="VARCHAR" property="assets20millionFlag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID_NO, CLIENT_ID, NAME, PROPORTION, FIID, PROFESSIONAL_INVESTOR_FLAG, FINANCIAL_ASSETS_OF_LASTYEAR, 
+    INVEST_3YEAR_EXP_FLAG, PROD_ID, ASSETS_20MILLION_FLAG
+  </sql>
+  <select id="selectByExample" parameterType="model.CounterpartyBenefitOverListExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from COUNTERPARTY_BENEFIT_OVER_LIST
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="model.CounterpartyBenefitOverListKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from COUNTERPARTY_BENEFIT_OVER_LIST
+    where ID_NO = #{idNo,jdbcType=VARCHAR}
+      and CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="model.CounterpartyBenefitOverListKey">
+    delete from COUNTERPARTY_BENEFIT_OVER_LIST
+    where ID_NO = #{idNo,jdbcType=VARCHAR}
+      and CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.CounterpartyBenefitOverList">
+    insert into COUNTERPARTY_BENEFIT_OVER_LIST (ID_NO, CLIENT_ID, NAME, 
+      PROPORTION, FIID, PROFESSIONAL_INVESTOR_FLAG, 
+      FINANCIAL_ASSETS_OF_LASTYEAR, INVEST_3YEAR_EXP_FLAG, 
+      PROD_ID, ASSETS_20MILLION_FLAG)
+    values (#{idNo,jdbcType=VARCHAR}, #{clientId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{proportion,jdbcType=DECIMAL}, #{fiid,jdbcType=DECIMAL}, #{professionalInvestorFlag,jdbcType=VARCHAR}, 
+      #{financialAssetsOfLastyear,jdbcType=DECIMAL}, #{invest3yearExpFlag,jdbcType=VARCHAR}, 
+      #{prodId,jdbcType=VARCHAR}, #{assets20millionFlag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.CounterpartyBenefitOverList">
+    insert into COUNTERPARTY_BENEFIT_OVER_LIST
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idNo != null">
+        ID_NO,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="proportion != null">
+        PROPORTION,
+      </if>
+      <if test="fiid != null">
+        FIID,
+      </if>
+      <if test="professionalInvestorFlag != null">
+        PROFESSIONAL_INVESTOR_FLAG,
+      </if>
+      <if test="financialAssetsOfLastyear != null">
+        FINANCIAL_ASSETS_OF_LASTYEAR,
+      </if>
+      <if test="invest3yearExpFlag != null">
+        INVEST_3YEAR_EXP_FLAG,
+      </if>
+      <if test="prodId != null">
+        PROD_ID,
+      </if>
+      <if test="assets20millionFlag != null">
+        ASSETS_20MILLION_FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idNo != null">
+        #{idNo,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="proportion != null">
+        #{proportion,jdbcType=DECIMAL},
+      </if>
+      <if test="fiid != null">
+        #{fiid,jdbcType=DECIMAL},
+      </if>
+      <if test="professionalInvestorFlag != null">
+        #{professionalInvestorFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="financialAssetsOfLastyear != null">
+        #{financialAssetsOfLastyear,jdbcType=DECIMAL},
+      </if>
+      <if test="invest3yearExpFlag != null">
+        #{invest3yearExpFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prodId != null">
+        #{prodId,jdbcType=VARCHAR},
+      </if>
+      <if test="assets20millionFlag != null">
+        #{assets20millionFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.CounterpartyBenefitOverList">
+    update COUNTERPARTY_BENEFIT_OVER_LIST
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="proportion != null">
+        PROPORTION = #{proportion,jdbcType=DECIMAL},
+      </if>
+      <if test="fiid != null">
+        FIID = #{fiid,jdbcType=DECIMAL},
+      </if>
+      <if test="professionalInvestorFlag != null">
+        PROFESSIONAL_INVESTOR_FLAG = #{professionalInvestorFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="financialAssetsOfLastyear != null">
+        FINANCIAL_ASSETS_OF_LASTYEAR = #{financialAssetsOfLastyear,jdbcType=DECIMAL},
+      </if>
+      <if test="invest3yearExpFlag != null">
+        INVEST_3YEAR_EXP_FLAG = #{invest3yearExpFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prodId != null">
+        PROD_ID = #{prodId,jdbcType=VARCHAR},
+      </if>
+      <if test="assets20millionFlag != null">
+        ASSETS_20MILLION_FLAG = #{assets20millionFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where
+       CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.CounterpartyBenefitOverList">
+    update COUNTERPARTY_BENEFIT_OVER_LIST
+    set NAME = #{name,jdbcType=VARCHAR},
+      PROPORTION = #{proportion,jdbcType=DECIMAL},
+      FIID = #{fiid,jdbcType=DECIMAL},
+      PROFESSIONAL_INVESTOR_FLAG = #{professionalInvestorFlag,jdbcType=VARCHAR},
+      FINANCIAL_ASSETS_OF_LASTYEAR = #{financialAssetsOfLastyear,jdbcType=DECIMAL},
+      INVEST_3YEAR_EXP_FLAG = #{invest3yearExpFlag,jdbcType=VARCHAR},
+      PROD_ID = #{prodId,jdbcType=VARCHAR},
+      ASSETS_20MILLION_FLAG = #{assets20millionFlag,jdbcType=VARCHAR}
+    where ID_NO = #{idNo,jdbcType=VARCHAR}
+      and CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByClientId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM OTC_DERIVATIVE_COUNTERPARTY WHERE CLIENT_ID  = #{clientId,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

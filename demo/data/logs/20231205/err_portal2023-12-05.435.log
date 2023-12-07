@@ -1,0 +1,4 @@
+2023-12-05 17:11:50.027  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mo.s.j.e.annotation.AnnotationMBeanExporter   [0;39m[451]: Unregistering JMX-exposed beans on shutdown
+2023-12-05 17:11:50.030  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mo.s.j.e.annotation.AnnotationMBeanExporter   [0;39m[185]: Unregistering JMX-exposed beans
+2023-12-05 17:11:50.030  [34mINFO [0;39m [[32mThread-3                      [0;39m] - [34mo.s.s.concurrent.ThreadPoolTaskExecutor      [0;39m[208]: Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-05 17:11:50.031  [34mINFO [0;39m [[32mThread-3                      [0;39m] - [34mcom.alibaba.druid.pool.DruidDataSource       [0;39m[1885]: {dataSource-1} closing ...

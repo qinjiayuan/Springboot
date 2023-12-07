@@ -1,0 +1,1 @@
+2023-12-05 09:40:47.602  DEBUG [HikariPool-1 connection adder ] - com.zaxxer.hikari.pool.HikariPool            [709] : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@e83a1fe

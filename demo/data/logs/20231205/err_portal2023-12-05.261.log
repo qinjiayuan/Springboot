@@ -1,0 +1,2 @@
+2023-12-05 16:34:02.823  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.core.env.PropertySourcesPropertyResolver [0;39m[115]: Found key 'spring.datasource.druid.filter.config.enabled' in PropertySource 'configurationProperties' with value of type String
+2023-12-05 16:34:03.182  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'com.example.demo.test.DemoApplication#MapperScannerRegistrar#0'

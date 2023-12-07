@@ -1,0 +1,1 @@
+2023-12-05 09:41:46.084  DEBUG [HikariPool-1 housekeeper      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - Before cleanup stats (total=3, active=0, idle=3, waiting=0)

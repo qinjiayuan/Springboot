@@ -1,0 +1,8 @@
+2023-12-05 09:40:44.108  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : registerMbeans..................false
+2023-12-05 09:40:44.112  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : scheduledExecutor...............none
+2023-12-05 09:40:44.113  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : schema..........................none
+2023-12-05 09:40:44.114  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : threadFactory...................internal
+2023-12-05 09:40:44.114  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : transactionIsolation............default
+2023-12-05 09:40:44.115  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : username........................"gf_otc"
+2023-12-05 09:40:44.115  DEBUG [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariConfig               [1052] : validationTimeout...............5000
+2023-12-05 09:40:44.115  INFO  [http-nio-8080-exec-1          ] - com.zaxxer.hikari.HikariDataSource           [110] : HikariPool-1 - Starting...

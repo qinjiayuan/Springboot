@@ -1,0 +1,8 @@
+2023-12-05 16:22:50.374  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.ServletContextInitializerBeans     [0;39m[267]: Mapping filters: characterEncodingFilter urls=[/*], hiddenHttpMethodFilter urls=[/*], formContentFilter urls=[/*], requestContextFilter urls=[/*]
+2023-12-05 16:22:50.382  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.ServletContextInitializerBeans     [0;39m[267]: Mapping servlets: dispatcherServlet urls=[/]
+2023-12-05 16:22:50.430  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.filter.OrderedRequestContextFilter [0;39m[241]: Filter 'requestContextFilter' configured for use
+2023-12-05 16:22:50.432  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.f.OrderedHiddenHttpMethodFilter    [0;39m[241]: Filter 'hiddenHttpMethodFilter' configured for use
+2023-12-05 16:22:50.433  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.f.OrderedCharacterEncodingFilter   [0;39m[241]: Filter 'characterEncodingFilter' configured for use
+2023-12-05 16:22:50.433  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.w.s.filter.OrderedFormContentFilter    [0;39m[241]: Filter 'formContentFilter' configured for use
+2023-12-05 16:22:50.568  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'demoApplication'
+2023-12-05 16:22:50.571  [39mDEBUG[0;39m [[32mmain                          [0;39m] - [34mo.s.b.f.support.DefaultListableBeanFactory   [0;39m[213]: Creating shared instance of singleton bean 'testController'

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.CrtExpiredRecordMapper">
+  <resultMap id="BaseResultMap" type="model.CrtExpiredRecord">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DOC_ID" jdbcType="VARCHAR" property="docId" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />
+    <result column="CHECK_DATE" jdbcType="TIMESTAMP" property="checkDate" />
+    <result column="CURRENT_STATUS" jdbcType="VARCHAR" property="currentStatus" />
+    <result column="CURRENT_OPERATOR" jdbcType="VARCHAR" property="currentOperator" />
+    <result column="CURRENT_ACTIVITY_NAME" jdbcType="VARCHAR" property="currentActivityName" />
+    <result column="RECORD_ID" jdbcType="VARCHAR" property="recordId" />
+    <result column="REMIND_TYPE" jdbcType="VARCHAR" property="remindType" />
+    <result column="ACCESS_USER" jdbcType="VARCHAR" property="accessUser" />
+    <result column="EDITABLE_USER" jdbcType="VARCHAR" property="editableUser" />
+    <result column="CREATED_DATETIME" jdbcType="TIMESTAMP" property="createdDatetime" />
+    <result column="WORK_PHONE" jdbcType="VARCHAR" property="workPhone" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="SECURITY_LEVEL" jdbcType="VARCHAR" property="securityLevel" />
+    <result column="SECURITY_LEVEL_DETAIL" jdbcType="VARCHAR" property="securityLevelDetail" />
+    <result column="URGENCY_LEVEL" jdbcType="VARCHAR" property="urgencyLevel" />
+    <result column="URGENCY_LEVEL_REASON" jdbcType="VARCHAR" property="urgencyLevelReason" />
+    <result column="HAS_STOCK_TRADING" jdbcType="CHAR" property="hasStockTrading" />
+    <result column="UNIFIEDSOCIAL_CODE" jdbcType="VARCHAR" property="unifiedsocialCode" />
+    <result column="VERSION" jdbcType="DECIMAL" property="version" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, DOC_ID, TITLE, CLIENT_ID, CHECK_DATE, CURRENT_STATUS, CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, 
+    RECORD_ID, REMIND_TYPE, ACCESS_USER, EDITABLE_USER, CREATED_DATETIME, WORK_PHONE, 
+    PHONE, SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, URGENCY_LEVEL_REASON, 
+    HAS_STOCK_TRADING, UNIFIEDSOCIAL_CODE, VERSION
+  </sql>
+  <select id="selectByExample" parameterType="model.CrtExpiredRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from CRT_EXPIRED_RECORD
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CRT_EXPIRED_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CRT_EXPIRED_RECORD
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="model.CrtExpiredRecord">
+    insert into CRT_EXPIRED_RECORD (ID, DOC_ID, TITLE, 
+      CLIENT_ID, CHECK_DATE, CURRENT_STATUS, 
+      CURRENT_OPERATOR, CURRENT_ACTIVITY_NAME, RECORD_ID, 
+      REMIND_TYPE, ACCESS_USER, EDITABLE_USER, 
+      CREATED_DATETIME, WORK_PHONE, PHONE, 
+      SECURITY_LEVEL, SECURITY_LEVEL_DETAIL, URGENCY_LEVEL, 
+      URGENCY_LEVEL_REASON, HAS_STOCK_TRADING, UNIFIEDSOCIAL_CODE, 
+      VERSION)
+    values (#{id,jdbcType=VARCHAR}, #{docId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{clientId,jdbcType=VARCHAR}, #{checkDate,jdbcType=TIMESTAMP}, #{currentStatus,jdbcType=VARCHAR}, 
+      #{currentOperator,jdbcType=VARCHAR}, #{currentActivityName,jdbcType=VARCHAR}, #{recordId,jdbcType=VARCHAR}, 
+      #{remindType,jdbcType=VARCHAR}, #{accessUser,jdbcType=VARCHAR}, #{editableUser,jdbcType=VARCHAR}, 
+      #{createdDatetime,jdbcType=TIMESTAMP}, #{workPhone,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{securityLevel,jdbcType=VARCHAR}, #{securityLevelDetail,jdbcType=VARCHAR}, #{urgencyLevel,jdbcType=VARCHAR}, 
+      #{urgencyLevelReason,jdbcType=VARCHAR}, #{hasStockTrading,jdbcType=CHAR}, #{unifiedsocialCode,jdbcType=VARCHAR}, 
+      #{version,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="model.CrtExpiredRecord">
+    insert into CRT_EXPIRED_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="docId != null">
+        DOC_ID,
+      </if>
+      <if test="title != null">
+        TITLE,
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID,
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE,
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS,
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR,
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME,
+      </if>
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="remindType != null">
+        REMIND_TYPE,
+      </if>
+      <if test="accessUser != null">
+        ACCESS_USER,
+      </if>
+      <if test="editableUser != null">
+        EDITABLE_USER,
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME,
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL,
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL,
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL,
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON,
+      </if>
+      <if test="hasStockTrading != null">
+        HAS_STOCK_TRADING,
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="docId != null">
+        #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentStatus != null">
+        #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="remindType != null">
+        #{remindType,jdbcType=VARCHAR},
+      </if>
+      <if test="accessUser != null">
+        #{accessUser,jdbcType=VARCHAR},
+      </if>
+      <if test="editableUser != null">
+        #{editableUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workPhone != null">
+        #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="hasStockTrading != null">
+        #{hasStockTrading,jdbcType=CHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.CrtExpiredRecord">
+    update CRT_EXPIRED_RECORD
+    <set>
+      <if test="docId != null">
+        DOC_ID = #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null">
+        CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        CHECK_DATE = #{checkDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="currentStatus != null">
+        CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="currentOperator != null">
+        CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="currentActivityName != null">
+        CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="remindType != null">
+        REMIND_TYPE = #{remindType,jdbcType=VARCHAR},
+      </if>
+      <if test="accessUser != null">
+        ACCESS_USER = #{accessUser,jdbcType=VARCHAR},
+      </if>
+      <if test="editableUser != null">
+        EDITABLE_USER = #{editableUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDatetime != null">
+        CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workPhone != null">
+        WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevel != null">
+        SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="securityLevelDetail != null">
+        SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevel != null">
+        URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="urgencyLevelReason != null">
+        URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="hasStockTrading != null">
+        HAS_STOCK_TRADING = #{hasStockTrading,jdbcType=CHAR},
+      </if>
+      <if test="unifiedsocialCode != null">
+        UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        VERSION = #{version,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.CrtExpiredRecord">
+    update CRT_EXPIRED_RECORD
+    set DOC_ID = #{docId,jdbcType=VARCHAR},
+      TITLE = #{title,jdbcType=VARCHAR},
+      CLIENT_ID = #{clientId,jdbcType=VARCHAR},
+      CHECK_DATE = #{checkDate,jdbcType=TIMESTAMP},
+      CURRENT_STATUS = #{currentStatus,jdbcType=VARCHAR},
+      CURRENT_OPERATOR = #{currentOperator,jdbcType=VARCHAR},
+      CURRENT_ACTIVITY_NAME = #{currentActivityName,jdbcType=VARCHAR},
+      RECORD_ID = #{recordId,jdbcType=VARCHAR},
+      REMIND_TYPE = #{remindType,jdbcType=VARCHAR},
+      ACCESS_USER = #{accessUser,jdbcType=VARCHAR},
+      EDITABLE_USER = #{editableUser,jdbcType=VARCHAR},
+      CREATED_DATETIME = #{createdDatetime,jdbcType=TIMESTAMP},
+      WORK_PHONE = #{workPhone,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      SECURITY_LEVEL = #{securityLevel,jdbcType=VARCHAR},
+      SECURITY_LEVEL_DETAIL = #{securityLevelDetail,jdbcType=VARCHAR},
+      URGENCY_LEVEL = #{urgencyLevel,jdbcType=VARCHAR},
+      URGENCY_LEVEL_REASON = #{urgencyLevelReason,jdbcType=VARCHAR},
+      HAS_STOCK_TRADING = #{hasStockTrading,jdbcType=CHAR},
+      UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

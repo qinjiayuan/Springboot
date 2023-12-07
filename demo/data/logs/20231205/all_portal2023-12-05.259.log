@@ -1,0 +1,1 @@
+2023-12-05 09:02:15.738  DEBUG [main                          ] - o.s.b.c.config.ConfigFileApplicationListener [224] : Loaded config file 'file:/D:/demo/target/classes/application.properties' (classpath:/application.properties)

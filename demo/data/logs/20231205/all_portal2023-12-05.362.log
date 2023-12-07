@@ -1,0 +1,4 @@
+2023-12-05 09:13:11.030  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [443] : Ignored because not a concrete top-level class: file [D:\demo\target\classes\com\example\demo\test\impl\Testservice.class]
+2023-12-05 09:13:11.043  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\impl\TestserviceImpl.class]
+2023-12-05 09:13:11.046  DEBUG [main                          ] - o.s.c.a.ClassPathBeanDefinitionScanner       [437] : Identified candidate component class: file [D:\demo\target\classes\com\example\demo\test\testSpring.class]
+2023-12-05 09:13:11.703  DEBUG [main                          ] - o.s.b.f.support.DefaultListableBeanFactory   [213] : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'

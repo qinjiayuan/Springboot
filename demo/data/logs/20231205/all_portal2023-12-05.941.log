@@ -1,0 +1,2 @@
+2023-12-05 15:28:28.090  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mationConfigServletWebServerApplicationContext[0;39m[1002]: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1534f01b, started on Tue Dec 05 15:18:21 CST 2023
+2023-12-05 15:28:28.093  [39mDEBUG[0;39m [[32mThread-3                      [0;39m] - [34mo.s.j.e.annotation.AnnotationMBeanExporter   [0;39m[451]: Unregistering JMX-exposed beans on shutdown

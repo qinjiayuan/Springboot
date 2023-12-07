@@ -1,0 +1,4 @@
+2023-12-05 08:54:27.133  DEBUG [HikariPool-1 housekeeper      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - Before cleanup stats (total=1, active=1, idle=0, waiting=0)
+2023-12-05 08:54:27.139  DEBUG [HikariPool-1 housekeeper      ] - com.zaxxer.hikari.pool.HikariPool            [411] : HikariPool-1 - After cleanup  stats (total=1, active=1, idle=0, waiting=0)
+2023-12-05 08:54:27.221  DEBUG [http-nio-8080-exec-1          ] - s.OtcDerivativeCounterpartyMapper.selectAll  [137] : ==> Parameters: true(String), 测试产品关注类(String)
+2023-12-05 08:54:27.342  DEBUG [http-nio-8080-exec-1          ] - s.OtcDerivativeCounterpartyMapper.selectAll  [137] : <==      Total: 4
