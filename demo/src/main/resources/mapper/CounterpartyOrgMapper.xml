@@ -462,7 +462,7 @@
         BIG_CLIENT = #{bigClient,jdbcType=VARCHAR},
       </if>
     </set>
-    where ID = #{id,jdbcType=VARCHAR}
+    where CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="model.CounterpartyOrg">
     update COUNTERPARTY_ORG

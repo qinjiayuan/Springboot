@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.ProcessExpiredRemind;
 import model.ProcessExpiredRemindExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ProcessExpiredRemindMapper {
     int deleteByPrimaryKey(String id);
 

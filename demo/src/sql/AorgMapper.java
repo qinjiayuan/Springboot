@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.Aorg;
 import model.AorgExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface AorgMapper {
     int deleteByPrimaryKey(String orgid);
 
@@ -18,4 +20,6 @@ public interface AorgMapper {
     int updateByPrimaryKeySelective(Aorg record);
 
     int updateByPrimaryKey(Aorg record);
+
+
 }

@@ -213,6 +213,7 @@
     </set>
     where ORGID = #{orgid,jdbcType=VARCHAR}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="model.Aorg">
     update AORG
     set PARENTID = #{parentid,jdbcType=VARCHAR},

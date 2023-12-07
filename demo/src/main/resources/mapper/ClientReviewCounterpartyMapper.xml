@@ -246,6 +246,17 @@
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+
+  <update id ="updatebyrecordId" parameterType="model.ClientReviewCounterparty">
+    update CLIENT_REVIEW_COUNTERPARTY SET
+    <if test="agreeInfo !=null"/>
+    AGREE_INFO = #{agreeInfo,jdbcType=VARCHAR},
+    <if test="benefitOverFlag !=null"/>
+    BENEFIT_OVER_FLAG = #{benefitOverFlag,jdbcType=VARCHAR}
+    WHERE
+    RECORD_ID = #{recordId,jdbcType=VARCHAR}
+
+  </update>
   <update id="updateByPrimaryKey" parameterType="model.ClientReviewCounterparty">
     update CLIENT_REVIEW_COUNTERPARTY
     set RECORD_ID = #{recordId,jdbcType=VARCHAR},

@@ -19,9 +19,21 @@ public class ClientReviewDetail {
 
     private Date createdDatetime;
 
+    private String reviewLog;
+
     public String getId() {
         return id;
     }
+
+    private String suitabilityLog;
+
+    public void setSuitabilityLog(String suitabilityLog){this.suitabilityLog=suitabilityLog;}
+
+    public String getSuitabilityLog(){return suitabilityLog;}
+
+    public void setReviewLog(String reviewLog){this.reviewLog=reviewLog;};
+
+    public String getReviewLog(){return reviewLog;}
 
     public void setId(String id) {
         this.id = id;

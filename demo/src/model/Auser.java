@@ -5,6 +5,8 @@ import java.util.Date;
 public class Auser {
     private String userid;
 
+    private String deptCode;
+
     private String username;
 
     private String adminid;
@@ -107,6 +109,14 @@ public class Auser {
 
     public String getAdminid() {
         return adminid;
+    }
+
+    public String getDeptCode() {
+        return deptCode;
+    }
+
+    public void setDeptCode(String deptCode) {
+        this.deptCode = deptCode;
     }
 
     public void setAdminid(String adminid) {

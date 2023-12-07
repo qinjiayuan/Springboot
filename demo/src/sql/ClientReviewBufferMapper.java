@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.ClientReviewBuffer;
 import model.ClientReviewBufferExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ClientReviewBufferMapper {
     int deleteByPrimaryKey(String id);
 

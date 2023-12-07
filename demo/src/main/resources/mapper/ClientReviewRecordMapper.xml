@@ -403,7 +403,7 @@
   <select id="selectflownum" parameterType="java.lang.String" resultMap="BaseResultMap">
     SELECT
      *
-    FROM OTC_DERIVATIVE_COUNTERPARTY crr
+    FROM CLIENT_REVIEW_RECORD crr
     WHERE
       crr.CLIENT_NAME = #{corporateName}
     AND
@@ -414,6 +414,14 @@
     DELETE FROM CLIENT_REVIEW_RECORD WHERE DOC_ID in  #{docid}
   </delete>
 
+  <update id="updatebyrecordId" parameterType="model.ClientReviewRecord">
+    UPDATE CLIENT_REVIEW_RECORD SET
+    ACCOUNTING_FIRM_NAME = #{accountingFirmName,jdbcType=VARCHAR},
+    SALE_PERSON = #{salePerson,jdbcType=VARCHAR},
+    VERSION = #{version,jdbcType=VARCHAR}
+    WHERE  RECORD_ID =#{recordId,jdbcType=VARCHAR}
+
+  </update>
   <update id="updateByPrimaryKey" parameterType="model.ClientReviewRecord">
     update CLIENT_REVIEW_RECORD
     set DOC_ID = #{docId,jdbcType=VARCHAR},

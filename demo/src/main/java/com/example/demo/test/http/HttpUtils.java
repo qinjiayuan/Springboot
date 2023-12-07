@@ -204,5 +204,9 @@ public class HttpUtils {
         return responseMsg;
     }
 
+    public void uploadFile(){
+        String url = "http://10.2.145.216:9090/clientreview/file/upload";
+    }
+
 
 }

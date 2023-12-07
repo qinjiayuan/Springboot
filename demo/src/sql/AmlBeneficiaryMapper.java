@@ -1,7 +1,9 @@
 package sql;
 
 import model.AmlBeneficiary;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface AmlBeneficiaryMapper {
     int deleteByPrimaryKey(String id);
 

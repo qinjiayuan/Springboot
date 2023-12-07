@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.CrtExpiredRecord;
 import model.CrtExpiredRecordExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface CrtExpiredRecordMapper {
     int deleteByPrimaryKey(String id);
 

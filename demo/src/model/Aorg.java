@@ -5,6 +5,8 @@ import java.util.Date;
 public class Aorg {
     private String orgid;
 
+    private String userId;
+
     private String parentid;
 
     private String orgname;
@@ -28,6 +30,10 @@ public class Aorg {
     private String leaderId;
 
     private String deptCode;
+
+    public String getUserId(){return userId;}
+
+    public void setUserId(String userId){this.userId=userId;}
 
     public String getOrgid() {
         return orgid;

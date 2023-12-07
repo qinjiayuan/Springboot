@@ -1,5 +1,8 @@
 package model;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+
 public class AmlBeneficiary {
     private String id;
 

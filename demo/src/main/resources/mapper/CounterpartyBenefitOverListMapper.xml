@@ -84,7 +84,7 @@
       #{prodId,jdbcType=VARCHAR}, #{assets20millionFlag,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="model.CounterpartyBenefitOverList">
-    insert into COUNTERPARTY_BENEFIT_OVER_LIST
+   INSERT INTO COUNTERPARTY_BENEFIT_OVER_LIST
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="idNo != null">
         ID_NO,
@@ -198,7 +198,7 @@
   <select id="selectByClientId" parameterType="java.lang.String" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"/>
-    FROM OTC_DERIVATIVE_COUNTERPARTY WHERE CLIENT_ID  = #{clientId,jdbcType=VARCHAR}
+    FROM COUNTERPARTY_BENEFIT_OVER_LIST WHERE CLIENT_ID  = #{clientId,jdbcType=VARCHAR}
   </select>
 
 </mapper>

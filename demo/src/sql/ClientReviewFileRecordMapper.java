@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.ClientReviewFileRecord;
 import model.ClientReviewFileRecordExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ClientReviewFileRecordMapper {
     int deleteByPrimaryKey(String s3FileId);
 

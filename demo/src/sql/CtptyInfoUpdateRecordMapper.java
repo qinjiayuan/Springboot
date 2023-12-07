@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.CtptyInfoUpdateRecord;
 import model.CtptyInfoUpdateRecordExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface CtptyInfoUpdateRecordMapper {
     int deleteByPrimaryKey(String id);
 

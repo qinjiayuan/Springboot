@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.Auser;
 import model.AuserExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface AuserMapper {
     int deleteByPrimaryKey(String userid);
 
@@ -18,4 +20,8 @@ public interface AuserMapper {
     int updateByPrimaryKeySelective(Auser record);
 
     int updateByPrimaryKey(Auser record);
+
+    List<Auser> selectExists(String username);
+
+
 }

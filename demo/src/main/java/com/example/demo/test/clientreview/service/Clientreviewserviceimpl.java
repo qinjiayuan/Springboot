@@ -1,30 +1,35 @@
 package com.example.demo.test.clientreview.service;
 
+import com.alibaba.fastjson.JSONArray;
+
 import com.example.demo.test.http.HttpUtils;
-import model.ClientReviewRecord;
-import model.CounterpartyBenefitOverList;
-import model.CounterpartyOrg;
-import model.OtcDerivativeCounterparty;
+import model.*;
+import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sql.ClientReviewRecordMapper;
-import sql.CounterpartyBenefitOverListMapper;
-import sql.CounterpartyOrgMapper;
-import sql.OtcDerivativeCounterpartyMapper;
-
+import org.springframework.web.multipart.MultipartFile;
+import sql.*;
+import org.json.JSONObject;
 import javax.annotation.Resource;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
@@ -39,34 +44,40 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
     @Resource
     private OtcDerivativeCounterpartyMapper otcDerivativeCounterpartyMapper;
 
-    @Autowired
-    private OtcDerivativeCounterparty otcDerivativeCounterparty;
-
-    @Autowired
-    private ClientReviewRecord clientReviewRecord;
-
     @Resource
     private ClientReviewRecordMapper clientReviewRecordMapper;
 
-    @Autowired
-    private CounterpartyOrg counterpartyOrg;
+    @Resource
+    private AuserMapper auserMapper;
 
     @Resource
     private CounterpartyOrgMapper counterpartyOrgMapper;
 
-    @Autowired
-    private HttpClient httpClient;
-
     @Resource
     private CounterpartyBenefitOverListMapper counterpartyBenefitOverListMapper;
 
+    @Resource
+    private ClientReviewCounterpartyMapper clientReviewCounterpartyMapper;
+
+    @Resource
+    private ClientReviewDetailMapper clientReviewDetailMapper;
+
+    @Resource
+    private ClientReviewFileRecordMapper clientReviewFileRecordMapper;
+
     @Override
-    public void createFlow(String corporateName , String customermanager , String isnew){
+    public void createFlow(String corporateName , String customermanager , String isnew) throws Exception {
+        List<String> file_name = Arrays.asList("主体/管理人文件", "32", "CSRC", "QCC_CREDIT_RECORD", "CEIDN", "QCC_ARBITRATION", "QCC_AUDIT_INSTITUTION", "CCPAIMIS", "CC", "P2P", "OTHERS", "NECIPS", "CJO");
         try{
             log.info("corporateName:{},customermanager:{},isnew:{}",corporateName,customermanager,isnew);
             SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-            String checkdate = today.format(date);
+            Date datenow = new Date();
+            String checkdate = today.format(datenow);
+//            查询客户经理
+            List<Auser> manager = new ArrayList<>();
+            manager = auserMapper.selectExists(customermanager);
+
+
 //            处理存量回访流程
             List<ClientReviewRecord> flownum =  new ArrayList<>();
             flownum = clientReviewRecordMapper.selectflownum(corporateName);
@@ -83,6 +94,7 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
 //            设置台账和机构中符合的起流程的条件
             CounterpartyOrg counterpartyOrg = new CounterpartyOrg();
             counterpartyOrg.setAmlMonitorFlag("true");
+            counterpartyOrg.setCorporateName(corporateName);
             counterpartyOrgMapper.updateByPrimaryKeySelective(counterpartyOrg);
 
             OtcDerivativeCounterparty configuration = new OtcDerivativeCounterparty();
@@ -93,13 +105,15 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
             configuration.setAllowBusiType("TRS,OPTION,PRODUCT");
             configuration.setMasterAgreementDate(LocalDate.now());
             configuration.setReturnVisitDate(LocalDate.now());
+            configuration.setCustomerManager(manager.get(0).getUserid());
+            configuration.setIntroductionDepartment(manager.get(0).getDeptCode());
             otcDerivativeCounterpartyMapper.updateByCorporatename(configuration);
 
 //            设置投资者明细
             List<OtcDerivativeCounterparty> prodclient = new ArrayList<>();
             prodclient = otcDerivativeCounterpartyMapper.selectAll(corporateName);
             if(prodclient.isEmpty()||prodclient==null)
-            {throw new RuntimeException("该公司不存在");}
+            {throw new Exception("公司不存在");}
             List<String> prodId = prodclient.stream()
                     .filter(tmp ->"03".equals(tmp.getIsProdHolder()))
                     .map(OtcDerivativeCounterparty::getClientId)
@@ -142,8 +156,9 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
 
 //            根据产品数量来判断是否需要走多产品接口
             if(1<prodId.size()){
-                String url = Env + "/clientreview/checkMultipleClient";
-                HttpPost httpPost = new HttpPost(url);
+                String url1 = Env + "/clientreview/checkMultipleClient";
+                String result1 = HttpUtils.postMap(url1,datas);
+                log.info(result1);
 
             }
 
@@ -151,15 +166,58 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
             String url1 = Env + "/clientreview/checkSingleClient";
 //            postmap方法中是Map<String,String> 所以入参也要是同样的类型
             String result = HttpUtils.postMap(url1, datas);
+            log.info(result);
 
+//            查出发起流程的数据
+            List<ClientReviewRecord> recordIdList = new ArrayList<>();
+            recordIdList = clientReviewRecordMapper.selectflownum(corporateName);
+            recordIdList.forEach(recordId -> {
+                ClientReviewDetail clientReviewDetail = new ClientReviewDetail();
+                clientReviewDetail.setId(getid());
+                clientReviewDetail.setRecordId(recordId.getRecordId());
+                clientReviewDetail.setClientName("11");
+                clientReviewDetail.setClientPosition("老师");
+                clientReviewDetail.setEmail("123@qq.com");
+                clientReviewDetail.setPhone("13112345678");
+                clientReviewDetail.setReviewLog("123");
+                clientReviewDetail.setSuitability("N");
+                clientReviewDetail.setSuitabilityLog("123");
+                clientReviewDetail.setCreatedDatetime(datenow);
+                clientReviewDetailMapper.insertSelective(clientReviewDetail);
 
+                ClientReviewCounterparty clientReviewCounterparty = new ClientReviewCounterparty();
+                clientReviewCounterparty.setAgreeInfo("Y");
+                clientReviewCounterparty.setBenefitOverFlag("1");
+                clientReviewCounterparty.setRecordId(recordId.getRecordId());
+                clientReviewCounterpartyMapper.updatebyrecordId(clientReviewCounterparty);
 
+                ClientReviewRecord updateinfo = new ClientReviewRecord();
+//               isnew=1 ->新流程
+                updateinfo.setVersion("1".equals(isnew) ? "202210" : null);
+                updateinfo.setAccountingFirmName("测试专用");
+                updateinfo.setSalePerson("1".equals(isnew) ? "renyu" : "wensiya");
+                updateinfo.setRecordId(recordId.getRecordId());
+                clientReviewRecordMapper.updatebyrecordId(updateinfo);
+                List <String> s3FileId = gets3filed();
 
+                ClientReviewFileRecord clientReviewFileRecord = new ClientReviewFileRecord();
+                for(int i =0;i < s3FileId.size();i++){
+                    clientReviewFileRecord.setRecordId(recordId.getRecordId());
+                    clientReviewFileRecord.setS3FileId(s3FileId.get(i));
+                    clientReviewFileRecord.setFileBelong(file_name.get(i));
+                    clientReviewFileRecordMapper.updateByPrimaryKeySelective(clientReviewFileRecord);
+                }
 
+            });
+
+//            查询标题并且返回
 
         }
+
+
         catch(Exception e){
             log.info(e.toString());
+            throw e;
         }
     }
 
@@ -192,7 +250,69 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
         return sb.toString();
     }
 
+    public  List<String> gets3filed() {
 
+
+
+        String url = "http://10.2.145.216:9090/clientreview/file/upload";
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        List<String> s3id = new ArrayList<>();
+        try{
+
+            HttpPost httpPost = new HttpPost(url);
+            File file = new File("src/main/intefacation/20220318144757.png");
+            log.info("file :"+file.getName());
+            if(!file.exists()){
+                log.info("File is no exists");
+            }else{
+                log.info("File is exisits");
+            }
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+            nameValuePairs.add(new BasicNameValuePair("fileBelong","主体/管理人文件"));
+            nameValuePairs.add(new BasicNameValuePair("productName","主体/管理人文件"));
+
+            MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+            multipartEntityBuilder.setCharset(Consts.UTF_8);
+            for(NameValuePair nameValuePair:nameValuePairs){
+                multipartEntityBuilder.addTextBody(nameValuePair.getName(),nameValuePair.getValue(), ContentType.create("text/plain", Consts.UTF_8));
+            }
+            for(int i = 0; i < 13 ; i++) {
+                multipartEntityBuilder.addBinaryBody("files", Files.newInputStream(file.toPath()), ContentType.MULTIPART_FORM_DATA, file.getName());
+            }
+            httpPost.setHeader("name","sunbin");
+            HttpEntity httpEntity = multipartEntityBuilder.build();
+            httpPost.setEntity(httpEntity);
+
+            CloseableHttpResponse response = httpClient.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+            String msg1 = EntityUtils
+                    .toString(response.getEntity());
+            log.info(msg1);
+
+            JSONObject jsonObject = new JSONObject(msg1);
+            String content = String.valueOf(jsonObject.getJSONArray("data"));
+            //该方法是将一个字符串转换成一个json数组对象
+            JSONArray arr = JSONArray.parseArray(content);
+
+
+            for(int i = 0 ; i< arr.size();i++){
+                com.alibaba.fastjson.JSONObject obj = arr.getJSONObject(i);
+                String s3fileid = obj.getString("s3FileId");
+                s3id.add(s3fileid);
+            }
+            log.info(s3id.toString());
+            return s3id;
+
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }finally{
+            if(httpClient !=null){
+                httpClient.getConnectionManager().shutdown();
+            }
+
+        }
+    }
 
 
 }

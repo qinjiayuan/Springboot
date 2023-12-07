@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.CrtExpiredRecordUnion;
 import model.CrtExpiredRecordUnionExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface CrtExpiredRecordUnionMapper {
     int deleteByPrimaryKey(String id);
 

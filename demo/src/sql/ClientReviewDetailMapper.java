@@ -4,13 +4,15 @@ import java.util.List;
 import model.ClientReviewDetail;
 import model.ClientReviewDetailExample;
 import model.ClientReviewDetailWithBLOBs;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ClientReviewDetailMapper {
     int deleteByPrimaryKey(String id);
 
     int insert(ClientReviewDetailWithBLOBs record);
 
-    int insertSelective(ClientReviewDetailWithBLOBs record);
+    int insertSelective(ClientReviewDetail record);
 
     List<ClientReviewDetailWithBLOBs> selectByExampleWithBLOBs(ClientReviewDetailExample example);
 

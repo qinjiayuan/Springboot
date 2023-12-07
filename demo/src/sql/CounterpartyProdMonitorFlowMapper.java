@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.CounterpartyProdMonitorFlow;
 import model.CounterpartyProdMonitorFlowExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface CounterpartyProdMonitorFlowMapper {
     int deleteByPrimaryKey(String id);
 

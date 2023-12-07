@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.AmlCounterparty;
 import model.AmlCounterpartyExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface AmlCounterpartyMapper {
     int deleteByPrimaryKey(String id);
 

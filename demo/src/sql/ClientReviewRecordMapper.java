@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.ClientReviewRecord;
 import model.ClientReviewRecordExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface ClientReviewRecordMapper {
     int deleteByPrimaryKey(String id);
 
@@ -22,4 +24,6 @@ public interface ClientReviewRecordMapper {
     List<ClientReviewRecord> selectflownum(String corporateName);
 
     int deleteflow(String docid);
+
+    int updatebyrecordId(ClientReviewRecord record );
 }

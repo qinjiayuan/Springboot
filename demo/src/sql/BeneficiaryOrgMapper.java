@@ -3,7 +3,9 @@ package sql;
 import java.util.List;
 import model.BeneficiaryOrg;
 import model.BeneficiaryOrgExample;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface BeneficiaryOrgMapper {
     int deleteByPrimaryKey(String id);
 
