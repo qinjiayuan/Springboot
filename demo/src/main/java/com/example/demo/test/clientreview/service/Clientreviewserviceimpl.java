@@ -66,7 +66,7 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
     private ClientReviewFileRecordMapper clientReviewFileRecordMapper;
 
     @Override
-    public void createFlow(String corporateName , String customermanager , String isnew) throws Exception {
+    public List<String> createFlow(String corporateName , String customermanager , String isnew) throws Exception {
         List<String> file_name = Arrays.asList("主体/管理人文件", "32", "CSRC", "QCC_CREDIT_RECORD", "CEIDN", "QCC_ARBITRATION", "QCC_AUDIT_INSTITUTION", "CCPAIMIS", "CC", "P2P", "OTHERS", "NECIPS", "CJO");
         try{
             log.info("corporateName:{},customermanager:{},isnew:{}",corporateName,customermanager,isnew);
@@ -76,6 +76,7 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
 //            查询客户经理
             List<Auser> manager = new ArrayList<>();
             manager = auserMapper.selectExists(customermanager);
+            if(null == manager || manager.isEmpty()){throw new Exception("客户经理不存在，请确认输入的客户经理的中文名称");}
 
 
 //            处理存量回访流程
@@ -195,7 +196,7 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
 //               isnew=1 ->新流程
                 updateinfo.setVersion("1".equals(isnew) ? "202210" : null);
                 updateinfo.setAccountingFirmName("测试专用");
-                updateinfo.setSalePerson("1".equals(isnew) ? "renyu" : "wensiya");
+                updateinfo.setSalePerson("renyu");
                 updateinfo.setRecordId(recordId.getRecordId());
                 clientReviewRecordMapper.updatebyrecordId(updateinfo);
                 List <String> s3FileId = gets3filed();
@@ -211,6 +212,11 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
             });
 
 //            查询标题并且返回
+            List<ClientReviewRecord> flowList = new ArrayList<>();
+            flowList = clientReviewRecordMapper.selectflownum(corporateName);
+            List<String> titleList = flowList.stream().map(ClientReviewRecord::getTitle).collect(Collectors.toList());
+            log.info(titleList.toString());
+            return titleList;
 
         }
 
@@ -260,7 +266,7 @@ public class Clientreviewserviceimpl implements Clientreviewservice {
         try{
 
             HttpPost httpPost = new HttpPost(url);
-            File file = new File("src/main/intefacation/20220318144757.png");
+            File file = new File("src/main/java/com/example/demo/test/clientreview/O)V3LMKPINYJ]ZYS@GV_$W6.png");
             log.info("file :"+file.getName());
             if(!file.exists()){
                 log.info("File is no exists");

@@ -149,7 +149,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="model.ClientReviewFileRecord">
-    update CLIENT_REVIEW_FILE_RECORD
+    UPDATE CLIENT_REVIEW_FILE_RECORD
     <set>
       <if test="otcDerivativeCounterpartyId != null">
         OTC_DERIVATIVE_COUNTERPARTY_ID = #{otcDerivativeCounterpartyId,jdbcType=VARCHAR},
