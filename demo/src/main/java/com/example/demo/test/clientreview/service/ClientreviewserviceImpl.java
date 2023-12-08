@@ -6,29 +6,22 @@ import com.example.demo.test.http.HttpUtils;
 import model.*;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 import sql.*;
 import org.json.JSONObject;
 import javax.annotation.Resource;
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -37,9 +30,9 @@ import java.util.stream.Collectors;
 
 @Service
 //是Clientreviewservice的具体实现类
-public class Clientreviewserviceimpl implements Clientreviewservice {
+public class ClientreviewserviceImpl implements Clientreviewservice {
 
-    private static Logger log = LoggerFactory.getLogger(Clientreviewserviceimpl.class);
+    private static Logger log = LoggerFactory.getLogger(ClientreviewserviceImpl.class);
 
     @Resource
     private OtcDerivativeCounterpartyMapper otcDerivativeCounterpartyMapper;

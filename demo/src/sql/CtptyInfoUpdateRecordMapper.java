@@ -15,7 +15,7 @@ public interface CtptyInfoUpdateRecordMapper {
 
     List<CtptyInfoUpdateRecord> selectByExample(CtptyInfoUpdateRecordExample example);
 
-    CtptyInfoUpdateRecord selectByPrimaryKey(String id);
+    List<CtptyInfoUpdateRecord> selectByPrimaryKey();
 
     int updateByPrimaryKeySelective(CtptyInfoUpdateRecord record);
 
