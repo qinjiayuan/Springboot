@@ -21,7 +21,7 @@ public interface AuserMapper {
 
     int updateByPrimaryKey(Auser record);
 
-    List<Auser> selectExists(String username);
+    List<Auser> selectExists(String userName);
 
 
 }

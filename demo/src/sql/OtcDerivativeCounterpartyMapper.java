@@ -19,12 +19,16 @@ public interface OtcDerivativeCounterpartyMapper {
     OtcDerivativeCounterparty selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(OtcDerivativeCounterparty record);
-
+//    OtcDerivativeCounterparty record
     int updateByPrimaryKey(OtcDerivativeCounterparty record);
 
     List<OtcDerivativeCounterparty> selectAll(String corporateName);
 
+    List<OtcDerivativeCounterparty> selectClient();
+
     List<OtcDerivativeCounterparty> selectClientbyid(String clientid);
+
+    List<OtcDerivativeCounterparty> selectSignatureNameByClientIdString(String clientId);
 
 
 

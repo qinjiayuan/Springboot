@@ -150,31 +150,29 @@ public class OtcDerivativeCounterparty {
 
     private String returnVisitDataStatus;
 
-    private Short extranProscaleRatio;
+    private BigInteger extranProscaleRatio;
 
-    private Short marginBalance;
+    private BigInteger marginBalance;
 
     private Date productEstabDate;
 
-    private Short payeeMinTransferAmount;
+    private BigInteger payerMinTransferAmount;
 
-    private Short payerMinTransferAmount;
-
-    private Short clientCoefficient;
+    private BigInteger clientCoefficient;
 
     private String opType;
 
-    private Short putTakeBalance;
+    private BigInteger putTakeBalance;
 
     private String guaranteeAgreementId;
 
-    private Short executePricePrecision;
+    private BigInteger executePricePrecision;
 
-    private Short blockPricePrecision;
+    private BigInteger blockPricePrecision;
 
-    private Short initialPricePrecision;
+    private BigInteger initialPricePrecision;
 
-    private Short finalPricePrecision;
+    private BigInteger finalPricePrecision;
 
     private String createBy;
 
@@ -208,15 +206,15 @@ public class OtcDerivativeCounterparty {
 
     private String guaranteeAgrmtFilePath;
 
-    private Short commissionRate;
+    private BigInteger commissionRate;
 
     private String allowBusiType;
 
     private String partialMarginFlag;
 
-    private Short commissionRateHk;
+    private BigInteger commissionRateHk;
 
-    private Short premiumFeeRatio;
+    private BigInteger premiumFeeRatio;
 
     private String interestType;
 
@@ -226,17 +224,17 @@ public class OtcDerivativeCounterparty {
 
     private String amlMonitorFlag;
 
-    private Short cptyNotionalLimit;
+    private BigInteger cptyNotionalLimit;
 
     private String benefitOverFlag;
 
     private Long fiid;
 
-    private Short hkFeeRateUs;
+    private BigInteger hkFeeRateUs;
 
-    private Short hkFeeRateHk;
+    private BigInteger hkFeeRateHk;
 
-    private Short hkFixedRate;
+    private BigInteger hkFixedRate;
 
     private String relatedPartyFlag;
 
@@ -254,7 +252,7 @@ public class OtcDerivativeCounterparty {
 
     private String idKind;
 
-    private Short grantBalance;
+    private BigInteger grantBalance;
 
     private Date grantBalanceExpireDate;
 
@@ -266,13 +264,13 @@ public class OtcDerivativeCounterparty {
 
     private Date prodEndDate;
 
-    private Short abFuturesPremiumRate;
+    private BigInteger abFuturesPremiumRate;
 
-    private Short abFuturesLevelFactor;
+    private BigInteger abFuturesLevelFactor;
 
     private String prodTypeOther;
 
-    private Short spread;
+    private BigInteger spread;
 
     private String leiCode;
 
@@ -886,19 +884,19 @@ public class OtcDerivativeCounterparty {
         this.returnVisitDataStatus = returnVisitDataStatus;
     }
 
-    public Short getExtranProscaleRatio() {
+    public BigInteger getExtranProscaleRatio() {
         return extranProscaleRatio;
     }
 
-    public void setExtranProscaleRatio(Short extranProscaleRatio) {
+    public void setExtranProscaleRatio(BigInteger extranProscaleRatio) {
         this.extranProscaleRatio = extranProscaleRatio;
     }
 
-    public Short getMarginBalance() {
+    public BigInteger getMarginBalance() {
         return marginBalance;
     }
 
-    public void setMarginBalance(Short marginBalance) {
+    public void setMarginBalance(BigInteger marginBalance) {
         this.marginBalance = marginBalance;
     }
 
@@ -910,27 +908,21 @@ public class OtcDerivativeCounterparty {
         this.productEstabDate = productEstabDate;
     }
 
-    public Short getPayeeMinTransferAmount() {
-        return payeeMinTransferAmount;
-    }
-
-    public void setPayeeMinTransferAmount(Short payeeMinTransferAmount) {
-        this.payeeMinTransferAmount = payeeMinTransferAmount;
-    }
-
-    public Short getPayerMinTransferAmount() {
+    public BigInteger getPayeeMinTransferAmount() {
         return payerMinTransferAmount;
     }
 
-    public void setPayerMinTransferAmount(Short payerMinTransferAmount) {
+    public void setPayeeMinTransferAmount(BigInteger payeMinTransferAmount) {
         this.payerMinTransferAmount = payerMinTransferAmount;
     }
 
-    public Short getClientCoefficient() {
+
+
+    public BigInteger getClientCoefficient() {
         return clientCoefficient;
     }
 
-    public void setClientCoefficient(Short clientCoefficient) {
+    public void setClientCoefficient(BigInteger clientCoefficient) {
         this.clientCoefficient = clientCoefficient;
     }
 
@@ -942,11 +934,11 @@ public class OtcDerivativeCounterparty {
         this.opType = opType;
     }
 
-    public Short getPutTakeBalance() {
+    public BigInteger getPutTakeBalance() {
         return putTakeBalance;
     }
 
-    public void setPutTakeBalance(Short putTakeBalance) {
+    public void setPutTakeBalance(BigInteger putTakeBalance) {
         this.putTakeBalance = putTakeBalance;
     }
 
@@ -958,35 +950,35 @@ public class OtcDerivativeCounterparty {
         this.guaranteeAgreementId = guaranteeAgreementId;
     }
 
-    public Short getExecutePricePrecision() {
+    public BigInteger getExecutePricePrecision() {
         return executePricePrecision;
     }
 
-    public void setExecutePricePrecision(Short executePricePrecision) {
+    public void setExecutePricePrecision(BigInteger executePricePrecision) {
         this.executePricePrecision = executePricePrecision;
     }
 
-    public Short getBlockPricePrecision() {
+    public BigInteger getBlockPricePrecision() {
         return blockPricePrecision;
     }
 
-    public void setBlockPricePrecision(Short blockPricePrecision) {
+    public void setBlockPricePrecision(BigInteger blockPricePrecision) {
         this.blockPricePrecision = blockPricePrecision;
     }
 
-    public Short getInitialPricePrecision() {
+    public BigInteger getInitialPricePrecision() {
         return initialPricePrecision;
     }
 
-    public void setInitialPricePrecision(Short initialPricePrecision) {
+    public void setInitialPricePrecision(BigInteger initialPricePrecision) {
         this.initialPricePrecision = initialPricePrecision;
     }
 
-    public Short getFinalPricePrecision() {
+    public BigInteger getFinalPricePrecision() {
         return finalPricePrecision;
     }
 
-    public void setFinalPricePrecision(Short finalPricePrecision) {
+    public void setFinalPricePrecision(BigInteger finalPricePrecision) {
         this.finalPricePrecision = finalPricePrecision;
     }
 
@@ -1118,11 +1110,11 @@ public class OtcDerivativeCounterparty {
         this.guaranteeAgrmtFilePath = guaranteeAgrmtFilePath;
     }
 
-    public Short getCommissionRate() {
+    public BigInteger getCommissionRate() {
         return commissionRate;
     }
 
-    public void setCommissionRate(Short commissionRate) {
+    public void setCommissionRate(BigInteger commissionRate) {
         this.commissionRate = commissionRate;
     }
 
@@ -1142,19 +1134,19 @@ public class OtcDerivativeCounterparty {
         this.partialMarginFlag = partialMarginFlag;
     }
 
-    public Short getCommissionRateHk() {
+    public BigInteger getCommissionRateHk() {
         return commissionRateHk;
     }
 
-    public void setCommissionRateHk(Short commissionRateHk) {
+    public void setCommissionRateHk(BigInteger commissionRateHk) {
         this.commissionRateHk = commissionRateHk;
     }
 
-    public Short getPremiumFeeRatio() {
+    public BigInteger getPremiumFeeRatio() {
         return premiumFeeRatio;
     }
 
-    public void setPremiumFeeRatio(Short premiumFeeRatio) {
+    public void setPremiumFeeRatio(BigInteger premiumFeeRatio) {
         this.premiumFeeRatio = premiumFeeRatio;
     }
 
@@ -1190,11 +1182,11 @@ public class OtcDerivativeCounterparty {
         this.amlMonitorFlag = amlMonitorFlag;
     }
 
-    public Short getCptyNotionalLimit() {
+    public BigInteger getCptyNotionalLimit() {
         return cptyNotionalLimit;
     }
 
-    public void setCptyNotionalLimit(Short cptyNotionalLimit) {
+    public void setCptyNotionalLimit(BigInteger cptyNotionalLimit) {
         this.cptyNotionalLimit = cptyNotionalLimit;
     }
 
@@ -1214,27 +1206,27 @@ public class OtcDerivativeCounterparty {
         this.fiid = fiid;
     }
 
-    public Short getHkFeeRateUs() {
+    public BigInteger getHkFeeRateUs() {
         return hkFeeRateUs;
     }
 
-    public void setHkFeeRateUs(Short hkFeeRateUs) {
+    public void setHkFeeRateUs(BigInteger hkFeeRateUs) {
         this.hkFeeRateUs = hkFeeRateUs;
     }
 
-    public Short getHkFeeRateHk() {
+    public BigInteger getHkFeeRateHk() {
         return hkFeeRateHk;
     }
 
-    public void setHkFeeRateHk(Short hkFeeRateHk) {
+    public void setHkFeeRateHk(BigInteger hkFeeRateHk) {
         this.hkFeeRateHk = hkFeeRateHk;
     }
 
-    public Short getHkFixedRate() {
+    public BigInteger getHkFixedRate() {
         return hkFixedRate;
     }
 
-    public void setHkFixedRate(Short hkFixedRate) {
+    public void setHkFixedRate(BigInteger hkFixedRate) {
         this.hkFixedRate = hkFixedRate;
     }
 
@@ -1302,11 +1294,11 @@ public class OtcDerivativeCounterparty {
         this.idKind = idKind;
     }
 
-    public Short getGrantBalance() {
+    public BigInteger getGrantBalance() {
         return grantBalance;
     }
 
-    public void setGrantBalance(Short grantBalance) {
+    public void setGrantBalance(BigInteger grantBalance) {
         this.grantBalance = grantBalance;
     }
 
@@ -1350,19 +1342,19 @@ public class OtcDerivativeCounterparty {
         this.prodEndDate = prodEndDate;
     }
 
-    public Short getAbFuturesPremiumRate() {
+    public BigInteger getAbFuturesPremiumRate() {
         return abFuturesPremiumRate;
     }
 
-    public void setAbFuturesPremiumRate(Short abFuturesPremiumRate) {
+    public void setAbFuturesPremiumRate(BigInteger abFuturesPremiumRate) {
         this.abFuturesPremiumRate = abFuturesPremiumRate;
     }
 
-    public Short getAbFuturesLevelFactor() {
+    public BigInteger getAbFuturesLevelFactor() {
         return abFuturesLevelFactor;
     }
 
-    public void setAbFuturesLevelFactor(Short abFuturesLevelFactor) {
+    public void setAbFuturesLevelFactor(BigInteger abFuturesLevelFactor) {
         this.abFuturesLevelFactor = abFuturesLevelFactor;
     }
 
@@ -1374,11 +1366,11 @@ public class OtcDerivativeCounterparty {
         this.prodTypeOther = prodTypeOther;
     }
 
-    public Short getSpread() {
+    public BigInteger getSpread() {
         return spread;
     }
 
-    public void setSpread(Short spread) {
+    public void setSpread(BigInteger spread) {
         this.spread = spread;
     }
 

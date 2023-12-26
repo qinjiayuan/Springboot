@@ -5,47 +5,39 @@ import java.util.Date;
 public class CrtExpiredPersonRecord {
     private String id;
 
-    private String docId;
+    private String crtExpiredRecordId;
 
-    private String title;
+    private String amlBeneficiaryId;
 
-    private String clientId;
+    private String fileRecordId;
 
-    private Date checkDate;
+    private String handleType;
 
-    private String currentStatus;
+    private String otcDerivCtptyId;
 
-    private String currentOperator;
+    private Date validDateStartOld;
 
-    private String currentActivityName;
+    private Date validDateEndOld;
 
-    private String recordId;
+    private Date validDateStartNew;
 
-    private String remindType;
-
-    private String accessUser;
-
-    private String editableUser;
+    private Date validDateEndNew;
 
     private Date createdDatetime;
 
-    private String workPhone;
+    private String entityType;
 
-    private String phone;
+    private String name;
 
-    private String securityLevel;
+    private String idKind;
 
-    private String securityLevelDetail;
+    private String idNo;
 
-    private String urgencyLevel;
+    private String entityId;
 
-    private String urgencyLevelReason;
+    private String category;
 
-    private String hasStockTrading;
 
-    private String unifiedsocialCode;
-
-    private Short version;
 
     public String getId() {
         return id;
@@ -55,171 +47,97 @@ public class CrtExpiredPersonRecord {
         this.id = id;
     }
 
-    public String getDocId() {
-        return docId;
+    public String getCrtExpiredRecordId() {
+        return crtExpiredRecordId;
     }
 
-    public void setDocId(String docId) {
-        this.docId = docId;
+    public void setCrtExpiredRecordId(String crtExpiredRecordId) {
+        this.crtExpiredRecordId = crtExpiredRecordId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAmlBeneficiaryId() {
+        return amlBeneficiaryId;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAmlBeneficiaryId(String amlBeneficiaryId) {
+        this.amlBeneficiaryId = amlBeneficiaryId;
     }
 
-    public String getClientId() {
-        return clientId;
+    public String getFileRecordId() {
+        return fileRecordId;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setFileRecordId(String fileRecordId) {
+        this.fileRecordId = fileRecordId;
     }
 
-    public Date getCheckDate() {
-        return checkDate;
+    public String getHandleType() {
+        return handleType;
     }
 
-    public void setCheckDate(Date checkDate) {
-        this.checkDate = checkDate;
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
     }
 
-    public String getCurrentStatus() {
-        return currentStatus;
+    public String getOtcDerivCtptyId() {
+        return otcDerivCtptyId;
     }
 
-    public void setCurrentStatus(String currentStatus) {
-        this.currentStatus = currentStatus;
+    public void setOtcDerivCtptyId(String otcDerivCtptyId) {
+        this.otcDerivCtptyId = otcDerivCtptyId;
     }
 
-    public String getCurrentOperator() {
-        return currentOperator;
+    public Date getValidDateStartOld() {
+        return validDateStartOld;
     }
 
-    public void setCurrentOperator(String currentOperator) {
-        this.currentOperator = currentOperator;
+    public void setValidDateStartOld(Date validDateStartOld) {
+        this.validDateStartOld = validDateStartOld;
     }
 
-    public String getCurrentActivityName() {
-        return currentActivityName;
+    public Date getValidDateEndOld() {
+        return validDateEndOld;
     }
 
-    public void setCurrentActivityName(String currentActivityName) {
-        this.currentActivityName = currentActivityName;
+    public void setValidDateEndOld(Date validDateEndOld) {
+        this.validDateEndOld = validDateEndOld;
     }
 
-    public String getRecordId() {
-        return recordId;
+    public Date getValidDateStartNew() {
+        return validDateStartNew;
     }
 
-    public void setRecordId(String recordId) {
-        this.recordId = recordId;
+    public void setValidDateEndNew(Date validDateEndNew) {
+        this.validDateEndNew = validDateEndNew;
     }
 
-    public String getRemindType() {
-        return remindType;
+    public  String getEntityType(){return entityType;}
+
+    public void setEntityType(){this.entityType = entityType;}
+
+    public String getName() {
+        return name;
     }
 
-    public void setRemindType(String remindType) {
-        this.remindType = remindType;
+    public void setIdKind(String idKind) {
+        this.idKind = idKind;
     }
 
-    public String getAccessUser() {
-        return accessUser;
+    public String getIdKind() {
+        return idKind;
     }
 
-    public void setAccessUser(String accessUser) {
-        this.accessUser = accessUser;
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
     }
 
-    public String getEditableUser() {
-        return editableUser;
+    public String getCategory() {
+        return category;
     }
 
-    public void setEditableUser(String editableUser) {
-        this.editableUser = editableUser;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public Date getCreatedDatetime() {
-        return createdDatetime;
-    }
 
-    public void setCreatedDatetime(Date createdDatetime) {
-        this.createdDatetime = createdDatetime;
-    }
-
-    public String getWorkPhone() {
-        return workPhone;
-    }
-
-    public void setWorkPhone(String workPhone) {
-        this.workPhone = workPhone;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getSecurityLevel() {
-        return securityLevel;
-    }
-
-    public void setSecurityLevel(String securityLevel) {
-        this.securityLevel = securityLevel;
-    }
-
-    public String getSecurityLevelDetail() {
-        return securityLevelDetail;
-    }
-
-    public void setSecurityLevelDetail(String securityLevelDetail) {
-        this.securityLevelDetail = securityLevelDetail;
-    }
-
-    public String getUrgencyLevel() {
-        return urgencyLevel;
-    }
-
-    public void setUrgencyLevel(String urgencyLevel) {
-        this.urgencyLevel = urgencyLevel;
-    }
-
-    public String getUrgencyLevelReason() {
-        return urgencyLevelReason;
-    }
-
-    public void setUrgencyLevelReason(String urgencyLevelReason) {
-        this.urgencyLevelReason = urgencyLevelReason;
-    }
-
-    public String getHasStockTrading() {
-        return hasStockTrading;
-    }
-
-    public void setHasStockTrading(String hasStockTrading) {
-        this.hasStockTrading = hasStockTrading;
-    }
-
-    public String getUnifiedsocialCode() {
-        return unifiedsocialCode;
-    }
-
-    public void setUnifiedsocialCode(String unifiedsocialCode) {
-        this.unifiedsocialCode = unifiedsocialCode;
-    }
-
-    public Short getVersion() {
-        return version;
-    }
-
-    public void setVersion(Short version) {
-        this.version = version;
-    }
 }

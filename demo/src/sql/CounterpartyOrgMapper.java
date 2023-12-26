@@ -15,7 +15,7 @@ public interface CounterpartyOrgMapper {
 
     List<CounterpartyOrg> selectByExample(CounterpartyOrgExample example);
 
-    CounterpartyOrg selectByPrimaryKey(String id);
+    List<CounterpartyOrg> selectByPrimaryKey(String corporateName);
 
     int updateByPrimaryKeySelective(CounterpartyOrg record);
 

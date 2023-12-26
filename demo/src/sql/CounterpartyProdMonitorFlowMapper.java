@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CounterpartyProdMonitorFlowMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(String clientId);
 
     int insert(CounterpartyProdMonitorFlow record);
 
@@ -15,9 +15,11 @@ public interface CounterpartyProdMonitorFlowMapper {
 
     List<CounterpartyProdMonitorFlow> selectByExample(CounterpartyProdMonitorFlowExample example);
 
-    CounterpartyProdMonitorFlow selectByPrimaryKey(String id);
+    CounterpartyProdMonitorFlow selectByPrimaryKey(String corporateName);
 
     int updateByPrimaryKeySelective(CounterpartyProdMonitorFlow record);
 
     int updateByPrimaryKey(CounterpartyProdMonitorFlow record);
+
+    List<CounterpartyProdMonitorFlow> selectFlow(String corporateName);
 }

@@ -7,7 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CrtExpiredRecordMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(String recordId);
+
+    int deleteByunisocialcode(String unifiedsocialCode);
 
     int insert(CrtExpiredRecord record);
 
@@ -18,6 +20,10 @@ public interface CrtExpiredRecordMapper {
     CrtExpiredRecord selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(CrtExpiredRecord record);
+
+    List<CrtExpiredRecord> selectProcessingflow(CrtExpiredRecord record);
+
+
 
     int updateByPrimaryKey(CrtExpiredRecord record);
 }

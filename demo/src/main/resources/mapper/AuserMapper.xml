@@ -536,8 +536,8 @@
     </set>
     where USERID = #{userid,jdbcType=VARCHAR}
   </update>
-  <select id="selectExists" parameterType="model.Auser" resultMap="BaseResultMap">
-    SELECT a2.userid , a.dept_code FROM AORG a LEFT JOIN Auser a2 ON a.ORGID  = a2.ORGID WHERE a2.USERNAME =#{username,jdbcType=VARCHAR}
+  <select id="selectExists" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT a2.userid , a.dept_code FROM AORG a LEFT JOIN Auser a2 ON a.ORGID  = a2.ORGID WHERE a2.USERNAME = #{username,jdbcType=VARCHAR}
 
   </select>
   <update id="updateByPrimaryKey" parameterType="model.Auser">

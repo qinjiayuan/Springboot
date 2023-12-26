@@ -38,6 +38,19 @@
     from AML_BENEFICIARY
     where ID = #{id,jdbcType=VARCHAR}
   </select>
+  <select id="selectAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM AML_BENEFICIARY WHERE COUNTERPARTY_ID = #{counterpartyId,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectByclientName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM AML_BENEFICIARY ab
+    LEFT JOIN AML_COUNTERPARTY ac on ab.COUNTERPARTY_ID = ac.ID
+    WHERE ac.CLIENT_NAME = #{clientName,jdbcType=VARCHAR }
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from AML_BENEFICIARY
     where ID = #{id,jdbcType=VARCHAR}

@@ -17,6 +17,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sql.*;
 import org.json.JSONObject;
@@ -26,6 +27,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @Service
@@ -58,6 +60,9 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
     @Resource
     private ClientReviewFileRecordMapper clientReviewFileRecordMapper;
 
+    @Autowired
+    private Clientreviewservice clientreviewservice;
+
     @Override
     public List<String> createFlow(String corporateName , String customermanager , String isnew) throws Exception {
         List<String> file_name = Arrays.asList("主体/管理人文件", "32", "CSRC", "QCC_CREDIT_RECORD", "CEIDN", "QCC_ARBITRATION", "QCC_AUDIT_INSTITUTION", "CCPAIMIS", "CC", "P2P", "OTHERS", "NECIPS", "CJO");
@@ -66,10 +71,11 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
             SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
             Date datenow = new Date();
             String checkdate = today.format(datenow);
-//            查询客户经理
-            List<Auser> manager = new ArrayList<>();
-            manager = auserMapper.selectExists(customermanager);
-            if(null == manager || manager.isEmpty()){throw new Exception("客户经理不存在，请确认输入的客户经理的中文名称");}
+            if(!clientreviewservice.checkCorporation(corporateName)){
+                throw new Exception("该公司不存在");
+            }
+            String userId = clientreviewservice.checkCustomer(customermanager).get(0).getUserid();
+            String deptCode = clientreviewservice.checkCustomer(customermanager).get(0).getDeptCode();
 
 
 //            处理存量回访流程
@@ -99,8 +105,8 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
             configuration.setAllowBusiType("TRS,OPTION,PRODUCT");
             configuration.setMasterAgreementDate(LocalDate.now());
             configuration.setReturnVisitDate(LocalDate.now());
-            configuration.setCustomerManager(manager.get(0).getUserid());
-            configuration.setIntroductionDepartment(manager.get(0).getDeptCode());
+            configuration.setCustomerManager(userId);
+            configuration.setIntroductionDepartment(deptCode);
             otcDerivativeCounterpartyMapper.updateByCorporatename(configuration);
 
 //            设置投资者明细
@@ -137,6 +143,13 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
                 }
 
             });
+             for(OtcDerivativeCounterparty sddc : prodclient){
+                 OtcDerivativeCounterparty otcDerivativeCounterparty = new OtcDerivativeCounterparty();
+                 otcDerivativeCounterparty.setBenefitOverFlag("03".equals(sddc.getIsProdHolder())?"1":null);
+                 otcDerivativeCounterparty.setClientId(sddc.getClientId());
+                 otcDerivativeCounterpartyMapper.updateByPrimaryKeySelective(otcDerivativeCounterparty);
+             }
+
 
 //            查出统一信用代码
             String unifiledsocialcode = prodclient.get(0).getUnifiedsocialCode();
@@ -220,6 +233,22 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
         }
     }
 
+    @Override
+    public String getIdNo(){
+        int length = 18 ;
+
+        Random random = new Random();
+        StringBuilder idNo = new StringBuilder();
+
+        for(int i =0;i<18;i++)
+        {
+            int num = random.nextInt(10);
+            idNo.append(num);
+        }
+        return idNo.toString();
+    }
+
+    @Override
     public  String getid() {
         // 定义生成的字符串长度
         int length = 32;
@@ -248,6 +277,34 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
         // 输出生成的字符串
         return sb.toString();
     }
+
+//    AtomicInteger i = new AtomicInteger(0);
+
+    @Override
+    public List<String> select() throws Exception {
+//        System.out.println(i.addAndGet(1));
+
+        try {
+            String corporate_name = "测试产品关注类";
+            List<OtcDerivativeCounterparty> info = new ArrayList<>();
+            info = otcDerivativeCounterpartyMapper.selectAll(corporate_name);
+            if(!info.isEmpty()){
+                List<String> clientId = info.stream().filter(clientid -> "03".equals(clientid.getIsProdHolder())).map(OtcDerivativeCounterparty::getClientId).collect(Collectors.toList());
+                return clientId;
+            }
+            else {
+                throw new Exception("该机构不存在任何客户");
+            }
+
+        }
+        catch (Exception e){
+            log.info(e.toString());
+            throw new Exception(e);
+        }
+//        return null ;
+
+    }
+
 
     public  List<String> gets3filed() {
 
@@ -312,6 +369,32 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
 
         }
     }
+    @Override
+    public List<Auser> checkCustomer( String customermanager) throws Exception{
+        //            查询客户经理
+
+        List<Auser> manager = new ArrayList<>();
+        manager = auserMapper.selectExists(customermanager);
+        if(null == manager || manager.isEmpty()){throw new Exception("客户经理不存在，请确认输入的客户经理的中文名称");}
+        return manager;
+
+    }
+
+    @Override
+    public Boolean checkCorporation (String corporateName) {
+        List<OtcDerivativeCounterparty> otcDerivativeCounterparties = new ArrayList<>();
+        otcDerivativeCounterparties = otcDerivativeCounterpartyMapper.selectAll(corporateName);
+        List<CounterpartyOrg> counterpartyOrgs = new ArrayList<>();
+        counterpartyOrgs = counterpartyOrgMapper.selectByPrimaryKey(corporateName);
+        if("".equals(otcDerivativeCounterparties) || null==otcDerivativeCounterparties || "".equals(counterpartyOrgs) ||  null==counterpartyOrgs){
+            return false;
+        }
+        return true;
+    }
+
+
+
+
 
 
 }

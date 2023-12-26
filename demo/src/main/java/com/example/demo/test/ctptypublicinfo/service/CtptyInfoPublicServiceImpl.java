@@ -1,5 +1,6 @@
 package com.example.demo.test.ctptypublicinfo.service;
 
+import com.example.demo.test.clientreview.service.Clientreviewservice;
 import com.example.demo.test.http.HttpUtils;
 import model.Auser;
 import model.CounterpartyOrg;
@@ -7,6 +8,7 @@ import model.CtptyInfoUpdateRecord;
 import model.OtcDerivativeCounterparty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sql.AuserMapper;
 import sql.CounterpartyOrgMapper;
@@ -35,6 +37,9 @@ public class CtptyInfoPublicServiceImpl implements CtptyInfoPublicService {
     @Resource
     private AuserMapper auserMapper;
 
+    @Autowired
+    private Clientreviewservice clientreviewservice;
+
     public List<String> processjob(String customerManager) throws Exception{
         String unifiledsocialcode = "911101080828461726";
         String corporateName ="云合资本管理(北京)有限公司";
@@ -43,25 +48,22 @@ public class CtptyInfoPublicServiceImpl implements CtptyInfoPublicService {
         String today = simpleDateFormat.format(date);
 
         try{
-            List<Auser> manager = new ArrayList<>();
-            manager = auserMapper.selectExists(customerManager);
-            if(manager.isEmpty()||null==manager){
-                throw new Exception("客户经理不存在，请确认输入的客户经理的中文名称");
-            }
+            String userId = clientreviewservice.checkCustomer(customerManager).get(0).getUserid();
+            String deptCode = clientreviewservice.checkCustomer(customerManager).get(0).getDeptCode();
 
             CounterpartyOrg counterpartyOrg = new CounterpartyOrg();
             counterpartyOrg.setCorporateName(corporateName);
             counterpartyOrg.setAmlMonitorFlag("true");
-            counterpartyOrg.setCustomerManager(manager.get(0).getUserid());
-            counterpartyOrg.setIntroductionDepartment(manager.get(0).getDeptCode());
+            counterpartyOrg.setCustomerManager(userId);
+            counterpartyOrg.setIntroductionDepartment(deptCode);
             counterpartyOrgMapper.updateByPrimaryKeySelective(counterpartyOrg);
 
             OtcDerivativeCounterparty otcDerivativeCounterparty = new OtcDerivativeCounterparty();
             otcDerivativeCounterparty.setCorporateName(corporateName);
             otcDerivativeCounterparty.setUnifiedsocialCode(unifiledsocialcode);
             otcDerivativeCounterparty.setAmlMonitorFlag("true");
-            otcDerivativeCounterparty.setIntroductionDepartment(manager.get(0).getDeptCode());
-            otcDerivativeCounterparty.setCustomerManager(manager.get(0).getUserid());
+            otcDerivativeCounterparty.setIntroductionDepartment(deptCode);
+            otcDerivativeCounterparty.setCustomerManager(userId);
             otcDerivativeCounterpartyMapper.updateByCorporatename(otcDerivativeCounterparty);
 
 //            处理存量流程

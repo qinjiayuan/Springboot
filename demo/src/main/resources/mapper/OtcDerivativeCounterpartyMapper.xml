@@ -690,7 +690,14 @@
     FROM OTC_DERIVATIVE_COUNTERPARTY
 
       where
-       corporate_name =  #{corporateName}
+       corporate_name =  #{corporateName,jdbcType=VARCHAR}
+
+  </select>
+  
+  <select id="selectClient" parameterType="java.lang.String"  resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM OTC_DERIVATIVE_COUNTERPARTY
 
   </select>
 
@@ -699,6 +706,9 @@
     <include refid="Base_Column_List"/>
     FROM OTC_DERIVATIVE_COUNTERPARTY
     WHERE CLIENT_ID = #{clientid}
+  </select>
+  <select id="selectSignatureNameByClientIdString" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT SIGNATURE_NAME FROM OTC_DERIVATIVE_COUNTERPARTY WHERE CLIENT_ID = #{clientId,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from OTC_DERIVATIVE_COUNTERPARTY
@@ -2194,7 +2204,9 @@
         FUND_MANAGER_TEL = #{fundManagerTel,jdbcType=VARCHAR},
       </if>
     </set>
-    where CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR}
+<!--    where CORPORATE_NAME = #{corporateName,jdbcType=VARCHAR}-->
+    where client_id = #{clientId,jdbcType=VARCHAR}
+
   </update>
   <update id="updateByPrimaryKey" parameterType="model.OtcDerivativeCounterparty">
     update OTC_DERIVATIVE_COUNTERPARTY

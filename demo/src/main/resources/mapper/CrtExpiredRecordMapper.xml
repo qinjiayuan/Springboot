@@ -83,7 +83,16 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from CRT_EXPIRED_RECORD
-    where ID = #{id,jdbcType=VARCHAR}
+    where
+    RECORD_ID = #{recordId,jdbcType=VARCHAR}
+    AND CURRENT_STATUS !='CLOSED' AND CURRENT_STATUS !='CANCELLED'
+  </delete>
+
+  <delete id="deleteByunisocialcode" parameterType="java.lang.String">
+    delete from crt_expired_record
+    where UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR}
+    and current_status !='CLOSED' and current_status !='CANCELLED'
+
   </delete>
   <insert id="insert" parameterType="model.CrtExpiredRecord">
     insert into CRT_EXPIRED_RECORD (ID, DOC_ID, TITLE, 
@@ -242,6 +251,26 @@
       </if>
     </trim>
   </insert>
+
+  <select id ="selectProcessingflow" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+      <include refid="Base_Column_List"></include>
+    FROM CRT_EXPIRED_RECORD
+    <where>
+      CURRENT_STATUS !='CLOSED'
+        AND
+      CURRENT_STATUS !='CANCELLED'
+      <if test="unifiedsocialCode != null">
+        AND
+          UNIFIEDSOCIAL_CODE = #{unifiedsocialCode,jdbcType=VARCHAR}
+      </if>
+      <if test="recordId != null">
+       AND
+        RECORD_ID = #{recordId,jdbcType=VARCHAR}
+      </if>
+    </where>
+
+  </select>
   <update id="updateByPrimaryKeySelective" parameterType="model.CrtExpiredRecord">
     update CRT_EXPIRED_RECORD
     <set>
@@ -309,7 +338,16 @@
         VERSION = #{version,jdbcType=DECIMAL},
       </if>
     </set>
-    where ID = #{id,jdbcType=VARCHAR}
+    <where>
+      <if test="id !=null">
+        ID = #{id,jdbcType=VARCHAR}
+      </if>
+      <if test="unifiedsocialCode !=null">
+         AND
+      UNIFIEDSOCIAL_CODE != #{unifiedsocialCode,jdbcType=VARCHAR}
+      </if>
+    </where>
+<!--    where ID = #{id,jdbcType=VARCHAR}-->
   </update>
   <update id="updateByPrimaryKey" parameterType="model.CrtExpiredRecord">
     update CRT_EXPIRED_RECORD

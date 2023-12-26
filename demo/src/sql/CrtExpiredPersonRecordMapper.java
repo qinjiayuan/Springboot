@@ -7,17 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CrtExpiredPersonRecordMapper {
-    int deleteByPrimaryKey(String id);
 
-    int insert(CrtExpiredPersonRecord record);
-
-    int insertSelective(CrtExpiredPersonRecord record);
-
-    List<CrtExpiredPersonRecord> selectByExample(CrtExpiredPersonRecordExample example);
-
-    CrtExpiredPersonRecord selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(CrtExpiredPersonRecord record);
-
-    int updateByPrimaryKey(CrtExpiredPersonRecord record);
+    List<CrtExpiredPersonRecord> selectByIdNo(String idNo);
 }

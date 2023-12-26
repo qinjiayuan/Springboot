@@ -1,5 +1,6 @@
 package model;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 public class CounterpartyOrg {
@@ -41,7 +42,7 @@ public class CounterpartyOrg {
 
     private Date setupDate;
 
-    private Short registeredCapital;
+    private BigInteger registeredCapital;
 
     private String clientType;
 
@@ -227,11 +228,11 @@ public class CounterpartyOrg {
         this.setupDate = setupDate;
     }
 
-    public Short getRegisteredCapital() {
+    public BigInteger getRegisteredCapital() {
         return registeredCapital;
     }
 
-    public void setRegisteredCapital(Short registeredCapital) {
+    public void setRegisteredCapital(BigInteger registeredCapital) {
         this.registeredCapital = registeredCapital;
     }
 

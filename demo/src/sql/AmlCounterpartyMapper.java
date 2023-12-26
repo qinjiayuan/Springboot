@@ -15,7 +15,9 @@ public interface AmlCounterpartyMapper {
 
     List<AmlCounterparty> selectByExample(AmlCounterpartyExample example);
 
-    AmlCounterparty selectByPrimaryKey(String id);
+    List<AmlCounterparty> selectAll(String clientId);
+
+    List<AmlCounterparty> selectByPrimaryKey(String clientName);
 
     int updateByPrimaryKeySelective(AmlCounterparty record);
 

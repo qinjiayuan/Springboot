@@ -52,6 +52,13 @@
     ID, CLIENT_ID, CLIENT_NAME, ORGAN_TYPE, CAPITAL_ACCOUNT, CREATOR, CREATE_TIME, UPDATER, 
     UPDATE_TIME, ID_NO, PRODNAME, REMARK, CREATOR_NAME, UPDATER_NAME, VERSION, ID_KIND
   </sql>
+  <select id="selectAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM AML_COUNTERPARTY
+    WHERE CLIENT_ID = #{clientId,jdbcType=VARCHAR}
+  </select>
+
   <select id="selectByExample" parameterType="model.AmlCounterpartyExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -71,7 +78,7 @@
     select 
     <include refid="Base_Column_List" />
     from AML_COUNTERPARTY
-    where ID = #{id,jdbcType=VARCHAR}
+    where CLIENT_NAME = #{clientName,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from AML_COUNTERPARTY
