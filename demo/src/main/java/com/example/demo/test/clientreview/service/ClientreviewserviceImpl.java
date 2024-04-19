@@ -23,6 +23,7 @@ import sql.*;
 import org.json.JSONObject;
 import javax.annotation.Resource;
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -119,7 +120,7 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
                     .map(OtcDerivativeCounterparty::getClientId)
                     .collect(Collectors.toList());
             if(prodId==null|| prodId.isEmpty()) {
-                throw new IllegalArgumentException("不存在产品客户");
+                log.info(" 不存在产品客户，不用设置投资者明细");
             }
             prodId.stream().forEach(clientId ->{
 
@@ -281,11 +282,11 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
 //    AtomicInteger i = new AtomicInteger(0);
 
     @Override
-    public List<String> select() throws Exception {
+    public List<String> select(String corporate_name) throws Exception {
 //        System.out.println(i.addAndGet(1));
 
         try {
-            String corporate_name = "测试产品关注类";
+//            String corporate_name = "测试产品关注类";
             List<OtcDerivativeCounterparty> info = new ArrayList<>();
             info = otcDerivativeCounterpartyMapper.selectAll(corporate_name);
             if(!info.isEmpty()){
@@ -393,8 +394,25 @@ public class ClientreviewserviceImpl implements Clientreviewservice {
     }
 
 
+    @Override
+    public List<OtcDerivativeCounterparty> selectClient(String clientId){
+        List<OtcDerivativeCounterparty> dataList = new ArrayList<>();
+        dataList = otcDerivativeCounterpartyMapper.selectClientbyid(clientId);
+        log.info(dataList.toString());
+        return dataList;
+    }
 
-
-
+    @Override
+    public  String encrypt(String secretKey){
+        log.info("入参："+secretKey);
+        long l = System.currentTimeMillis();
+        String timeStamp = String.valueOf(l);
+        Base64.Encoder encoder = Base64.getEncoder();
+        String source = timeStamp + "+" + secretKey;
+        byte[] bytes = source.getBytes(StandardCharsets.UTF_8);
+        String token = encoder.encodeToString(bytes);
+        log.info("生成的token:"+token);
+        return token;
+    }
 
 }

@@ -47,6 +47,10 @@ public class CounterpartyOptionServiceImpl implements CounterpartyOpionService {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         String current_date = simpleDateFormat.format(date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE,-153);
+        Date newdate = calendar.getTime();
         try {
              Boolean flag = clientreviewservice.checkCorporation(corporateName);
              if(!flag){throw new Exception("该公司不存在");}
@@ -106,6 +110,7 @@ public class CounterpartyOptionServiceImpl implements CounterpartyOpionService {
             log.info(e.toString());
             throw new Exception(e);
         }
+
 
 
     }

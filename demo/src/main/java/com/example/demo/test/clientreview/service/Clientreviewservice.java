@@ -1,6 +1,7 @@
 package com.example.demo.test.clientreview.service;
 
 import model.Auser;
+import model.OtcDerivativeCounterparty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,5 +19,9 @@ public interface Clientreviewservice    {
 
     String getIdNo();
 
-    List<String> select() throws Exception;
+    List<String> select(String corporateName) throws Exception;
+
+    List<OtcDerivativeCounterparty> selectClient(String clientId);
+
+    String encrypt(String secretKey);
 }
